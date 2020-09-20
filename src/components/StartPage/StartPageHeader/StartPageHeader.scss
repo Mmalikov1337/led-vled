@@ -1,0 +1,103 @@
+.sp-header {
+    height: 120px; //
+    background-color: rgba(141, 0, 0, 0.247);
+    display: flex;
+    // align-content: space-between;
+    justify-content: space-between;
+    align-items: center;
+
+    // flex-basis: 90%;
+    &__logo {
+        img {}
+    }
+
+    &__links {
+        // align-self: center;
+        position: relative;
+        transform: translate(25%);
+        // left: 260px;
+        ul {
+            padding: 0;
+            display: flex;
+            gap: 40px; //
+            list-style: none;
+        }
+
+        &__link {
+            // display: inline;
+        }
+    }
+
+    &__buttons {
+        display: flex;
+        // justify-self: flex-end;
+        // gap: 100px;
+        // flex-basis: max($numbers: 2);
+        &__phone {
+            display: flex;
+            align-items: center;
+            gap: 20px; /////
+            // flex: 1;
+
+            div {
+
+                // display: flex;
+                // flex-direction: column;
+                img {
+                    padding: 17px;
+                    background: #FFFFFF;
+                    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+                    border-radius: 15px; //
+                }
+            }
+
+            span {
+                // gap: 100px;
+                span {}
+            }
+        }
+
+        &__cart {
+            // flex-basis: 300px;
+            margin-left: 100px;
+            // display: flex;
+            // gap: 30px;
+            &__button {
+
+                background: #FFFFFF;
+                /* 1 */
+
+                box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+                border-radius: 15px;
+                padding: 17px;
+
+                img {}
+            }
+
+            .circle {
+                position: absolute;
+
+                div {
+                    position: absolute;
+                    bottom: 46px;
+                    left: 26px;
+                    font-size: 14px;
+                    background: #FF4E5A;
+                    box-shadow: 0px 8px 10px rgba(239, 45, 59, 0.2);
+                    border-radius: 15px;
+                    width: 23px;
+                    height: 23px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    // text-align: center;
+
+                    span {
+                        font-size: 14px;
+                        color: #FFFFFF;
+                    }
+                }
+            }
+        }
+    }
+}
