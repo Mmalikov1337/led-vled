@@ -10,6 +10,7 @@ import appleSVG from './../../assets/images/apple.svg';
 import icecreamSVG from './../../assets/images/icecream.svg';
 import starSVG from './../../assets/images/star_full.svg';
 import arrow_downSVG from './../../assets/images/arrow_down.svg';
+import shadowPNG from './../../assets/images/shadow.png';
 import prod_1_5PNG from './../../assets/images/1_5.png';
 import prod_1_4PNG from './../../assets/images/1_4.png';
 import prod_1_3PNG from './../../assets/images/1_3.png';
@@ -226,6 +227,7 @@ export default function StartPage() {
                                     </div>
                                     <div className="startpage__items__main__section__item__content">
                                         <Circle color={tempItems[selectedItem].mainColor} sideColor={tempItems[selectedItem].sideColor} width="582" height="582" />
+                                        <img src={shadowPNG} alt="starSVG" className="side_pic shadow" />
                                         <img src={tempItems[selectedItem].pic} alt="prodPNG" className="side_pic" />
                                     </div>
 
@@ -246,6 +248,7 @@ export default function StartPage() {
                                                 </div>
                                                 <div className="startpage__items__side__section__item__content">
                                                     <Circle color={it.mainColor} sideColor={it.sideColor} width="147" height="147" />
+                                                    <img src={shadowPNG} alt="starSVG" className="side_pic shadow" />
                                                     <img src={it.pic} alt="prodPNG" className="side_pic" />
                                                     <div />
                                                 </div>
