@@ -7,7 +7,7 @@ import cartSVG from './../../../assets/images/cart.svg'
 import './StartPageHeader.scss';
 
 export default function StartPageHeader() {
-	const [productQuantity, setProductQuantity] = React.useState(1);
+	const [productQuantity, setProductQuantity] = React.useState(3);
 	return (
 		<div className="sp-header">
 			{/* <div className="container"> */}
