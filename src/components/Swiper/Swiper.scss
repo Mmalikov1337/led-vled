@@ -1,0 +1,258 @@
+.swiper {
+    color: #fff;
+    height: 1080px; ////
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &__navbar {
+        display: flex;
+        justify-content: space-between;
+
+        &__list {
+            display: flex;
+            list-style-type: none;
+            padding-left: 0;
+            margin-left: 75px;
+            gap: 75px;
+
+            &__link {
+                font-family: 'Cera Round Pro';
+                font-style: normal;
+                font-weight: bold;
+                cursor: pointer;
+
+                &::before {
+                    content: "";
+                    width: 30px;
+                    height: 2px;
+                    border-radius: 55px;
+                    margin-top: 10px;
+                    margin-left: -40px;
+                    background: #56BDFF;
+                    position: absolute;
+                }
+
+                &:hover,
+                .active {
+                    &::before {
+                        background: #FFC700;
+
+                    }
+                }
+            }
+        }
+
+        &__catalog {
+            display: flex;
+            align-items: center;
+            font-family: 'Cera Round Pro';
+            font-style: normal;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+
+    .main-block {
+        display: flex;
+        // height: max-content;
+        // justify-content: space-between;
+
+    }
+
+    &__main {}
+
+    &__sidebar {
+        display: flex;
+        flex-direction: row;
+        // width: min-content;
+        align-items: center;
+        // justify-content: center;
+        // transform-origin: center center 100;
+        // width: min-content;
+        // height: fit-content;
+
+        .sidebar-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            height: 100%;
+            // gap: 100px;
+        }
+
+        &__hash {
+            font-family: 'Cera Round Pro';
+            font-style: normal;
+            font-weight: normal;
+            font-size: 15px;
+            line-height: 15px;
+            text-align: center;
+            letter-spacing: 0.05em;
+            transform: rotate(90deg);
+
+            span {
+                color: #FFC700;
+            }
+        }
+
+        &__progress-line {
+            display: flex;
+            // transform: rotate(90deg);
+            // margin: auto 0;
+            flex-direction: column;
+            justify-content: center;
+
+            &__index {
+                justify-self: center;
+                align-self: center;
+                margin-bottom: 20px;
+
+                font-family: 'Cera Round Pro';
+                font-style: normal;
+                font-weight: bold;
+                font-size: 14px;
+                line-height: 14px;
+            }
+
+            &__page {
+                margin-top: 36px;
+                transform: rotate(90deg);
+
+                font-family: 'Cera Round Pro';
+                font-style: normal;
+                font-weight: 500;
+                font-size: 15px;
+                line-height: 15px;
+            }
+
+            &__line-holder {
+                display: flex;
+                justify-content: center;
+
+                &__line {
+                    background: rgb(255, 255, 255);
+                    // transform: rotate(90deg);
+                    width: 2px;
+                    height: 200px;
+                    // display: flex;
+                    // justify-content: center;
+
+
+                }
+            }
+        }
+    }
+
+
+    &__footer {
+
+        &__wrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+
+            &__logo {
+                display: flex;
+
+                img {}
+
+                p {
+                    align-self: flex-end;
+                }
+            }
+
+            &__feedback {
+                display: flex;
+                gap: 75px;
+
+                &__phone {
+                    font-family: 'Cera Round Pro';
+                    font-style: normal;
+                    font-weight: bold;
+                    cursor: pointer;
+
+                    &::before {
+                        content: "";
+                        width: 30px;
+                        height: 2px;
+                        border-radius: 55px;
+                        margin-top: 10px;
+                        margin-left: -40px;
+                        background: #56BDFF;
+                        position: absolute;
+                    }
+
+                    &:hover,
+                    .active {
+                        &::before {
+                            background: #FFC700;
+
+                        }
+                    }
+
+                    span {}
+                }
+
+                &__mail {
+                    font-family: 'Cera Round Pro';
+                    font-style: normal;
+                    font-weight: bold;
+                    cursor: pointer;
+
+                    &::before {
+                        content: "";
+                        width: 30px;
+                        height: 2px;
+                        border-radius: 55px;
+                        margin-top: 10px;
+                        margin-left: -40px;
+                        background: #56BDFF;
+                        position: absolute;
+                    }
+
+                    &:hover,
+                    .active {
+                        &::before {
+                            background: #FFC700;
+
+                        }
+                    }
+
+                    span {}
+                }
+
+                &__adress {
+                    font-family: 'Cera Round Pro';
+                    font-style: normal;
+                    font-weight: bold;
+                    cursor: pointer;
+
+                    &::before {
+                        content: "";
+                        width: 30px;
+                        height: 2px;
+                        border-radius: 55px;
+                        margin-top: 10px;
+                        margin-left: -40px;
+                        background: #56BDFF;
+                        position: absolute;
+                    }
+
+                    &:hover,
+                    .active {
+                        &::before {
+                            background: #FFC700;
+
+                        }
+                    }
+
+                    span {}
+                }
+            }
+        }
+    }
+
+}
