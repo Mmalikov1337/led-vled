@@ -1,7 +1,11 @@
+.content{
+    min-height: 100vh;
+
+}
+
 .startpage {
     border-radius: 15px 15px 0px 0px;
     background: url('./../../assets/images/snow-flake-start-page.svg') bottom center no-repeat, #F0F9FF;
-
     padding-bottom: 82px; ////
 
     .wrapper {
