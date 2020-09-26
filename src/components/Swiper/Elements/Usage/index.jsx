@@ -6,7 +6,7 @@ import './Usage.scss'
 
 export default function Usage() {
 	return (
-		<div className='usage' id='u'>
+		<div className='usage' id='usage'>
 			<div className="usage__wrapper">
 				<div className="usage__wrapper__left">
 

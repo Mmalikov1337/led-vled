@@ -6,7 +6,7 @@ import './Composition.scss'
 
 export default function Composition() {
     return (
-        <div className='composition' id = 'c'>
+        <div className='composition' id = 'composition'>
             <div className="composition__wrapper">
                 <div className="text-part">
 

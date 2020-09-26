@@ -11,46 +11,34 @@ import './Swiper.scss';
 
 
 export default function Swiper() {
-	const x = () => {
-		// window.scrollTo(document.getElementById('a'))
-		Scroll.scroller.scrollTo('u', {
+
+	const scrollToId = (scrollId) => {
+		Scroll.scroller.scrollTo(scrollId, {
 			duration: 1000,
 			delay: 0,
 			smooth: true,
-			containerId: 'el',
-			// offset: 50, // Scrolls to element + 50 pixels down the page
+			containerId: 'elements',
 		})
-
 	}
-	const xxc = () => {
-		// window.scrollTo(document.getElementById('a'))
-		Scroll.scroller.scrollTo('c', {
-			duration: 1000,
-			delay: 0,
-			smooth: true,
-			containerId: 'el',
-			// offset: 50, // Scrolls to element + 50 pixels down the page
-		})
 
-	}
 	const links = [{
 		title: 'Состав',
-		link: '',
+		id: 'composition',
 	}, {
 		title: 'Как использовать',
-		link: '',
+		id: 'usage',
 	}, {
 		title: 'Цена',
-		link: '',
+		id: 'price',
 	}, {
 		title: 'Доставка',
-		link: '',
+		id: 'delivery',
 	}, {
 		title: 'Любимые вкусы',
-		link: '',
+		id: 'tastes',
 	}, {
 		title: 'Партнёрам',
-		link: '',
+		id: 'partners',
 	}];
 
 	const [currentPage, setCurrentPage] = React.useState(0)
@@ -76,19 +64,21 @@ export default function Swiper() {
 
 			<div className="swiper__navbar">
 				<ul className="swiper__navbar__list">
-					<li className="swiper__navbar__list__link" onClick = {xxc}>Состав</li>
-					<li className="swiper__navbar__list__link" onClick={x}>Как использовать</li>
-					<li className="swiper__navbar__list__link">Цена</li>
-					<li className="swiper__navbar__list__link">Доставка</li>
-					<li className="swiper__navbar__list__link">Любимые вкусы</li>
-					<li className="swiper__navbar__list__link">Партнёрам</li>
+					{
+						links.map((it, index) => (
+							<li className="swiper__navbar__list__link" onClick={() => scrollToId(it.id)} key={index}>
+								{it.title}
+							</li>
+						))
+					}
+
 				</ul>
 				<div className="swiper__navbar__catalog">
 					Каталог
                 </div>
 			</div>
 
-			<div className="main-block" id = 'a'>
+			<div className="main-block" id='main-block'>
 
 				<div className="swiper__sidebar">
 					<div className="sidebar-container">
@@ -108,10 +98,8 @@ export default function Swiper() {
 
 								</div>
 								<div className="swiper__sidebar__progress-line__line-holder__arrows">
-									{/* <arrowSVG toUp={true} /> */}
 									{arrowSVG(true)}
 									{arrowSVG(false)}
-									{/* <arrowSVG toUp={false} /> */}
 								</div>
 							</div>
 							<div className="swiper__sidebar__progress-line__page">
@@ -121,7 +109,7 @@ export default function Swiper() {
 					</div>
 
 				</div>
-				
+
 				<div className="swiper__main">
 					{/*  */}
 					<Elements />

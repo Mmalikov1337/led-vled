@@ -9,7 +9,7 @@ export default function Elements() {
 
 
 	return (
-		<div className="elements" id="el">
+		<div className="elements" id="elements">
 			{/* <> */}
 			<Composition />
 			<Usage />
