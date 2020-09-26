@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8ae12b9af862e5f105a5997b8456acfe",
+    "revision": "bbd12f97937f7a00347505d50313d7a0",
     "url": "/led-vled/index.html"
   },
   {
-    "revision": "77904a3bfe651749a3af",
-    "url": "/led-vled/static/css/main.ec448573.chunk.css"
+    "revision": "20497201c6e49ca798ae",
+    "url": "/led-vled/static/css/main.3a74b917.chunk.css"
   },
   {
-    "revision": "e1e6dae3ec79ce0cd2a7",
-    "url": "/led-vled/static/js/2.41112890.chunk.js"
+    "revision": "ea3d0f3df11cbc3bb5a6",
+    "url": "/led-vled/static/js/2.9dc3b943.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/led-vled/static/js/2.41112890.chunk.js.LICENSE.txt"
+    "url": "/led-vled/static/js/2.9dc3b943.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "77904a3bfe651749a3af",
-    "url": "/led-vled/static/js/main.e9a03a23.chunk.js"
+    "revision": "20497201c6e49ca798ae",
+    "url": "/led-vled/static/js/main.cbd9ad31.chunk.js"
   },
   {
     "revision": "31e8f2e3749f7f84e7d0",
@@ -140,28 +140,28 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/led-vled/static/media/CeraRoundPro-Thin.de1732b7.eot"
   },
   {
-    "revision": "8670fe3d136351c24b6c9ce845b7bbdf",
-    "url": "/led-vled/static/media/apple.8670fe3d.svg"
-  },
-  {
     "revision": "3bcf704f36d77ef1a4ea53ad982c013d",
     "url": "/led-vled/static/media/arrow_down.3bcf704f.svg"
+  },
+  {
+    "revision": "4f2ac4bdc2dde4e30ba0735c7e179506",
+    "url": "/led-vled/static/media/body.4f2ac4bd.svg"
   },
   {
     "revision": "22d9f42da83226fec603719a0737ec72",
     "url": "/led-vled/static/media/cart.22d9f42d.svg"
   },
   {
+    "revision": "296d3639d344ca3b27e47304f3b40dff",
+    "url": "/led-vled/static/media/delivery_circle.296d3639.png"
+  },
+  {
+    "revision": "242d39dc0880faac9c8d3e55c9f06ff8",
+    "url": "/led-vled/static/media/drink.242d39dc.svg"
+  },
+  {
     "revision": "a767f98b052d1c3eb274cc07319794aa",
     "url": "/led-vled/static/media/germany.a767f98b.svg"
-  },
-  {
-    "revision": "fe9dd07fb4428c9cd0ffb1cfe3814f2e",
-    "url": "/led-vled/static/media/icecream.fe9dd07f.svg"
-  },
-  {
-    "revision": "194a4579000d3444c9fac0073071a861",
-    "url": "/led-vled/static/media/kcal.194a4579.svg"
   },
   {
     "revision": "23606cfc77eb38b00ea89c0a5d59d25a",
@@ -178,6 +178,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "508469c2966ee5395b1f43877f2ccf31",
     "url": "/led-vled/static/media/phone.508469c2.svg"
+  },
+  {
+    "revision": "2e0912a1c101596aa369a84b8f3fb225",
+    "url": "/led-vled/static/media/price_circle.2e0912a1.png"
   },
   {
     "revision": "6ee650e60705fad524a045c40b0220a9",

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/led-vled/precache-manifest.5e9665b55c95bfd88aed0b49e4f63c7d.js"
+  "/led-vled/precache-manifest.98c905bcc538cd2a4c459062f3381b83.js"
 );
 
 self.addEventListener('message', (event) => {
