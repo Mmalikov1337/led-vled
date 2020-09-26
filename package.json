@@ -1,6 +1,6 @@
 {
-  "homepage": "https://mmalikov1337.github.io/led-vled-layout",
-  "name": "led-vled-layout",
+  "homepage": "https://mmalikov1337.github.io/led-vled",
+  "name": "led-vled",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
