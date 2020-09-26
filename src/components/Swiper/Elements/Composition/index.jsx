@@ -13,7 +13,7 @@ export default function Composition() {
                     <div className="composition__wrapper__title">
                         <h2>
                             Натуральные
-                            ингредиенты111
+                            ингредиенты
                     </h2>
                     </div>
                     <div className="composition__wrapper__under-title">
