@@ -52,7 +52,7 @@ const Circle = ({ color, sideColor, width, height }) => {
 	)
 }
 
-export default function StartPage() {
+export default function StartPage({id, nextPage}) {
 	const [rating, setRatingValue] = React.useState(null)
 	const [hover, setHover] = React.useState(null)
 	const [selectedItem, setSelectedItem] = React.useState(0)
@@ -123,8 +123,8 @@ export default function StartPage() {
 	]
 
 	return (
-		<React.Fragment>
-			<div className="content">
+		// <React.Fragment>
+			<div className="content" id = {id}>
 
 				<StartPageHeader />
 				<div className="startpage">
@@ -265,13 +265,13 @@ export default function StartPage() {
 						</div>
 
 					</div>
-					<div className="arrow-wrapper">
+					<div className="arrow-wrapper" onClick = {nextPage}>
 						<img src={arrow_downSVG} alt="arrow_downSVG" className="arrow_down" />
 					</div>
 				</div>
 			</div>
 
-		</React.Fragment >
+		// </React.Fragment >
 
 	)
 }

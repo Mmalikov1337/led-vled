@@ -8,18 +8,9 @@ import logo_whiteSVG from './../../assets/images/logo_white.svg';
 
 import './Swiper.scss';
 
+// Scroll.Events.registered()
 
-
-export default function Swiper() {
-
-	const scrollToId = (scrollId) => {
-		Scroll.scroller.scrollTo(scrollId, {
-			duration: 1000,
-			delay: 0,
-			smooth: true,
-			containerId: 'elements',
-		})
-	}
+export default function Swiper({id, link, setSwiperPage}) {
 
 	const links = [{
 		title: 'Состав',
@@ -41,14 +32,29 @@ export default function Swiper() {
 		id: 'partners',
 	}];
 
+	const scrollToId = (indexScroll) => {
+		Scroll.scroller.scrollTo(links[indexScroll].id, {
+			duration: 1000,
+			delay: 0,
+			smooth: true,
+			containerId: 'elements',
+		})
+	}
 	const [currentPage, setCurrentPage] = React.useState(0)
 
 	const [active, setActive] = React.useState([false, false]);
-	const arrowSVG = (toUp) => {
+
+	React.useEffect(() => {
+		setSwiperPage(currentPage)
+		scrollToId(currentPage)
+	}, [currentPage])
+
+	const arrowSVG = (toUp, func) => {
 		return (
 			<div className={`swipe-arrow ${toUp ? 'down' : 'up'}`}
 				onMouseEnter={() => setActive(toUp ? [true, false] : [false, true])}
-				onMouseLeave={() => setActive(toUp ? [false, false] : [false, false])} >
+				onMouseLeave={() => setActive(toUp ? [false, false] : [false, false])}
+				onClick={func}>
 
 				<svg width="20" height="13" viewBox="0 0 20 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.7804 12.1054L19.6805 3.2134C19.8865 3.00774 20 2.7332 20 2.44046C20 2.14773 19.8865 1.87319 19.6805 1.66753L19.0252 1.01269C18.5982 0.586589 17.9042 0.586589 17.4779 1.01269L10.0041 8.47953L2.52209 1.00441C2.31608 0.798748 2.04145 0.685195 1.7486 0.685195C1.45543 0.685195 1.1808 0.798747 0.974625 1.00441L0.319508 1.65924C0.113495 1.86507 -6.36262e-08 2.13945 -7.64339e-08 2.43218C-8.92416e-08 2.72491 0.113495 2.99945 0.319507 3.20511L9.22773 12.1054C9.43439 12.3116 9.71033 12.4248 10.0037 12.4241C10.2981 12.4248 10.5739 12.3116 10.7804 12.1054Z"
@@ -59,19 +65,21 @@ export default function Swiper() {
 		)
 	}
 
+	const toTop = () => setCurrentPage(currentPage < links.length - 1 ? currentPage + 1 : links.length - 1)
+	const toBottom = () => setCurrentPage(currentPage > 0 ? currentPage - 1 : 0)
+
 	return (
-		<div className="swiper">
+		<div className="swiper" id = {id}>
 
 			<div className="swiper__navbar">
 				<ul className="swiper__navbar__list">
 					{
 						links.map((it, index) => (
-							<li className="swiper__navbar__list__link" onClick={() => scrollToId(it.id)} key={index}>
+							<li className="swiper__navbar__list__link" onClick={() => setCurrentPage(index)} key={index}>
 								{it.title}
 							</li>
 						))
 					}
-
 				</ul>
 				<div className="swiper__navbar__catalog">
 					Каталог
@@ -98,8 +106,8 @@ export default function Swiper() {
 
 								</div>
 								<div className="swiper__sidebar__progress-line__line-holder__arrows">
-									{arrowSVG(true)}
-									{arrowSVG(false)}
+									{arrowSVG(true, toTop)}
+									{arrowSVG(false, toBottom)}
 								</div>
 							</div>
 							<div className="swiper__sidebar__progress-line__page">
@@ -110,9 +118,8 @@ export default function Swiper() {
 
 				</div>
 
-				<div className="swiper__main">
-					{/*  */}
-					<Elements />
+				<div className="swiper__main" ref = {link}>
+					<Elements toTop = {toTop} toBottom = {toBottom}/>
 				</div>
 			</div>
 
