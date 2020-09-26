@@ -128,10 +128,12 @@
                 display: flex;
                 justify-content: space-between;
                 margin-top: 50px;
-                max-width: 390px;
+                max-width: 450px;
                 // gap: 30px;
 
                 &__item {
+					display: flex;
+					
                     &__pic {
                         display: flex;
                         // justify-self: center;
@@ -147,11 +149,12 @@
                     }
 
                     span {
-                        margin-top: 20px;
-                        text-align: center;
+						margin-top: 20px;
+						margin-left: 20px;
+                        text-align: left;
                         display: flex;
                         justify-content: center;
-
+						width: 110px;
                         font-family: 'Cera Round Pro';
                         font-weight: 500;
                         font-size: 15px;

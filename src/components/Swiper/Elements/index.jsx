@@ -2,6 +2,8 @@ import React from 'react'
 
 import Composition from "./Composition";
 import Usage from "./Usage";
+import Price from "./Price";
+import Delivery from "./Delivery";
 
 import './Elements.scss'
 export default function Elements({ toTop, toBottom }) {
@@ -11,14 +13,14 @@ export default function Elements({ toTop, toBottom }) {
 			toTop();
 		else
 			toBottom();
-
-		// console.log(e);
 	}
 
 	return (
 		<div className="elements" id="elements" onWheel={(e) => z(e.deltaY)}>
 			<Composition />
 			<Usage />
+			<Price />
+			<Delivery />
 		</div>
 	)
 }
