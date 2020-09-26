@@ -1,0 +1,42 @@
+{
+  "files": {
+    "main.css": "/led-vled/static/css/main.ec448573.chunk.css",
+    "main.js": "/led-vled/static/js/main.6e0da091.chunk.js",
+    "main.js.map": "/led-vled/static/js/main.6e0da091.chunk.js.map",
+    "runtime-main.js": "/led-vled/static/js/runtime-main.936a022f.js",
+    "runtime-main.js.map": "/led-vled/static/js/runtime-main.936a022f.js.map",
+    "static/js/2.41112890.chunk.js": "/led-vled/static/js/2.41112890.chunk.js",
+    "static/js/2.41112890.chunk.js.map": "/led-vled/static/js/2.41112890.chunk.js.map",
+    "index.html": "/led-vled/index.html",
+    "precache-manifest.57abbca4fdd4187954e1e7747596802c.js": "/led-vled/precache-manifest.57abbca4fdd4187954e1e7747596802c.js",
+    "service-worker.js": "/led-vled/service-worker.js",
+    "static/css/main.ec448573.chunk.css.map": "/led-vled/static/css/main.ec448573.chunk.css.map",
+    "static/js/2.41112890.chunk.js.LICENSE.txt": "/led-vled/static/js/2.41112890.chunk.js.LICENSE.txt",
+    "static/media/1_1.png": "/led-vled/static/media/1_1.c065d9cc.png",
+    "static/media/1_2.png": "/led-vled/static/media/1_2.e3fc1fd0.png",
+    "static/media/1_3.png": "/led-vled/static/media/1_3.850d1122.png",
+    "static/media/1_4.png": "/led-vled/static/media/1_4.b0315c66.png",
+    "static/media/1_5.png": "/led-vled/static/media/1_5.fc6f51b2.png",
+    "static/media/app.scss": "/led-vled/static/media/CeraRoundPro-Thin.de1732b7.eot",
+    "static/media/apple.svg": "/led-vled/static/media/apple.8670fe3d.svg",
+    "static/media/arrow_down.svg": "/led-vled/static/media/arrow_down.3bcf704f.svg",
+    "static/media/cart.svg": "/led-vled/static/media/cart.22d9f42d.svg",
+    "static/media/germany.svg": "/led-vled/static/media/germany.a767f98b.svg",
+    "static/media/icecream.svg": "/led-vled/static/media/icecream.fe9dd07f.svg",
+    "static/media/kcal.svg": "/led-vled/static/media/kcal.194a4579.svg",
+    "static/media/logo.svg": "/led-vled/static/media/logo.23606cfc.svg",
+    "static/media/logo_white.svg": "/led-vled/static/media/logo_white.d2e76b6d.svg",
+    "static/media/peach.png": "/led-vled/static/media/peach.8988189c.png",
+    "static/media/phone.svg": "/led-vled/static/media/phone.508469c2.svg",
+    "static/media/shadow.png": "/led-vled/static/media/shadow.6ee650e6.png",
+    "static/media/StartPage.scss": "/led-vled/static/media/snow-flake-start-page.354a26df.svg",
+    "static/media/star_full.svg": "/led-vled/static/media/star_full.b0f478f9.svg",
+    "static/media/usage_pic.png": "/led-vled/static/media/usage_pic.8866e551.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.936a022f.js",
+    "static/js/2.41112890.chunk.js",
+    "static/css/main.ec448573.chunk.css",
+    "static/js/main.6e0da091.chunk.js"
+  ]
+}
