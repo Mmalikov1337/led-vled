@@ -1,19 +1,19 @@
 import React from 'react'
 
-import peachPNG from './../../../assets/images/peach.png';
+import peachPNG from '../../../../assets/images/peach.png';
 
 import './Composition.scss'
 
 export default function Composition() {
     return (
-        <div className='composition'>
+        <div className='composition' id = 'c'>
             <div className="composition__wrapper">
                 <div className="text-part">
 
                     <div className="composition__wrapper__title">
                         <h2>
                             Натуральные
-                            ингредиенты
+                            ингредиенты111
                     </h2>
                     </div>
                     <div className="composition__wrapper__under-title">

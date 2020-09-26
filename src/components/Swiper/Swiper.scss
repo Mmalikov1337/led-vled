@@ -2,7 +2,8 @@
     color: #fff;
     min-height: 900px; ////
     height: 100vh;
-    max-height: 100vh;
+    //max-height: 100vh;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -13,9 +14,10 @@
 
         &__list {
             display: flex;
-            list-style-type: none;
-            padding-left: 0;
-            margin-left: 41px;
+			list-style-type: none;
+			padding-left: 0;
+			// flex: 0 0 60%;    ////@at-root
+            margin-left: 2.5%;
             gap: 75px;
 
             &__link {
@@ -23,6 +25,7 @@
                 font-style: normal;
                 font-weight: bold;
                 cursor: pointer;
+				// flex: 0 0 20%;
 
                 &::before {
                     content: "";
@@ -57,16 +60,21 @@
 
     .main-block {
         display: flex;
-        // height: max-content;
+         height: max-content;
         justify-content: space-between;
-        gap: 150px; ////
+		gap: 120px; ////
+		height: 100%;
     }
 
-    &__main {}
+    &__main {
+
+    }
 
     &__sidebar {
         display: flex;
-        flex-direction: row;
+		flex-direction: row;
+		justify-content: stretch;
+		height: 100%;
         // width: min-content;
         // align-items: ;
         // justify-content: center;
@@ -75,10 +83,12 @@
         // height: fit-content;
 
         .sidebar-container {
-            display: flex;
+			display: grid;
+			grid-template-rows: 33% 67%;
             flex-direction: column;
-            align-items: flex-start;
-            justify-content: space-evenly;
+            align-items: center;
+			justify-content: center;
+			// flex: 1;
             // height: 100%;
             // gap: 100px;
         }
@@ -90,9 +100,10 @@
             // text-align: center;
             letter-spacing: 0.05em;
             transform: rotate(90deg);
-
+			//
+			// margin-bottom: 26%;
             p {
-                margin-bottom: 0;
+                margin: 0;
 
                 span {
                     color: #FFC700;
@@ -101,7 +112,8 @@
         }
 
         &__progress-line {
-            display: flex;
+			align-self: flex-start;
+            display: grid;
             // transform: rotate(90deg);
             // margin: auto 0;
             flex-direction: column;
@@ -172,31 +184,32 @@
 
         &__wrapper {
             display: flex;
-            flex-direction: row;
-            align-items: center;
+            // flex-direction: row;
+            // align-items: center;
             justify-content: space-between;
-            height: 140px; ////
+			// height: 140px; ////
+			padding-bottom: 20px;
 
             &__logo {
                 display: flex;
                 align-items: center;
                 align-content: center;
-                gap: 50px;
+                gap: 20px;
 
                 img {
                     // align-self: flex-start;
                 }
 
                 p {
-                    align-self: flex-end;
+					// margin-left: 100px;
+					align-self: flex-end;
+					margin-bottom: 0;
                     font-family: 'Cera Round Pro';
-                    font-style: normal;
-                    font-weight: normal;
                     font-size: 14px;
                     line-height: 14px;
                     text-align: center;
                     color: #D2EEFF;
-                    margin: 0;
+                    // margin: 0;
                     span {
                         font-weight: bold;
                     }
