@@ -18,7 +18,7 @@ import prod_1_1PNG from './../../assets/images/1_1.png';
 
 import './StartPage.scss'
 
-const Circle = ({ color, sideColor, width, height }) => {
+const Circle = ({ color, width, height }) => {
 	return (
 		<svg wiwidth={width} height={height} viewBox="0 0 582 582" xmlns="http://www.w3.org/2000/svg" >
 			<title>Layer 1</title>
@@ -181,7 +181,7 @@ export default function StartPage({ id, nextPage }) {
 											<img src={starSVG} alt="starSVG" />
 										</div>
 										<div className="startpage__items__main__section__item__content">
-											<Circle color={tempItems[selectedItem].mainColor} sideColor={tempItems[selectedItem].sideColor} width="582" height="582" />
+											<Circle color={tempItems[selectedItem].mainColor} width="582" height="582" />
 											<img src={shadowPNG} alt="starSVG" className="side_pic shadow" />
 											<img src={tempItems[selectedItem].pic} alt="prodPNG" className="side_pic" />
 										</div>
