@@ -5,6 +5,7 @@ import Usage from "./Usage";
 import Price from "./Price";
 import Delivery from "./Delivery";
 import Tastes from "./Tastes";
+import Partners from "./Partners";
 
 import './Elements.scss'
 export default function Elements({ toTop, toBottom }) {
@@ -23,6 +24,7 @@ export default function Elements({ toTop, toBottom }) {
 			<Price />
 			<Delivery />
 			<Tastes />
+			<Partners />
 		</div>
 	)
 }
