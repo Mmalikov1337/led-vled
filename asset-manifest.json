@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/led-vled/static/css/main.f5040c93.chunk.css",
+    "main.css": "/led-vled/static/css/main.caf4879c.chunk.css",
     "main.js": "/led-vled/static/js/main.e563b97b.chunk.js",
     "main.js.map": "/led-vled/static/js/main.e563b97b.chunk.js.map",
     "runtime-main.js": "/led-vled/static/js/runtime-main.936a022f.js",
@@ -8,9 +8,9 @@
     "static/js/2.527d3bd5.chunk.js": "/led-vled/static/js/2.527d3bd5.chunk.js",
     "static/js/2.527d3bd5.chunk.js.map": "/led-vled/static/js/2.527d3bd5.chunk.js.map",
     "index.html": "/led-vled/index.html",
-    "precache-manifest.66cb9ccf074d8a25d47c28f056d90c9c.js": "/led-vled/precache-manifest.66cb9ccf074d8a25d47c28f056d90c9c.js",
+    "precache-manifest.e3ead8224ff2b5d9fd66232d06cb80fb.js": "/led-vled/precache-manifest.e3ead8224ff2b5d9fd66232d06cb80fb.js",
     "service-worker.js": "/led-vled/service-worker.js",
-    "static/css/main.f5040c93.chunk.css.map": "/led-vled/static/css/main.f5040c93.chunk.css.map",
+    "static/css/main.caf4879c.chunk.css.map": "/led-vled/static/css/main.caf4879c.chunk.css.map",
     "static/js/2.527d3bd5.chunk.js.LICENSE.txt": "/led-vled/static/js/2.527d3bd5.chunk.js.LICENSE.txt",
     "static/media/1_1.png": "/led-vled/static/media/1_1.c065d9cc.png",
     "static/media/1_2.png": "/led-vled/static/media/1_2.e3fc1fd0.png",
@@ -38,7 +38,7 @@
   "entrypoints": [
     "static/js/runtime-main.936a022f.js",
     "static/js/2.527d3bd5.chunk.js",
-    "static/css/main.f5040c93.chunk.css",
+    "static/css/main.caf4879c.chunk.css",
     "static/js/main.e563b97b.chunk.js"
   ]
 }
