@@ -32,21 +32,24 @@ export default function Swiper({id, link, setSwiperPage}) {
 		id: 'partners',
 	}];
 
-	const scrollToId = (indexScroll) => {
-		Scroll.scroller.scrollTo(links[indexScroll].id, {
-			duration: 1000,
-			delay: 0,
-			smooth: true,
-			containerId: 'elements',
-		})
-	}
+	// const scrollToId = (indexScroll) => {
+	// 	Scroll.scroller.scrollTo(links[indexScroll].id, {
+	// 		duration: 1000,
+	// 		delay: 0,
+	// 		smooth: true,
+	// 		containerId: 'elements',
+	// 	})
+	// }
 	const [currentPage, setCurrentPage] = React.useState(0)
 
 	const [active, setActive] = React.useState([false, false]);
 
 	React.useEffect(() => {
-		setSwiperPage(currentPage)
-		scrollToId(currentPage)
+		// setTimeout(() => {
+			
+			setSwiperPage(currentPage)
+		// }, 3000);
+		// scrollToId(currentPage)
 	}, [currentPage])
 
 	const arrowSVG = (toUp, func) => {
@@ -118,8 +121,8 @@ export default function Swiper({id, link, setSwiperPage}) {
 
 				</div>
 
-				<div className="swiper__main" ref = {link}>
-					<Elements toTop = {toTop} toBottom = {toBottom}/>
+				<div className="swiper__main" ref = {link}>{/* */}
+					<Elements toTop = {toTop} toBottom = {toBottom} currentPage = {currentPage}/>
 				</div>
 			</div>
 

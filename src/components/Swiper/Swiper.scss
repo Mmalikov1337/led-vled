@@ -62,7 +62,10 @@
 		height: 100%;
 	}
 
-	&__main {}
+	&__main {
+		width: 100%;
+		position: relative;
+	}
 
 	&__sidebar {
 		display: flex;
