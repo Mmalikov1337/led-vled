@@ -28,7 +28,7 @@ export default function App() {
 	const ref = React.useRef(null)
 	React.useEffect(() => {
 		scrollToId(currentPages)
-		console.log(currentPages, swiperPage);
+		// console.log(currentPages, swiperPage);
 	}, [currentPages, swiperPage])
 
 	const toBottom = () => setCurrentPages(currentPages < links.length - 1 ? currentPages + 1 : links.length - 1)

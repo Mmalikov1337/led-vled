@@ -2,10 +2,14 @@
 	font-family: "Cera Round Pro";
 	height: 100%;
 
+	background: url("./../../../../assets/images/partners_bg_snowflake.svg") center (right 71%) no-repeat;
+
 	// display: flex;
 	&__content {
 		display: flex;
 		flex-direction: column;
+		// background: url("./../../../../assets/images/snow-flake-start-page.svg") center center no-repeat, blue;
+
 		height: 100%;
 
 	}
@@ -14,6 +18,7 @@
 
 		// justify-self: flex-start;
 		h3 {
+			margin-top: 105px;
 			font-weight: 900;
 			font-size: 72px;
 			line-height: 72px;
@@ -22,6 +27,7 @@
 
 	&__form {
 		width: 580px; ////
+		margin-left: -250px;
 
 		&-wrapper {
 			width: 100%;
@@ -34,7 +40,7 @@
 		}
 
 		&__input {
-			width: 480px;
+			width: 428px;
 			// margin-top: 50px;
 
 			div {
@@ -61,13 +67,20 @@
 			}
 
 			input {
+				font-weight: 500;
+				font-size: 16px;
+				line-height: 16px;
+				// padding-left: 40px;
+				font-family: "Cera Round Pro";
+				color: #FFFFFF;
+				// width: 480px;
+				padding-left: 50px;
 				position: relative;
 				height: 50px;
 				width: 100%;
 				background: transparent;
 				border: none;
 				border-bottom: 2px solid #56BDFF;
-				padding-left: 40px;
 
 				outline: none;
 
@@ -75,8 +88,12 @@
 					font-weight: 500;
 					font-size: 16px;
 					line-height: 16px;
+					font-family: "Cera Round Pro";
+					// padding-left: 40px;
+
 					color: #FFFFFF;
 				}
+
 			}
 		}
 

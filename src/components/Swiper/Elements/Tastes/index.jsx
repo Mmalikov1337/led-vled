@@ -96,7 +96,7 @@ export default function Tastes() {
 		)
 	}
 	const scrollToId = (id) => {
-		console.log(id);
+		// console.log(id);
 		Scroll.scroller.scrollTo(id, {
 			duration: 1000,
 			delay: 0,
@@ -107,7 +107,7 @@ export default function Tastes() {
 	};
 
 	const [selectedQuantity, setSelectedQuantity] = React.useState(() => [...Array(tempItems.length)].fill(1));
-	console.log('selectedQuantity', selectedQuantity);
+	// console.log('selectedQuantity', selectedQuantity);
 	const [slideIndex, setSlideIndex] = React.useState(() => 0);
 	const maxIndex = tempItems.length - 3
 

@@ -74,7 +74,8 @@
 	}
 
 	&__right {
-		img {
+			transform: translateX(-15%);
+			img {
 			width: 582px;
 			height: 582px;
 		}

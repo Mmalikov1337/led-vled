@@ -7,20 +7,25 @@
 		display: flex;
 		justify-content: space-between;
 
-		.text-part {}
+		.text-part {
+			width: fit-content;
+		}
 
 		&__title {
 			font-family: 'Cera Round Pro';
-			font-weight: 900;
-			font-size: 72px;
-			line-height: 100px; ////!*!
-
-			h2 {}
+			
+			h2 {
+				margin-top: 110px;
+				font-size: 72px;
+				font-weight: 900;
+				line-height: 100px; ////!*!
+				width: min-content;
+			}
 		}
 
 		&__under-title {
 			display: grid;
-			grid-template-columns: 50% 50%;
+			grid-template-columns: 40% 60%;
 
 			&__button {
 				div {
@@ -120,10 +125,11 @@
 			}
 		}
 
+		// background: url("./../../../../assets/images/snow-flake-start-page.svg") center center no-repeat;
 		&__circle {
 			display: flex;
 			align-items: center;
-
+			transform: translateX(-15%);
 			img {
 				width: 582px; ////
 				height: 582px;

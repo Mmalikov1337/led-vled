@@ -1,6 +1,10 @@
 import React from 'react'
+import MaskedInput from 'react-text-mask'
+
 import './Partners.scss'
+
 export default function Partners() {
+
 	return (
 		<div className="partners" id='partners'>
 			<div className="partners__content">
@@ -24,7 +28,7 @@ export default function Partners() {
 							<div>
 
 								<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<g clip-path="url(#clip0)">
+									<g clipPath="url(#clip0)">
 										<path d="M6.99984 7.41351C8.73337 7.41351 10.1388 5.76857 10.1388 3.73945C10.1388 0.925623 8.73344 0.0654297 6.99984 0.0654297C5.26617 0.0654297 3.86084 0.925623 3.86084 3.73945C3.86087 5.76857 5.2662 7.41351 6.99984 7.41351Z" fill="white" />
 										<path d="M13.9316 12.821L12.3479 9.25355C12.2755 9.0903 12.1482 8.95491 11.9899 8.87245L9.53211 7.59304C9.47791 7.56488 9.41229 7.57036 9.36357 7.60724C8.66843 8.13301 7.85111 8.41091 7.00005 8.41091C6.14886 8.41091 5.33161 8.13301 4.63647 7.60724C4.58761 7.57036 4.52199 7.56488 4.46779 7.59304L2.01022 8.87245C1.85176 8.95491 1.72465 9.09024 1.65214 9.25355L0.0684867 12.821C-0.0406969 13.067 -0.0183195 13.3484 0.128365 13.5739C0.274981 13.7995 0.523116 13.9341 0.792157 13.9341H13.2078C13.4769 13.9341 13.7251 13.7994 13.8717 13.5739C14.0183 13.3484 14.0408 13.0669 13.9316 12.821Z" fill="white" />
 									</g>
@@ -36,7 +40,7 @@ export default function Partners() {
 								</svg>
 							</div>
 
-							<input type="text" placeholder = "Ваше имя"/>
+							<input type="text" placeholder="Ваше имя" />
 						</div>
 						<div className="partners__form__input">
 							<div>
@@ -45,8 +49,13 @@ export default function Partners() {
 									<path d="M11.0526 7.90106C10.3124 7.90106 9.58738 7.78548 8.90021 7.55873C8.56484 7.44315 8.184 7.53221 7.96359 7.75706L6.60127 8.7859C5.03811 7.9516 4.03769 6.95179 3.21475 5.4L4.21579 4.0699C4.46779 3.8179 4.55812 3.44905 4.45012 3.10358C4.22148 2.412 4.10528 1.68632 4.10528 0.947369C4.10528 0.425043 3.68023 0 3.15791 0H0.947369C0.425043 0 0 0.425043 0 0.947369C0 7.04147 4.95853 12 11.0526 12C11.575 12 12 11.575 12 11.0526V8.84843C12 8.3261 11.575 7.90106 11.0526 7.90106Z" fill="white" />
 								</svg>
 							</div>
-
-							<input type="text" placeholder = "+7 (___) ___ - __ - __"/>
+							<MaskedInput
+								mask={['+', '7', '(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, ' ', '-', ' ', /\d/, /\d/, ' ', '-', ' ', /\d/, /\d/]}
+								// className="form-control"
+								placeholder="+7 (___) ___ - __ - __"
+								guide={true}
+							/>
+							{/* <input type="text" placeholder="+7 (___) ___ - __ - __" value={inputValue} onChange={(e) => changeInputValue(e)} /> */}
 						</div>
 						<div className="partners__form__container">
 							<div className="partners__form__container__button">

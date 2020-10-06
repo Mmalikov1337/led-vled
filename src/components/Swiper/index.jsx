@@ -4,13 +4,10 @@ import Scroll from 'react-scroll'
 import Elements from './Elements/';
 
 import logo_whiteSVG from './../../assets/images/logo_white.svg';
-// import swipe_downSVG from './../../assets/images/swipe_down.svg';
 
 import './Swiper.scss';
 
-// Scroll.Events.registered()
-
-export default function Swiper({id, link, setSwiperPage}) {
+export default function Swiper({ id, link, setSwiperPage }) {
 
 	const links = [{
 		title: 'Состав',
@@ -31,25 +28,12 @@ export default function Swiper({id, link, setSwiperPage}) {
 		title: 'Партнёрам',
 		id: 'partners',
 	}];
-
-	// const scrollToId = (indexScroll) => {
-	// 	Scroll.scroller.scrollTo(links[indexScroll].id, {
-	// 		duration: 1000,
-	// 		delay: 0,
-	// 		smooth: true,
-	// 		containerId: 'elements',
-	// 	})
-	// }
 	const [currentPage, setCurrentPage] = React.useState(0)
 
 	const [active, setActive] = React.useState([false, false]);
 
 	React.useEffect(() => {
-		// setTimeout(() => {
-			
-			setSwiperPage(currentPage)
-		// }, 3000);
-		// scrollToId(currentPage)
+		setSwiperPage(currentPage)
 	}, [currentPage])
 
 	const arrowSVG = (toUp, func) => {
@@ -72,7 +56,7 @@ export default function Swiper({id, link, setSwiperPage}) {
 	const toBottom = () => setCurrentPage(currentPage > 0 ? currentPage - 1 : 0)
 
 	return (
-		<div className="swiper" id = {id}>
+		<div className="swiper" id={id}>
 
 			<div className="swiper__navbar">
 				<ul className="swiper__navbar__list">
@@ -121,8 +105,8 @@ export default function Swiper({id, link, setSwiperPage}) {
 
 				</div>
 
-				<div className="swiper__main" ref = {link}>{/* */}
-					<Elements toTop = {toTop} toBottom = {toBottom} currentPage = {currentPage}/>
+				<div className="swiper__main" ref={link}>{/* */}
+					<Elements toTop={toTop} toBottom={toBottom} currentPage={currentPage} />
 				</div>
 			</div>
 
