@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "22e1e817349d3f1ca7a42cc29d769275",
+    "revision": "19bb8d52c2b97d00e7d31aa4d3dac965",
     "url": "/led-vled/index.html"
   },
   {
-    "revision": "a5d7b2686c1d0ea9be3a",
-    "url": "/led-vled/static/css/main.044b12b2.chunk.css"
+    "revision": "59aca06a9806d5392772",
+    "url": "/led-vled/static/css/main.e58b8742.chunk.css"
   },
   {
-    "revision": "8fb487f32aacaa75cc57",
-    "url": "/led-vled/static/js/2.8144c4d9.chunk.js"
+    "revision": "c1c488d765fc8cc54b97",
+    "url": "/led-vled/static/js/2.527d3bd5.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/led-vled/static/js/2.8144c4d9.chunk.js.LICENSE.txt"
+    "url": "/led-vled/static/js/2.527d3bd5.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "a5d7b2686c1d0ea9be3a",
-    "url": "/led-vled/static/js/main.5d06f917.chunk.js"
+    "revision": "59aca06a9806d5392772",
+    "url": "/led-vled/static/js/main.849d720e.chunk.js"
   },
   {
     "revision": "31e8f2e3749f7f84e7d0",
@@ -170,6 +170,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "d2e76b6d951f8aa53b9867b846ce5f12",
     "url": "/led-vled/static/media/logo_white.d2e76b6d.svg"
+  },
+  {
+    "revision": "51479c07a16d428e7a3d27941ef46942",
+    "url": "/led-vled/static/media/partners_bg_snowflake.51479c07.svg"
   },
   {
     "revision": "8988189cb71d29fc05e2ffddf44198f8",
