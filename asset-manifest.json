@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/led-vled/static/css/main.ef73aca0.chunk.css",
-    "main.js": "/led-vled/static/js/main.b8e20a08.chunk.js",
-    "main.js.map": "/led-vled/static/js/main.b8e20a08.chunk.js.map",
+    "main.js": "/led-vled/static/js/main.afd9037b.chunk.js",
+    "main.js.map": "/led-vled/static/js/main.afd9037b.chunk.js.map",
     "runtime-main.js": "/led-vled/static/js/runtime-main.936a022f.js",
     "runtime-main.js.map": "/led-vled/static/js/runtime-main.936a022f.js.map",
     "static/js/2.527d3bd5.chunk.js": "/led-vled/static/js/2.527d3bd5.chunk.js",
     "static/js/2.527d3bd5.chunk.js.map": "/led-vled/static/js/2.527d3bd5.chunk.js.map",
     "index.html": "/led-vled/index.html",
-    "precache-manifest.51c3d748f96184c6579b80cce651738d.js": "/led-vled/precache-manifest.51c3d748f96184c6579b80cce651738d.js",
+    "precache-manifest.57b96ffb8525fe0cbfc4e138673f1ee1.js": "/led-vled/precache-manifest.57b96ffb8525fe0cbfc4e138673f1ee1.js",
     "service-worker.js": "/led-vled/service-worker.js",
     "static/css/main.ef73aca0.chunk.css.map": "/led-vled/static/css/main.ef73aca0.chunk.css.map",
     "static/js/2.527d3bd5.chunk.js.LICENSE.txt": "/led-vled/static/js/2.527d3bd5.chunk.js.LICENSE.txt",
@@ -39,6 +39,6 @@
     "static/js/runtime-main.936a022f.js",
     "static/js/2.527d3bd5.chunk.js",
     "static/css/main.ef73aca0.chunk.css",
-    "static/js/main.b8e20a08.chunk.js"
+    "static/js/main.afd9037b.chunk.js"
   ]
 }
