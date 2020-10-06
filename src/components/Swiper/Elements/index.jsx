@@ -96,25 +96,12 @@ export default function Elements({ toTop, toBottom, currentPage }) {
 		},
 
 	]
-	// console.log('windowSize', windowSize);    ////
-
-	const [paused, setPaused] = React.useState(false)
 
 	function changeBlock(value) {
-		if (paused) return
-		else {
-			let p = new Promise((res, rej) => {
-				setPaused(true)
-				if (value > 0) toTop();
-				else toBottom();
-				res()
-			})
-			p.then(() => {
-				setTimeout(() => {
-					setPaused(false)
-				}, 1000);
-			})
-		}
+		if (value > 0)
+			toTop();
+		else
+			toBottom();
 	}
 
 	return (

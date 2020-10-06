@@ -34,6 +34,7 @@ export default function Swiper({ id, link, setSwiperPage }) {
 
 	const [heightOfLine, setHeightOfLine] = React.useState(null);
 
+	const [swiperPause, setSwiperPause] = React.useState(false)
 	// let heightOfLine = 150;
 
 	const lineStyle = {
@@ -65,28 +66,33 @@ export default function Swiper({ id, link, setSwiperPage }) {
 	}
 
 	const toTop = () => {
-
+		if(swiperPause) return
 		setCurrentPage(currentPage < links.length - 1 ? currentPage + 1 : links.length - 1)
 		let promise = new Promise(function (resolve, reject) {
 			setHeightOfLine('to_top')
+			setSwiperPause(true)
 			resolve()
 		});
 		promise.then(() => {
 			setTimeout(() => {
 				setHeightOfLine(null)
+				setSwiperPause(false)
 			}, 1000);
 		})
 	}
 
 	const toBottom = () => {
+		if(swiperPause) return
 		setCurrentPage(currentPage > 0 ? currentPage - 1 : 0)
 		let promise = new Promise(function (resolve, reject) {
 			setHeightOfLine('to_bottom')
+			setSwiperPause(true)
 			resolve()
 		});
 		promise.then(() => {
 			setTimeout(() => {
 				setHeightOfLine(null)
+				setSwiperPause(false)
 			}, 1000);
 		})
 	}
