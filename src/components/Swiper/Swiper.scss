@@ -5,26 +5,32 @@
 	//max-height: 100vh;
 	font-family: 'Cera Round Pro';
 
-	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
 
 	&__navbar {
 		display: flex;
 		justify-content: space-between;
 
 		&__list {
-			display: flex;
+			// justify-content: space-between;
 			list-style-type: none;
 			padding-left: 0;
-			margin-left: 2.5%;
-			gap: 75px;
+			display: flex;
+			// width: max-content;
+			flex-basis: 80%;
+			// margin-left: 3.5%;
 
 			&__link {
 				font-style: normal;
 				font-weight: bold;
 				cursor: pointer;
-
+				// display: inline;
+				// padding-left: 15.5%;
+				width: max-content;
+				margin-left: 80px;
 				&::before {
 					content: "";
 					width: 30px;
@@ -60,12 +66,14 @@
 		display: flex;
 		height: max-content;
 		justify-content: space-between;
-		gap: 120px; ////
+		// gap: 120px; ////    ////
+		// grid-gap:120px;
 		height: 100%;
 	}
 
 	&__main {
 		width: 100%;
+		margin-left: 120px;
 		position: relative;
 	}
 
@@ -203,7 +211,8 @@
 
 			&__feedback {
 				display: flex;
-				gap: 75px;
+				// gap: 75px;
+				margin-left: 75px;
 				align-self: flex-end;
 				padding-bottom: 25px;
 
@@ -211,7 +220,7 @@
 					font-style: normal;
 					font-weight: bold;
 					cursor: pointer;
-
+					width: 151px;
 					&::before {
 						content: "";
 						width: 30px;
@@ -237,7 +246,7 @@
 				&__mail {
 					font-weight: bold;
 					cursor: pointer;
-
+					margin-left: 75px;
 					&::before {
 						content: "";
 						width: 30px;
@@ -263,6 +272,7 @@
 				&__adress {
 					font-weight: bold;
 					cursor: pointer;
+					margin-left: 75px;
 
 					&::before {
 						content: "";

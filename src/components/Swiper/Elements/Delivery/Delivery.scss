@@ -49,7 +49,7 @@
 				display: flex;
 				align-items: center;
 				justify-content: center;
-				gap: 15px;
+				// gap: 15px;
 
 				span {
 					font-weight: bold;
@@ -66,7 +66,7 @@
 					display: flex;
 					align-content: center;
 					justify-content: center;
-
+					margin: 0 0 0 15px;
 					svg {}
 				}
 			}
