@@ -106,13 +106,18 @@ export default function Elements({ toTop, toBottom, currentPage }) {
 
 	return (
 		<div className="elements" id="elements" onWheel={(e) => changeBlock(e.deltaY)}>
-			<div className="elements__background-holder" >
-				<CircleSVG style={{
-					transform: `translate(${circlePositions[currentPage].x},${circlePositions[currentPage].y})`
-				}} />
-				<p className="elements__background-holder__logo">
-					Сделано в <span>REJI</span>
-				</p>
+			<div className="elements__background" >
+				<div className="elements__background-circle">
+					<CircleSVG style={{
+						transform: `translate(${circlePositions[currentPage].x},${circlePositions[currentPage].y})`
+					}} />
+				</div>
+				<div className="elements__background-logo">
+					<p className="elements__background-holder__logo">
+						Сделано в <span>REJI</span>
+					</p>
+				</div>
+
 			</div>
 
 
