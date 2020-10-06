@@ -28,12 +28,24 @@ export default function Swiper({ id, link, setSwiperPage }) {
 		title: 'Партнёрам',
 		id: 'partners',
 	}];
-	const [currentPage, setCurrentPage] = React.useState(0)
+	const [currentPage, setCurrentPage] = React.useState(0);
 
 	const [active, setActive] = React.useState([false, false]);
 
+	const [heightOfLine, setHeightOfLine] = React.useState(null);
+
+	// let heightOfLine = 150;
+
+	const lineStyle = {
+		maxHeight: `${heightOfLine}px`
+	}
+
 	React.useEffect(() => {
 		setSwiperPage(currentPage)
+		// setHeightOfLine(0)
+		// setTimeout(() => {
+		// 	setHeightOfLine(150)
+		// }, 400);
 	}, [currentPage])
 
 	const arrowSVG = (toUp, func) => {
@@ -52,8 +64,32 @@ export default function Swiper({ id, link, setSwiperPage }) {
 		)
 	}
 
-	const toTop = () => setCurrentPage(currentPage < links.length - 1 ? currentPage + 1 : links.length - 1)
-	const toBottom = () => setCurrentPage(currentPage > 0 ? currentPage - 1 : 0)
+	const toTop = () => {
+
+		setCurrentPage(currentPage < links.length - 1 ? currentPage + 1 : links.length - 1)
+		let promise = new Promise(function (resolve, reject) {
+			setHeightOfLine('to_top')
+			resolve()
+		});
+		promise.then(() => {
+			setTimeout(() => {
+				setHeightOfLine(null)
+			}, 1000);
+		})
+	}
+
+	const toBottom = () => {
+		setCurrentPage(currentPage > 0 ? currentPage - 1 : 0)
+		let promise = new Promise(function (resolve, reject) {
+			setHeightOfLine('to_bottom')
+			resolve()
+		});
+		promise.then(() => {
+			setTimeout(() => {
+				setHeightOfLine(null)
+			}, 1000);
+		})
+	}
 
 	return (
 		<div className="swiper" id={id}>
@@ -62,7 +98,7 @@ export default function Swiper({ id, link, setSwiperPage }) {
 				<ul className="swiper__navbar__list">
 					{
 						links.map((it, index) => (
-							<li className="swiper__navbar__list__link" onClick={() => setCurrentPage(index)} key={index}>
+							<li className={`swiper__navbar__list__link ${currentPage === index ? 'active' : ''}`} onClick={() => setCurrentPage(index)} key={index}>
 								{it.title}
 							</li>
 						))
@@ -89,7 +125,7 @@ export default function Swiper({ id, link, setSwiperPage }) {
 								0{currentPage + 1}
 							</div>
 							<div className="swiper__sidebar__progress-line__line-holder">
-								<div className="swiper__sidebar__progress-line__line-holder__line">
+								<div className={`swiper__sidebar__progress-line__line-holder__line ${heightOfLine ? heightOfLine : ''}`} style={lineStyle}>
 
 								</div>
 								<div className="swiper__sidebar__progress-line__line-holder__arrows">
@@ -114,9 +150,6 @@ export default function Swiper({ id, link, setSwiperPage }) {
 				<div className="swiper__footer__wrapper">
 					<div className="swiper__footer__wrapper__logo">
 						<img src={logo_whiteSVG} alt="logo_whiteSVG" />
-						<p>
-							Сделано в <span>REJI</span>
-						</p>
 					</div>
 					<div className="swiper__footer__wrapper__feedback">
 						<div className="swiper__footer__wrapper__feedback__phone">

@@ -19,8 +19,7 @@ export default function App() {
 		Scroll.scroller.scrollTo(links[indexScroll].id, {
 			duration: 1000,
 			delay: 0,
-			smooth: true,
-			// containerId: 'elements',
+			smooth: true
 		})
 	}
 	const [currentPages, setCurrentPages] = React.useState(0)
@@ -28,7 +27,6 @@ export default function App() {
 	const ref = React.useRef(null)
 	React.useEffect(() => {
 		scrollToId(currentPages)
-		// console.log(currentPages, swiperPage);
 	}, [currentPages, swiperPage])
 
 	const toBottom = () => setCurrentPages(currentPages < links.length - 1 ? currentPages + 1 : links.length - 1)

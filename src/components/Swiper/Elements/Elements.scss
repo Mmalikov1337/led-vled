@@ -21,10 +21,13 @@
 		width: 100%;
 	}
 
-	.circle-holder {
+	&__background-holder {
 		position: absolute;
 		width: 100%;
 		height: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
 
 		// transition: all .5s;
 		svg {
@@ -36,9 +39,17 @@
 			transition: all 0.5s ease-in-out;
 		}
 
-		// display: flex;
-		// justify-content: flex-end;
-		// // align-content: flex-end;
-		// align-items: flex-end;
+		&__logo {
+
+			font-size: 14px;
+			line-height: 14px;
+			text-align: center;
+			color: #D2EEFF;
+			transform: rotate(-90deg) translateY(50px);
+			
+			span {
+				font-weight: bold;
+			}
+		}
 	}
 }

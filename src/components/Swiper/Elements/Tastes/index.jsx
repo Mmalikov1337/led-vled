@@ -11,103 +11,100 @@ import prod_1_1PNG from './../../../../assets/images/1_1.png';
 
 import './Tastes.scss';
 
-export default function Tastes() {
-	const tempItems = [
-		{
-			pic: prod_1_4PNG,
-			mainColor: "#FBB35E",
-			sideColor: "#FCCA8E",
-			rating: "5.0",
-			title: 'Лимон',
-			description: "Натуральные ингредиенты",
-			price: "10₽",
-			mesure: 'шт',
-			properties: [
-				"21 ккал",
-				"200 мл"
-			]
-		}
-		, {
-			pic: prod_1_2PNG,
-			mainColor: "#DBE4A7",
-			sideColor: "#e6ecc1",
-			rating: "5.0",
-			title: 'Лимон',
-			description: "Натуральные ингредиенты",
-			price: "10₽",
-			mesure: 'шт',
-			properties: [
-				"21 ккал",
-				"200 мл"
-			]
-		}, {
-			pic: prod_1_1PNG,
-			mainColor: "#FF4E5A",
-			sideColor: "#f46c81",
-			rating: "4.8",
-			title: 'Вишня',
-			description: "Натуральные ингредиенты",
-			price: "10₽",
-			mesure: 'шт',
-			properties: [
-				"21 ккал",
-				"200 мл"
-			]
-		},
-		{
-			pic: prod_1_5PNG,
-			mainColor: "#2D1109",
-			sideColor: "#4c342e",
-			rating: "4.7",
-			title: 'Coca-Cola',
-			description: "Натуральные ингредиенты",
-			price: "10₽",
-			mesure: 'шт',
-			properties: [
-				"21 ккал",
-				"200 мл"
-			]
-		}, {
-			pic: prod_1_3PNG,
-			mainColor: "#3F9B0B",
-			sideColor: "#65af3c",
-			rating: "5.0",
-			title: 'Лимон',
-			description: "Натуральные ингредиенты",
-			price: "10₽",
-			mesure: 'шт',
-			properties: [
-				"21 ккал",
-				"200 мл"
-			]
-		},
-	]
-
-	const Circle = ({ color, width, height }) => {
-		{/* *!!!!!* */ }
-		return (
-			<svg wiwidth={width} height={height} viewBox="0 0 582 582" xmlns="http://www.w3.org/2000/svg" >
-				<title>Layer 1</title>
-				<circle id="svg_1" fill={color} cx="291" cy="291" r="291" viewBox="0 0 582 582" />
-				<g id="svg_19">
-					<path fillRule="evenodd" clipRule="evenodd" d="M241.815 61.409L291.527 147.581L341.324 61.3303C389.157 71.721 432.551 96.7749 465.466 133.004L415.669 219.255L515.182 219.237C530.139 265.865 530.123 316.017 515.135 362.654L415.606 362.682L465.356 448.872C432.465 485.171 389.041 510.26 341.182 520.614L291.435 434.435L241.646 520.672C193.822 510.26 150.433 485.209 117.504 448.998L167.292 362.761L67.8154 362.785C52.839 316.162 52.8513 266.007 67.8508 219.372L167.351 219.352L117.629 133.154C150.52 96.8475 193.95 71.7573 241.815 61.409Z" fill="white" fillOpacity="0.3" />
-				</g>
-			</svg>
-		)
+const Circle = ({ color, width, height }) => {
+	return (
+		<svg wiwidth={width} height={height} viewBox="0 0 582 582" xmlns="http://www.w3.org/2000/svg" >
+			<title>Layer 1</title>
+			<circle id="svg_1" fill={color} cx="291" cy="291" r="291" viewBox="0 0 582 582" />
+			<g id="svg_19">
+				<path fillRule="evenodd" clipRule="evenodd" d="M241.815 61.409L291.527 147.581L341.324 61.3303C389.157 71.721 432.551 96.7749 465.466 133.004L415.669 219.255L515.182 219.237C530.139 265.865 530.123 316.017 515.135 362.654L415.606 362.682L465.356 448.872C432.465 485.171 389.041 510.26 341.182 520.614L291.435 434.435L241.646 520.672C193.822 510.26 150.433 485.209 117.504 448.998L167.292 362.761L67.8154 362.785C52.839 316.162 52.8513 266.007 67.8508 219.372L167.351 219.352L117.629 133.154C150.52 96.8475 193.95 71.7573 241.815 61.409Z" fill="white" fillOpacity="0.3" />
+			</g>
+		</svg>
+	)
+}
+const scrollToId = (id) => {
+	// console.log(id);
+	Scroll.scroller.scrollTo(id, {
+		duration: 1000,
+		delay: 0,
+		smooth: true,
+		horizontal: true,
+		containerId: 'slider',
+	});
+};
+const tempItems = [
+	{
+		pic: prod_1_4PNG,
+		mainColor: "#FBB35E",
+		sideColor: "#FCCA8E",
+		rating: "5.0",
+		title: 'Лимон',
+		description: "Натуральные ингредиенты",
+		price: "10₽",
+		mesure: 'шт',
+		properties: [
+			"21 ккал",
+			"200 мл"
+		]
 	}
-	const scrollToId = (id) => {
-		// console.log(id);
-		Scroll.scroller.scrollTo(id, {
-			duration: 1000,
-			delay: 0,
-			smooth: true,
-			horizontal: true,
-			containerId: 'slider',
-		});
-	};
+	, {
+		pic: prod_1_2PNG,
+		mainColor: "#DBE4A7",
+		sideColor: "#e6ecc1",
+		rating: "5.0",
+		title: 'Лимон',
+		description: "Натуральные ингредиенты",
+		price: "10₽",
+		mesure: 'шт',
+		properties: [
+			"21 ккал",
+			"200 мл"
+		]
+	}, {
+		pic: prod_1_1PNG,
+		mainColor: "#FF4E5A",
+		sideColor: "#f46c81",
+		rating: "4.8",
+		title: 'Вишня',
+		description: "Натуральные ингредиенты",
+		price: "10₽",
+		mesure: 'шт',
+		properties: [
+			"21 ккал",
+			"200 мл"
+		]
+	},
+	{
+		pic: prod_1_5PNG,
+		mainColor: "#2D1109",
+		sideColor: "#4c342e",
+		rating: "4.7",
+		title: 'Coca-Cola',
+		description: "Натуральные ингредиенты",
+		price: "10₽",
+		mesure: 'шт',
+		properties: [
+			"21 ккал",
+			"200 мл"
+		]
+	}, {
+		pic: prod_1_3PNG,
+		mainColor: "#3F9B0B",
+		sideColor: "#65af3c",
+		rating: "5.0",
+		title: 'Лимон',
+		description: "Натуральные ингредиенты",
+		price: "10₽",
+		mesure: 'шт',
+		properties: [
+			"21 ккал",
+			"200 мл"
+		]
+	},
+]
 
+export default function Tastes() {
 	const [selectedQuantity, setSelectedQuantity] = React.useState(() => [...Array(tempItems.length)].fill(1));
-	// console.log('selectedQuantity', selectedQuantity);
 	const [slideIndex, setSlideIndex] = React.useState(() => 0);
 	const maxIndex = tempItems.length - 3
 
@@ -115,7 +112,6 @@ export default function Tastes() {
 		const temp = selectedQuantity.concat();
 		temp[index]++;
 		setSelectedQuantity(temp)
-		// console.log('temp, index', temp, index, selectedQuantity);
 	}
 	const decreaseSelectedQuantity = (index) => {
 		const temp = selectedQuantity.concat();
@@ -123,7 +119,6 @@ export default function Tastes() {
 			temp[index]--;
 			setSelectedQuantity(temp);
 		};
-		// console.log('temp, index', temp, index, selectedQuantity);
 	}
 
 	const nextSlide = () => {

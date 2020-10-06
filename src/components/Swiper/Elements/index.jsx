@@ -64,12 +64,7 @@ const CircleSVG = ({ style }) => {
 export default function Elements({ toTop, toBottom, currentPage }) {
 	// const [state, setstate] = useState(initialState)
 	let windowSize = useWindowSize()
-	function changeBlock(value) {
-		if (value > 0)
-			toTop();
-		else
-			toBottom();
-	}
+
 
 	const elementsList = [
 		<Composition />,
@@ -79,7 +74,7 @@ export default function Elements({ toTop, toBottom, currentPage }) {
 		<Tastes />,
 		<Partners />
 	]
-	const positions = [
+	const circlePositions = [
 		{
 			x: `${windowSize.width - 430}px`,
 			y: `${windowSize.height - 300}px`,
@@ -101,15 +96,38 @@ export default function Elements({ toTop, toBottom, currentPage }) {
 		},
 
 	]
-	console.log('windowSize', windowSize);    ////
+	// console.log('windowSize', windowSize);    ////
+
+	const [paused, setPaused] = React.useState(false)
+
+	function changeBlock(value) {
+		if (paused) return
+		else {
+			let p = new Promise((res, rej) => {
+				setPaused(true)
+				if (value > 0) toTop();
+				else toBottom();
+				res()
+			})
+			p.then(() => {
+				setTimeout(() => {
+					setPaused(false)
+				}, 1000);
+			})
+		}
+	}
+
 	return (
 		<div className="elements" id="elements" onWheel={(e) => changeBlock(e.deltaY)}>
-			<div className="circle-holder" >
+			<div className="elements__background-holder" >
 				<CircleSVG style={{
-					transform: `translate(${positions[currentPage].x},${positions[currentPage].y})`
+					transform: `translate(${circlePositions[currentPage].x},${circlePositions[currentPage].y})`
 				}} />
+				<p className="elements__background-holder__logo">
+					Сделано в <span>REJI</span>
+				</p>
 			</div>
-			
+
 
 			{elementsList.map((it, index) => (
 				<div className="opacity-toggler" key={index}
