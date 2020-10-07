@@ -1,4 +1,5 @@
 import React from 'react'
+import { BrowserRouter, Route, NavLink } from 'react-router-dom'
 
 import logoSVG from '../../../assets/images/logo.svg'
 import phoneSVG from './../../../assets/images/phone.svg'
@@ -15,10 +16,10 @@ export default function StartPageHeader() {
 			</div>
 			<div className="sp-header__links">
 				<ul>
-					<li className="sp-header__links__link">Состав</li>
-					<li className="sp-header__links__link">Каталог</li>
-					<li className="sp-header__links__link">Партнёрам</li>
-					<li className="sp-header__links__link">Контакты</li>
+					<li className="sp-header__links__link"><NavLink to="/">Состав</NavLink></li>
+					<li className="sp-header__links__link"><NavLink to="/catalog">Каталог</NavLink></li>
+					<li className="sp-header__links__link"><NavLink to="/partners">Партнёрам</NavLink></li>
+					<li className="sp-header__links__link"><NavLink to="/contacts">Контакты</NavLink></li>
 				</ul>
 			</div>
 			<div className="sp-header__buttons">

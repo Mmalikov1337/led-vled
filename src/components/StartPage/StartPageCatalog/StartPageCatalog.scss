@@ -1,0 +1,85 @@
+.start_page_catalog {
+	border-radius: 15px 15px 0px 0px;
+	height: 88vh;
+	// height: 100%;
+
+	background-color: orange;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	align-items: center;
+	&__wrapper {
+		position: absolute;
+		height: 100%;
+
+		
+	}
+
+	&__circle {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		align-items: center;
+	}
+
+	&__background {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+
+		.layer {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+		}
+	}
+}
+
+
+.homeSlider__navigationPin {
+	fill: white;
+}
+
+.circle__nav_arc {
+	cursor: grab;
+	user-select: none;
+	pointer-events: none;
+	font-size: 100%;
+	font-weight: 400;
+	/* d: path("M 635.001 1269.82 A 620 620 0 0 1 120.721 972.898"); */
+	stroke-width: 2;
+	box-sizing: border-box;
+	outline: none;
+	text-size-adjust: none;
+	-webkit-tap-highlight-color: transparent;
+	// fill: white;
+
+	stroke: #fff;
+	opacity: .47;
+}
+.active-line{
+	animation: circle 5s linear;
+
+}
+svg {}
+
+.zxc {
+	/* stroke-dashoffset:1111.604 !important; */
+	stroke-dashoffset: 1700.72;
+}
+button{
+	position: relative;
+	z-index: 1000;
+}
+@keyframes circle {
+
+	0% {
+		stroke-dashoffset: 1700.72;
+	}
+
+	100% {
+		stroke-dashoffset: 1242.72;
+	}
+}
