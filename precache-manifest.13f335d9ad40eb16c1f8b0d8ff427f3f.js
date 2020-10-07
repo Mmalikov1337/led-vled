@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e0b4bdadb007cdc0f990398153c48403",
+    "revision": "6a61679217d5158b0ccb9dc892140b30",
     "url": "/led-vled/index.html"
   },
   {
-    "revision": "af06fcc3522ba2468d92",
-    "url": "/led-vled/static/css/main.7b1f0549.chunk.css"
+    "revision": "9928038d278336281a69",
+    "url": "/led-vled/static/css/main.a618e48e.chunk.css"
   },
   {
-    "revision": "4edf7a9657b4b88519f5",
-    "url": "/led-vled/static/js/2.359ed676.chunk.js"
+    "revision": "87973426b9ad7a2de5dd",
+    "url": "/led-vled/static/js/2.4a0d306a.chunk.js"
   },
   {
-    "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/led-vled/static/js/2.359ed676.chunk.js.LICENSE.txt"
+    "revision": "c64c486544348f10a6d6c716950bc223",
+    "url": "/led-vled/static/js/2.4a0d306a.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "af06fcc3522ba2468d92",
-    "url": "/led-vled/static/js/main.48729168.chunk.js"
+    "revision": "9928038d278336281a69",
+    "url": "/led-vled/static/js/main.ebcff049.chunk.js"
   },
   {
     "revision": "31e8f2e3749f7f84e7d0",
@@ -170,6 +170,42 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "a767f98b052d1c3eb274cc07319794aa",
     "url": "/led-vled/static/media/germany.a767f98b.svg"
+  },
+  {
+    "revision": "47f5e269ffde94a6730051d02a463785",
+    "url": "/led-vled/static/media/ice_cube_1.47f5e269.png"
+  },
+  {
+    "revision": "309e3ef75204f59c7eb686dc5412eae5",
+    "url": "/led-vled/static/media/ice_cube_2.309e3ef7.png"
+  },
+  {
+    "revision": "5851d1b45d9f6d456f088b7a15cd0871",
+    "url": "/led-vled/static/media/ice_cube_3.5851d1b4.png"
+  },
+  {
+    "revision": "ac5f80d0f1e4795b7baea847e6c03997",
+    "url": "/led-vled/static/media/ice_cube_4.ac5f80d0.png"
+  },
+  {
+    "revision": "655423ff42c96c61a41d7444a9e4c614",
+    "url": "/led-vled/static/media/leaf_1.655423ff.png"
+  },
+  {
+    "revision": "7cb92237b5709611c135d269b5d6eea6",
+    "url": "/led-vled/static/media/leaf_2.7cb92237.png"
+  },
+  {
+    "revision": "e0df3f19423eb8ddf2ff0018981d941e",
+    "url": "/led-vled/static/media/lemon_1.e0df3f19.png"
+  },
+  {
+    "revision": "fd747027705029f5159c4546f3141ae0",
+    "url": "/led-vled/static/media/lemon_2.fd747027.png"
+  },
+  {
+    "revision": "dfaf896642891fce50bf979b9b24e563",
+    "url": "/led-vled/static/media/lemon_3.dfaf8966.png"
   },
   {
     "revision": "824a1c678b7beadba171aa8064b20fb3",
