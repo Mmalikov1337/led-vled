@@ -1,11 +1,12 @@
 .composition {
 	height: 100%;
 	display: flex;
-	align-content: center;
+	// align-content: center;
 
 	&__wrapper {
 		display: flex;
-		justify-content: space-between;
+		// justify-content: space-between;
+		height: 100%;
 
 		.text-part {
 			width: fit-content;
@@ -13,7 +14,7 @@
 
 		&__title {
 			font-family: 'Cera Round Pro';
-			
+
 			h2 {
 				margin-top: 110px;
 				font-size: 72px;
@@ -57,7 +58,8 @@
 						align-content: center;
 						justify-content: center;
 						margin: 0 0 0 15px;
-						svg {}
+
+						// svg {}
 					}
 				}
 			}
@@ -130,6 +132,7 @@
 			display: flex;
 			align-items: center;
 			transform: translateX(-15%);
+
 			img {
 				width: 582px; ////
 				height: 582px;

@@ -6,7 +6,9 @@ import './Price.scss';
 
 export default function Price() {
 	return (
-		<div className='price' id = "price">
+		<div className='price' id="price">
+			{/* <div className="price-container"> */}
+
 			<div className="price__left">
 				<div className="price__left__title">
 					<h3>Цена</h3>
@@ -41,5 +43,6 @@ export default function Price() {
 				<img src={priceCirclePNG} alt="priceCirclePNG" />
 			</div>
 		</div>
+		// </div>
 	)
 }

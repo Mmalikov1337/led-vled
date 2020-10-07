@@ -6,6 +6,8 @@ import Price from "./Price";
 import Delivery from "./Delivery";
 import Tastes from "./Tastes";
 import Partners from "./Partners";
+import Contacts from "./Contacts";
+
 import useWindowSize from "./../../WindowSize/"
 import './Elements.scss';
 
@@ -72,9 +74,10 @@ export default function Elements({ toTop, toBottom, currentPage }) {
 		<Price />,
 		<Delivery />,
 		<Tastes />,
-		<Partners />
+		<Partners />,
+		<Contacts />
 	]
-	const circlePositions = [
+	const circleStyles = [
 		{
 			x: `${windowSize.width - 430}px`,
 			y: `${windowSize.height - 300}px`,
@@ -93,10 +96,12 @@ export default function Elements({ toTop, toBottom, currentPage }) {
 		}, {
 			x: `${windowSize.width - 430}px`,
 			y: `0`,
+		}, {
+			x: `${windowSize.width - 1600}px`,
+			y: `160px`,
 		},
-
 	]
-
+	
 	function changeBlock(value) {
 		if (value > 0)
 			toTop();
@@ -109,7 +114,7 @@ export default function Elements({ toTop, toBottom, currentPage }) {
 			<div className="elements__background" >
 				<div className="elements__background-circle">
 					<CircleSVG style={{
-						transform: `translate(${circlePositions[currentPage].x},${circlePositions[currentPage].y})`
+						transform: `translate(${circleStyles[currentPage].x},${circleStyles[currentPage].y})`
 					}} />
 				</div>
 				<div className="elements__background-logo">

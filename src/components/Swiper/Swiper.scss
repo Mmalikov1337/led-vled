@@ -4,15 +4,17 @@
 	height: 100vh;
 	//max-height: 100vh;
 	font-family: 'Cera Round Pro';
-
+	// background: transparent;
 	flex-direction: column;
 	display: -webkit-flex;
 	display: flex;
-	-webkit-justify-content: space-between;
+	// -webkit-justify-content: space-between;
+	// transition: all .3s;
 
 	&__navbar {
 		display: flex;
 		justify-content: space-between;
+		margin-right: 5%;
 
 		&__list {
 			// justify-content: space-between;
@@ -31,6 +33,7 @@
 				// padding-left: 15.5%;
 				width: max-content;
 				margin-left: 80px;
+
 				&::before {
 					content: "";
 					width: 30px;
@@ -75,6 +78,7 @@
 		width: 100%;
 		margin-left: 120px;
 		position: relative;
+
 	}
 
 	&__sidebar {
@@ -136,10 +140,10 @@
 				height: 20px;
 				width: 150px;
 
-				div {
+				// div {
 
-					span {}
-				}
+				// 	span {}
+				// }
 			}
 
 			.to_top {
@@ -178,7 +182,7 @@
 					margin-left: 20px;
 				}
 
-				&__arrows {}
+				// &__arrows {}
 
 				&__line {
 					background: #56BDFF;
@@ -192,8 +196,14 @@
 
 
 	&__footer {
+		// position: absolute;
+		// top: 200%;
+		// width: 90%;
+		// margin-right: 5%;
 
+		// align-self: flex-end;
 		&__wrapper {
+			// position: relative;
 			display: flex;
 			justify-content: space-between;
 			padding-bottom: 20px;
@@ -202,17 +212,17 @@
 				display: flex;
 				align-items: center;
 				align-content: center;
-				gap: 20px;
+				// gap: 20px;
 
-				img {}
-
+				// img {}
 
 			}
 
 			&__feedback {
 				display: flex;
 				// gap: 75px;
-				margin-left: 75px;
+				// margin-left: 75px;
+				margin-right: 5%;
 				align-self: flex-end;
 				padding-bottom: 25px;
 
@@ -221,6 +231,7 @@
 					font-weight: bold;
 					cursor: pointer;
 					width: 151px;
+
 					&::before {
 						content: "";
 						width: 30px;
@@ -240,13 +251,14 @@
 						}
 					}
 
-					span {}
+					// span {}
 				}
 
 				&__mail {
 					font-weight: bold;
 					cursor: pointer;
 					margin-left: 75px;
+
 					&::before {
 						content: "";
 						width: 30px;
@@ -266,7 +278,7 @@
 						}
 					}
 
-					span {}
+					// span {}
 				}
 
 				&__adress {
@@ -293,7 +305,7 @@
 						}
 					}
 
-					span {}
+					// span {}
 				}
 			}
 		}
