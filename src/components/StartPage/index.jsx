@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter, Route, Link } from 'react-router-dom'
 
+
 import StartPageHeader from './StartPageHeader/';
 import StartPageComposition from './StartPageComposition/';
 import StartPageCatalog from './StartPageCatalog/';
@@ -38,17 +39,15 @@ export default function StartPage({ id, nextPage }) {
 	return (
 		<React.Fragment>
 			<div className="content" id={id}>
-				<BrowserRouter>
-					<StartPageHeader />
-					<Route exact path="/catalog" >
-						<StartPageCatalog/>
-					</ Route >
-					<Route exact path="/" >
-						{/* {StartPageComposition(nextPage)} */}
-						<StartPageComposition nextPage={nextPage} />
-					</ Route >
+				<StartPageHeader />
+				<Route exact path="/catalog" >
+					<StartPageCatalog />
+				</ Route >
+				<Route exact path="/" >
+					{/* {StartPageComposition(nextPage)} */}
+					<StartPageComposition nextPage={nextPage} />
+				</ Route >
 
-				</ BrowserRouter>
 			</div>
 
 		</React.Fragment >

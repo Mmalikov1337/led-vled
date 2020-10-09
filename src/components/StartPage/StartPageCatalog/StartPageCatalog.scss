@@ -28,9 +28,15 @@
 		align-items: center;
 
 		img{
+			position: absolute;
+		}
+		.image{
 			width: 126px;
 			height: 500px;
-			position: absolute;
+		}
+		.secondary_image{
+			top: 40%;
+			right: 60%;
 		}
 	}
 
@@ -83,11 +89,11 @@
 
 
 .homeSlider__navigationPin {
-	fill: white;
+	cursor: pointer;
+	// fill: white;
 }
 
 .circle__nav_arc {
-	cursor: grab;
 	user-select: none;
 	pointer-events: none;
 	font-size: 100%;
@@ -100,7 +106,7 @@
 	-webkit-tap-highlight-color: transparent;
 	// fill: white;
 
-	stroke: #fff;
+	stroke: white;
 	opacity: .47;
 
 	&--front {
@@ -108,10 +114,12 @@
 
 	}
 }
-
+circle{
+	outline: none;
+}
 .active-line {
-	animation: circle 5s linear;
-
+	animation: circle 10s linear;    ////!!!!!!!!!!!!!!! animation
+	stroke: #008CE6;
 }
 
 svg {}
@@ -129,7 +137,7 @@ button {
 @keyframes circle {
 
 	0% {
-		stroke-dashoffset: 1700.72;
+		stroke-dashoffset: 1830.72;
 	}
 
 	100% {
