@@ -16,10 +16,10 @@ export default function StartPageHeader() {
 			</div>
 			<div className="sp-header__links">
 				<ul>
-					<li className="sp-header__links__link"><NavLink to="/">Состав</NavLink></li>
-					<li className="sp-header__links__link"><NavLink to="/catalog">Каталог</NavLink></li>
-					<li className="sp-header__links__link"><NavLink to="/partners">Партнёрам</NavLink></li>
-					<li className="sp-header__links__link"><NavLink to="/contacts">Контакты</NavLink></li>
+					<li className="sp-header__links__link"><NavLink exact to="/" activeClassName="active">Состав</NavLink></li>
+					<li className="sp-header__links__link"><NavLink exact to="/catalog" activeClassName="active">Каталог</NavLink></li>
+					<li className="sp-header__links__link"><NavLink exact to="/partners" activeClassName="active">Партнёрам</NavLink></li>
+					<li className="sp-header__links__link"><NavLink exact to="/contacts" activeClassName="active">Контакты</NavLink></li>
 				</ul>
 			</div>
 			<div className="sp-header__buttons">
