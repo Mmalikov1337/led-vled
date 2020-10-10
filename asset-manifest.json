@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/led-vled/static/css/main.67e32532.chunk.css",
-    "main.js": "/led-vled/static/js/main.d4d93f89.chunk.js",
-    "main.js.map": "/led-vled/static/js/main.d4d93f89.chunk.js.map",
+    "main.css": "/led-vled/static/css/main.852cf42c.chunk.css",
+    "main.js": "/led-vled/static/js/main.d2bd9c19.chunk.js",
+    "main.js.map": "/led-vled/static/js/main.d2bd9c19.chunk.js.map",
     "runtime-main.js": "/led-vled/static/js/runtime-main.936a022f.js",
     "runtime-main.js.map": "/led-vled/static/js/runtime-main.936a022f.js.map",
-    "static/js/2.f0913561.chunk.js": "/led-vled/static/js/2.f0913561.chunk.js",
-    "static/js/2.f0913561.chunk.js.map": "/led-vled/static/js/2.f0913561.chunk.js.map",
+    "static/js/2.92527172.chunk.js": "/led-vled/static/js/2.92527172.chunk.js",
+    "static/js/2.92527172.chunk.js.map": "/led-vled/static/js/2.92527172.chunk.js.map",
     "index.html": "/led-vled/index.html",
-    "precache-manifest.aa59bbea69127474270a1a602dd229fb.js": "/led-vled/precache-manifest.aa59bbea69127474270a1a602dd229fb.js",
+    "precache-manifest.4624b9e9d01b30a971b4cf418e0421fe.js": "/led-vled/precache-manifest.4624b9e9d01b30a971b4cf418e0421fe.js",
     "service-worker.js": "/led-vled/service-worker.js",
-    "static/css/main.67e32532.chunk.css.map": "/led-vled/static/css/main.67e32532.chunk.css.map",
-    "static/js/2.f0913561.chunk.js.LICENSE.txt": "/led-vled/static/js/2.f0913561.chunk.js.LICENSE.txt",
+    "static/css/main.852cf42c.chunk.css.map": "/led-vled/static/css/main.852cf42c.chunk.css.map",
+    "static/js/2.92527172.chunk.js.LICENSE.txt": "/led-vled/static/js/2.92527172.chunk.js.LICENSE.txt",
     "static/media/1_1.png": "/led-vled/static/media/1_1.c065d9cc.png",
     "static/media/1_2.png": "/led-vled/static/media/1_2.e3fc1fd0.png",
     "static/media/1_3.png": "/led-vled/static/media/1_3.850d1122.png",
@@ -61,6 +61,7 @@
     "static/media/price_circle.png": "/led-vled/static/media/price_circle.2e0912a1.png",
     "static/media/shadow.png": "/led-vled/static/media/shadow.6ee650e6.png",
     "static/media/StartPageComposition.scss": "/led-vled/static/media/snow-flake-start-page.354a26df.svg",
+    "static/media/StartPageCatalog.scss": "/led-vled/static/media/sp_catalog_bg.f32645bc.svg",
     "static/media/star_full.svg": "/led-vled/static/media/star_full.b0f478f9.svg",
     "static/media/tarragon_bg1.png": "/led-vled/static/media/tarragon_bg1.e4f4f367.png",
     "static/media/tarragon_bg2.png": "/led-vled/static/media/tarragon_bg2.2b8795ca.png",
@@ -69,8 +70,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.936a022f.js",
-    "static/js/2.f0913561.chunk.js",
-    "static/css/main.67e32532.chunk.css",
-    "static/js/main.d4d93f89.chunk.js"
+    "static/js/2.92527172.chunk.js",
+    "static/css/main.852cf42c.chunk.css",
+    "static/js/main.d2bd9c19.chunk.js"
   ]
 }
