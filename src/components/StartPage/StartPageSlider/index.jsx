@@ -413,7 +413,7 @@ export default function StartPageSlider() {
 						</div>
 					</div>
 				</div>
-				<span style={{ color: tempProducts[currentProduct].sideTextColor }} className="start_page_catalog__background__phone">8 800 800 - 80 - 80</span>
+				<span style={{ color: tempProducts[currentProduct].sideTextColor }} className="start_page_slider__background__phone">8 800 800 - 80 - 80</span>
 				<div className="start_page_slider__layer1 layer" style={tempProducts[currentProduct].styles[0]} ref={ref0}></div>
 				<div className="start_page_slider__layer2 layer" style={tempProducts[currentProduct].styles[1]} ref={ref1}></div>
 				<div className="start_page_slider__layer3 layer" style={tempProducts[currentProduct].styles[2]} ref={ref2}></div>

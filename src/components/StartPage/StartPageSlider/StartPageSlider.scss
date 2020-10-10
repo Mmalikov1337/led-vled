@@ -58,16 +58,12 @@
 		&__phone {
 			position: relative;
 			z-index: 1;
-			justify-self: flex-end;
 			align-self: flex-end;
+			justify-self: flex-start;
+			// transform: rotate(90deg);
 			margin-left: auto;
 			margin-right: 50px;
 			margin-bottom: 50px;
-
-			font-style: normal;
-			font-weight: bold;
-			cursor: pointer;
-			width: 151px;
 
 			&::before {
 				content: "";
@@ -79,15 +75,6 @@
 				background: #fff;
 				position: absolute;
 			}
-
-			// &:hover,
-			// .active {
-			// 	&::before {
-			// 		background: #fff;
-
-			// 	}
-			// }
-
 		}
 
 		&__hash {
