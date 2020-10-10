@@ -12,7 +12,7 @@ export default function App() {
 	const links = [
 		{ id: 'start_page', },
 		{ id: 'swiper', },
-		{ id: 'ad', },
+		{ id: 'start_page_catalog', },
 	];
 
 	const [currentPages, setCurrentPages] = React.useState(0);
@@ -69,13 +69,8 @@ export default function App() {
 		<div className='app' onWheel={(e) => z(e)}>
 			<BrowserRouter>
 				<div className="app__container">
-					<StartPage id={links[0].id} nextPage={() => toBottom()} />
-					<Route exact path="/catalog">
-						<div ref={ref} id="ad" className="zxc">
-							{/* {setstate(1)} */}
-							asd
-						</div>
-					</Route>
+					<StartPage id={links[0].id} nextPage={() => toBottom()} link={ref} />
+
 				</div>
 				<div className="app__container blue">
 					{/* <div className="app__container"> */}

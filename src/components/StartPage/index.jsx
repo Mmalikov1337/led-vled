@@ -4,7 +4,8 @@ import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 import StartPageHeader from './StartPageHeader/';
 import StartPageComposition from './StartPageComposition/';
-import StartPageCatalog from './StartPageCatalog/';
+import StartPageSlider from './StartPageSlider';
+import StartPageCatalog from './StartPageCatalog';
 
 import germanySVG from './../../assets/images/germany.svg';
 
@@ -35,13 +36,16 @@ const Circle = ({ color, width, height }) => {
 	)
 }
 
-export default function StartPage({ id, nextPage }) {
+export default function StartPage({ id, nextPage, link }) {
 	return (
 		<React.Fragment>
 			<div className="content" id={id}>
 				<StartPageHeader />
 				<Route exact path="/catalog" >
-					<StartPageCatalog />
+
+					<StartPageSlider />
+					<StartPageCatalog link={link} />
+
 				</ Route >
 				<Route exact path="/" >
 					{/* {StartPageComposition(nextPage)} */}

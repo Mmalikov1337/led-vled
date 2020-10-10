@@ -1,12 +1,21 @@
 .sp-header {
-	height: 120px; //
+	// height: 120px; //
+	height: 12vh;
 	// background-color: rgba(141, 0, 0, 0.247);
+	position: sticky;
+	top: 0;
+	bottom: 0;
+	// left: 0;
+	// right: 0;
 	display: flex;
 	// align-content: space-between;
 	justify-content: space-between;
 	align-items: center;
-	position: relative;
-	z-index: 10;
+	// position: webkit-sticky;
+	// top: 0;
+	background-color: #fff;
+	z-index: 2;
+	// z-index: 10;
 	// flex-basis: 90%;
 	&__logo {
 		img {}

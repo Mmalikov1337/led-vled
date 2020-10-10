@@ -1,146 +1,361 @@
 .start_page_catalog {
 	border-radius: 15px 15px 0px 0px;
 	height: 88vh;
-	// height: 100%;
 	font-family: 'Cera Round Pro';
-	overflow: hidden;
 	position: relative;
-	background-color: orange;
-	display: flex;
-	justify-content: center;
-	align-content: center;
-	align-items: center;
+	background: url("./../../../assets/images/sp_catalog_bg.svg") center center no-repeat, #F0F9FF;
 	transition: all .3s;
 
-	&__wrapper {
+	&__side {
 		position: absolute;
-		height: 100%;
-
-
 	}
 
-	&__circle {
+	&__products {
+		display: flex;
+		justify-content: center;
+		padding-top: 8vh; ////
+
+		&__item {
+			position: relative;
+			margin: 0 35px;
+
+			&:first-child {
+				margin-left: 0;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			&__title {
+				display: flex;
+				justify-content: center;
+
+				h4 {
+					width: max-content;
+					font-weight: 900;
+					font-size: 36px;
+					text-align: center;
+					margin-top: 30px;
+					margin-bottom: 30px;
+				}
+			}
+
+			&__counter {
+				display: flex;
+				justify-content: center;
+
+				&__plate {
+					background: #ffffff;
+					box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+					border-radius: 15px;
+
+					width: 158px;
+					height: 60px; ////
+
+					display: flex;
+					// align-content: center;
+					align-items: center;
+					justify-content: space-evenly;
+
+
+					&__button {
+						cursor: pointer;
+
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						background: linear-gradient(135deg, #F2F2F2 0%, #FFFFFF 100%);
+						box-shadow: -5px 5px 10px rgba(224, 224, 224, 0.2), 5px -5px 10px rgba(224, 224, 224, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px 5px 13px rgba(224, 224, 224, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(224, 224, 224, 0.5);
+						border-radius: 15px;
+						width: 40px;
+						height: 40px;
+
+						svg {}
+					}
+
+					&__quantity {
+						font-size: 18px;
+						line-height: 18px;
+
+						font-weight: bold;
+						color: #2F2F2F;
+					}
+				}
+			}
+
+			&__price {
+				margin-top: 40px;
+				display: flex;
+				justify-content: center;
+				font-weight: bold;
+				font-size: 36px;
+				line-height: 36px;
+				/* identical to box height */
+				color: #2F2F2F;
+
+				span {
+					color: #56bdff;
+				}
+			}
+
+			&__description {
+				width: min-content;
+				text-align: center;
+				margin: 15px auto 0 auto; ////
+
+				font-weight: 500;
+				font-size: 18px;
+				line-height: 20px;
+				/* or 111% */
+
+				text-align: center;
+			}
+
+			&__properties {
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+
+				font-weight: 500;
+				font-size: 16px;
+				line-height: 20px;
+				/* identical to box height, or 125% */
+
+				text-align: center;
+
+				p {
+					margin: 0;
+					margin-top: 10px;
+				}
+			}
+
+			&__top {}
+
+			&__rating {
+				// align-self: center;
+				// justify-self: center;
+				// padding-top: 50%; tastes__slider__slide__rating
+				// margin-right: 200px;
+				// background-color: #s;
+				position: relative;
+				top: 90px;
+				// right: 5px;
+				// z-index: 1000;
+				display: flex;
+				justify-content: center;
+				// align-content: center;
+				align-items: center;
+				gap: 5px;
+
+				width: 84px;
+				height: 35px;
+				background: #FFFFFF;
+				box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+				border-radius: 10px;
+				color: #000;
+
+				font-weight: bold;
+				font-size: 16px;
+				line-height: 16px;
+
+				img {
+					// margin-left: 5;
+				}
+			}
+
+			&__content {
+				display: flex;
+				justify-content: center;
+				align-content: center;
+				align-items: center;
+				overflow: visible;
+
+				&__product {
+					position: absolute;
+					width: 49px;
+					// z-index: 100;
+
+					height: 194px;
+
+					&__shadow {
+						// display: none;
+						width: 49px;
+						height: 194px;
+						margin-left: 20px;
+						margin-top: 20px;
+						position: absolute;
+					}
+				}
+
+				img {
+
+					// position: absolute;
+				}
+			}
+
+			&__button {
+				margin-top: 40px;
+				// margin: 10px 40px;    ////
+				margin: 40px 20px 0 20px;
+
+				div {
+					cursor: pointer;
+					width: 185px;
+					height: 60px;
+					background: #FFC700;
+					box-shadow: 0px 16px 24px rgba(239, 45, 59, 0.2), 0px 2px 6px rgba(239, 45, 59, 0.12), 0px 0px 1px rgba(0, 0, 0, 0.04);
+					border-radius: 15px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					// gap: 15px;
+
+					span {
+						font-family: 'Cera Round Pro';
+						font-weight: bold;
+						font-size: 18px;
+						color: rgb(0, 0, 0);
+					}
+
+					div {
+						background: linear-gradient(135deg, #F2BD00 0%, #FFD100 100%);
+						box-shadow: -5px 5px 10px rgba(224, 179, 0, 0.2), 5px -5px 10px rgba(224, 179, 0, 0.2), -5px -5px 10px rgba(255, 219, 0, 0.9), 5px 5px 13px rgba(224, 179, 0, 0.9), inset 1px 1px 2px rgba(255, 219, 0, 0.3), inset -1px -1px 2px rgba(224, 179, 0, 0.5);
+						border-radius: 15px;
+						width: 30px;
+						height: 30px;
+						display: flex;
+						align-content: center;
+						justify-content: center;
+						margin: 0 0 0 15px;
+
+						svg {}
+					}
+				}
+			}
+		}
+	}
+
+	&__side {
+		position: absolute;
 		width: 100%;
 		height: 100%;
 		display: flex;
-		justify-content: center;
-		align-content: center;
 		align-items: center;
+		justify-content: flex-end;
 
-		img{
-			position: absolute;
-		}
-		.image{
-			width: 126px;
-			height: 500px;
-		}
-		.secondary_image{
-			top: 40%;
-			right: 60%;
-		}
-	}
-
-	&__background {
-		position: absolute;
-		height: 100%;
-		width: 100%;
-
-		.layer {
-			position: absolute;
-			height: 100%;
-			z-index: 0;
-			width: 100%;
-		}
-	}
-
-	&__text {
-
-
-		&__ccal {
-			font-weight: 500;
-			font-size: 18px;
-			color: #FFFFFF;
-			position: relative;
-
-			top: 25%;
-			left: 300px;
-		}
-
-		&__ml {
-			font-weight: 500;
-			font-size: 18px;
-			color: #FFFFFF;
-
-			position: relative;
-			bottom: 25%;
-			right: 100px;
-		}
-
-		&__title {
-			font-weight: 900;
-			font-size: 64px;
-			left: 360px;
-			position: relative;
-			color: #FFFFFF;
+		&__logo {
+			font-size: 14px;
+			line-height: 14px;
+			color: #A7A7A7;
 			transform: rotate(90deg);
+			span{
+				font-weight: 700;
+			}
 		}
 	}
-}
 
+	&__footer {
+		width: 95%;
+		margin: 0 auto;
 
-.homeSlider__navigationPin {
-	cursor: pointer;
-	// fill: white;
-}
+		&__wrapper {
+			display: flex;
+			justify-content: space-between;
+			padding-top: 20px;
 
-.circle__nav_arc {
-	user-select: none;
-	pointer-events: none;
-	font-size: 100%;
-	font-weight: 400;
-	/* d: path("M 635.001 1269.82 A 620 620 0 0 1 120.721 972.898"); */
-	stroke-width: 4;
-	box-sizing: border-box;
-	outline: none;
-	text-size-adjust: none;
-	-webkit-tap-highlight-color: transparent;
-	// fill: white;
+			&__logo {
+				display: flex;
+				align-items: center;
+				align-content: center;
 
-	stroke: white;
-	opacity: .47;
+				img {
+					width: 128px;
+					height: auto;
+				}
+			}
 
-	&--front {
-		stroke-width: 4;
+			&__feedback {
+				display: flex;
+				margin-left: 75px;
+				// margin-right: 5%;
+				align-self: flex-end;
+				padding-bottom: 25px;
 
-	}
-}
-circle{
-	outline: none;
-}
-.active-line {
-	animation: circle 10s linear;    ////!!!!!!!!!!!!!!! animation
-	stroke: #008CE6;
-}
+				&__phone {
+					font-style: normal;
+					font-weight: bold;
+					cursor: pointer;
+					width: 151px;
 
-svg {}
+					&::before {
+						content: "";
+						width: 30px;
+						height: 2px;
+						border-radius: 55px;
+						margin-top: 10px;
+						margin-left: -40px;
+						background: #56BDFF;
+						position: absolute;
+					}
 
-.zxc {
-	/* stroke-dashoffset:1111.604 !important; */
-	stroke-dashoffset: 1700.72;
-}
+					&:hover,
+					.active {
+						&::before {
+							background: #FFC700;
+						}
+					}
+				}
 
-button {
-	position: relative;
-	z-index: 1000;
-}
+				&__mail {
+					font-weight: bold;
+					cursor: pointer;
+					margin-left: 75px;
 
-@keyframes circle {
+					&::before {
+						content: "";
+						width: 30px;
+						height: 2px;
+						border-radius: 55px;
+						margin-top: 10px;
+						margin-left: -40px;
+						background: #56BDFF;
+						position: absolute;
+					}
 
-	0% {
-		stroke-dashoffset: 1830.72;
-	}
+					&:hover,
+					.active {
+						&::before {
+							background: #FFC700;
+						}
+					}
+				}
 
-	100% {
-		stroke-dashoffset: 1242.72;
+				&__adress {
+					font-weight: bold;
+					cursor: pointer;
+					margin-left: 75px;
+
+					&::before {
+						content: "";
+						width: 30px;
+						height: 2px;
+						border-radius: 55px;
+						margin-top: 10px;
+						margin-left: -40px;
+						background: #56BDFF;
+						position: absolute;
+					}
+
+					&:hover,
+					.active {
+						&::before {
+							background: #FFC700;
+
+						}
+					}
+				}
+			}
+		}
 	}
 }

@@ -94,6 +94,16 @@ const ArrowSVG = ({ toUp, func, active, setActive }) => {
 		</div>
 	)
 }
+function Footer(currentPage) {
+	return <div className="swiper__footer">
+		<div className="swiper__footer__wrapper">
+			<div className="swiper__footer__wrapper__logo">
+				<img src={logo_whiteSVG} alt="logo_whiteSVG" />
+			</div>
+			<Feedback currentPage={currentPage} />
+		</div>
+	</div>
+}
 const Feedback = ({ currentPage }) => {
 	return (
 		<div className="swiper__footer__wrapper__feedback">
@@ -190,14 +200,9 @@ export default function Swiper({ id, link, setSwiperPage }) {
 					<Elements toTop={toTop} toBottom={toBottom} currentPage={currentPage} />
 				</div>
 			</div>
-			<div className="swiper__footer">
-				<div className="swiper__footer__wrapper">
-					<div className="swiper__footer__wrapper__logo">
-						<img src={logo_whiteSVG} alt="logo_whiteSVG" />
-					</div>
-					<Feedback currentPage={currentPage} />
-				</div>
-			</div>
+			<Footer currentPage={currentPage} />
 		</div>
 	)
 }
+
+
