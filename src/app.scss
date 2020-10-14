@@ -3,16 +3,19 @@
 .app {
     // font-family: 'Cera Round Pro';
 	// overflow: hidden;
+
     &__container {
         //   margin-left: 57px;
         //   margin-bottom: 57px;  
         width: 95%;
-        margin: 0 auto;
+		margin: 0 auto;
+		transition: all 1s;
     }
 
     .blue {
-        background: #008CE6;
-        // padding: 0 auto;
+        background: #F0F9FF;
+		// padding: 0 auto;
+		opacity: 0;
         width: 100%;
 		padding-left: 2.5%;
     }

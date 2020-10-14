@@ -10,9 +10,25 @@ import './app.scss';
 
 export default function App() {
 	const links = [
-		{ id: 'start_page', },
-		{ id: 'swiper', },
-		{ id: 'start_page_catalog', },
+		{
+			id: 'start_page',
+			style: {
+				// background: "#008CE6"
+			}
+		},
+		{
+			id: 'swiper',
+			style: {
+				background: "#008CE6",
+				opacity:"1",
+			}
+		},
+		{
+			id: 'start_page_catalog',
+			style: {
+				// background: "#008CE6"
+			}
+		},
 	];
 
 	const [currentPages, setCurrentPages] = React.useState(0);
@@ -72,7 +88,7 @@ export default function App() {
 					<StartPage id={links[0].id} nextPage={() => toBottom()} link={ref} />
 
 				</div>
-				<div className="app__container blue">
+				<div className="app__container blue" style={links[currentPages].style}>
 					{/* <div className="app__container"> */}
 					<Route exact path="/">
 						{/* {setstate(22)} */}
