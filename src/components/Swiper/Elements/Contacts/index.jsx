@@ -2,7 +2,7 @@ import React from 'react'
 
 import './Contacts.scss'
 
-export default function Contacts() {
+export default function Contacts({ onLoad }) {
 	return (
 		<div className="contacts" id="contacts">
 			<div className="contacts__content">
@@ -75,7 +75,7 @@ export default function Contacts() {
 								г. Омск, ул. Звездова 129. ООО «Глобал»
 							</p>
 						</div>
-						<div className="contacts__content__bottom__contacts__policy">
+						<div className={`${onLoad ? 'contacts__content__bottom__contacts__policy contacts__content__bottom__contacts__policy--active' : 'contacts__content__bottom__contacts__policy'}`}>
 							<p>
 								Политика в обработки персональных данных
 							</p>

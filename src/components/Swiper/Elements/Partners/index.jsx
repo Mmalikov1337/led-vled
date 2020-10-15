@@ -3,7 +3,7 @@ import MaskedInput from 'react-text-mask'
 
 import './Partners.scss'
 
-export default function Partners() {
+export default function Partners({ onLoad }) {
 
 	return (
 		<div className="partners" id='partners'>
@@ -15,18 +15,16 @@ export default function Partners() {
 					</h3>
 				</div>
 				<div className="partners__form-wrapper">
-
 					<div className="partners__form">
 						<p className="partners__form__recall">
 							Заполните форму – мы перезвоним сами,
 							и расскажем об актуальных условиях поставок
-					</p>
+						</p>
 						<p className="partners__form__mail">
 							Свои предложения отправляйте на <span>info@ledvled.ru</span>
 						</p>
-						<div className="partners__form__input">
+						<div className={`${onLoad ? "partners__form__input partners__form__input--active" : "partners__form__input"}`}>
 							<div>
-
 								<svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<g clipPath="url(#clip0)">
 										<path d="M6.99984 7.41351C8.73337 7.41351 10.1388 5.76857 10.1388 3.73945C10.1388 0.925623 8.73344 0.0654297 6.99984 0.0654297C5.26617 0.0654297 3.86084 0.925623 3.86084 3.73945C3.86087 5.76857 5.2662 7.41351 6.99984 7.41351Z" fill="white" />
@@ -42,9 +40,8 @@ export default function Partners() {
 
 							<input type="text" placeholder="Ваше имя" />
 						</div>
-						<div className="partners__form__input">
+						<div className={`${onLoad ? "partners__form__input partners__form__input--active" : "partners__form__input"}`}>
 							<div>
-
 								<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 									<path d="M11.0526 7.90106C10.3124 7.90106 9.58738 7.78548 8.90021 7.55873C8.56484 7.44315 8.184 7.53221 7.96359 7.75706L6.60127 8.7859C5.03811 7.9516 4.03769 6.95179 3.21475 5.4L4.21579 4.0699C4.46779 3.8179 4.55812 3.44905 4.45012 3.10358C4.22148 2.412 4.10528 1.68632 4.10528 0.947369C4.10528 0.425043 3.68023 0 3.15791 0H0.947369C0.425043 0 0 0.425043 0 0.947369C0 7.04147 4.95853 12 11.0526 12C11.575 12 12 11.575 12 11.0526V8.84843C12 8.3261 11.575 7.90106 11.0526 7.90106Z" fill="white" />
 								</svg>

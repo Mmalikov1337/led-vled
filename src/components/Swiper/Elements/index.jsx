@@ -63,10 +63,9 @@ const CircleSVG = ({ style }) => {
 	)
 }
 
-export default function Elements({ toTop, toBottom, currentPage }) {
+export default function Elements({ toTop, toBottom, currentPage, swiperPause }) {
 	// const [state, setstate] = useState(initialState)
 	let windowSize = useWindowSize()
-
 
 	const elementsList = [
 		<Composition />,
@@ -74,8 +73,8 @@ export default function Elements({ toTop, toBottom, currentPage }) {
 		<Price />,
 		<Delivery />,
 		<Tastes />,
-		<Partners />,
-		<Contacts />
+		<Partners onLoad={swiperPause} />,
+		<Contacts onLoad={swiperPause}  />
 	]
 	const circleStyles = [
 		{
@@ -101,7 +100,7 @@ export default function Elements({ toTop, toBottom, currentPage }) {
 			y: `160px`,
 		},
 	]
-	
+
 	function changeBlock(value) {
 		if (value > 0)
 			toTop();
@@ -122,9 +121,7 @@ export default function Elements({ toTop, toBottom, currentPage }) {
 						Сделано в <span>REJI</span>
 					</p>
 				</div>
-
 			</div>
-
 
 			{elementsList.map((it, index) => (
 				<div className="opacity-toggler" key={index}
@@ -135,7 +132,6 @@ export default function Elements({ toTop, toBottom, currentPage }) {
 					{it}
 				</div>
 			))}
-
 		</div>
 	)
 }
