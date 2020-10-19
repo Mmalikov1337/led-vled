@@ -693,7 +693,7 @@ export default function StartPageSlider() {
 		pic.sort((a, b) => a.id - b.id).map((i, index) => {
 			setTimeout(() => {
 				i.classList.remove("zxccxz")
-			}, 1000 + index * 100);
+			}, 500 + index * 100);
 		})
 		// pic.classList.remove("zxccxz")
 		console.log("pic", pic);
