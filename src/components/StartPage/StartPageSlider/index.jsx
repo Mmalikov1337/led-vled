@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 
 import prod_1_5PNG from './../../../assets/images/1_5.png';
 import prod_1_4PNG from './../../../assets/images/1_4.png';
@@ -24,7 +24,7 @@ import cherry2_3 from './../../../assets/images/cherry2_3.png';
 
 import leaf2_1 from './../../../assets/images/leaf2_1.png';
 import leaf2_2 from './../../../assets/images/leaf2_2.png';
-import leaf2_3 from './../../../assets/images/leaf2_3.png';
+// import leaf2_3 from './../../../assets/images/leaf2_3.png';
 import leaf2_4 from './../../../assets/images/leaf2_4.png';
 /* + Кубики льда */
 //3
@@ -34,20 +34,19 @@ import cola_cup from './../../../assets/images/cola_cup.png';
 import peach1 from './../../../assets/images/peach1.png';
 import peach2 from './../../../assets/images/peach2.png';
 import peach3 from './../../../assets/images/peach3.png';
-import leaf4_1 from './../../../assets/images/leaf4_1.png';
+// import leaf4_1 from './../../../assets/images/leaf4_1.png';
 import leaf4_2 from './../../../assets/images/leaf4_2.png';
 import leaf4_3 from './../../../assets/images/leaf4_3.png';
 //5
-import tarragon_bg1 from './../../../assets/images/tarragon_bg1.png';
+// import tarragon_bg1 from './../../../assets/images/tarragon_bg1.png';
 import tarragon_bg2 from './../../../assets/images/tarragon_bg2.png';
 import tarragon_secondary from './../../../assets/images/tarragon_secondary.png';
 
-import './StartPageSlider.scss'
+import './StartPageSlider.scss';
 
 const Circle = ({ currentProduct, setCurrentProduct, circleFill, pinFill, pinStroke }) => {
 	return (
 		<svg width={768} height={768} viewBox="0 0 1300 1300" fill="none" xmlns="http://www.w3.org/2000/svg" className="start_page_catalog_svg">
-			{/* <svg > */}
 			<circle cx={1300 / 2} cy={1300 / 2} r={620} fill={circleFill} viewBox="0 0 1300 1300" />
 			<path className="circle__nav_arc zxc" d="M 635.0014632766333,1269.8185572376467 A 620,620 0 0, 1 120.72065205686215,972.8983924408526" strokeWidth={2} />
 			<path data-slide={0} className={`circle__nav_arc circle__nav_arc--front ${currentProduct === 0 ? "active-line" : ""}`} d="M 635.0014632766333,1269.8185572376467 A 620,620 0 0, 1 120.72065205686215,972.8983924408526" strokeWidth={3} strokeDasharray="619.2624817418906" strokeDashoffset="619.2624817418906" style={{ opacity: 1 }} />
@@ -87,8 +86,8 @@ let tempProducts = [
 	{
 		title: "Лимон",
 		image: prod_1_2PNG,
-		secondatyImage: { pic: lemon_2, styles: { width: "250px", height: "250px" } },
-		color: "#FFC700",
+		secondatyImage: [{ pic: lemon_2, styles: { width: "270px", height: "270px", right: "80px", top: "65px" } },],
+		backgroundStyle: { background: "#FFC700" },
 		circleFill: "#FFC700",
 		ccal: "21 ккал",
 		ml: "200 мл",
@@ -269,60 +268,416 @@ let tempProducts = [
 			},]
 		},],
 	}, {
-		title: "Лимон",
-		image: prod_1_2PNG,
-		secondatyImage: { pic: lemon_2, styles: { width: "250px", height: "250px" } },
-		color: "#FFC700",
-		circleFill: "transparent",
+		title: "Вишня",
+		image: prod_1_1PNG,
+		secondatyImage: [{ pic: cherry2_3, styles: { width: "139px", height: "auto", top: "30px", right: "10%" } },
+		{ pic: cherry2_1, styles: { width: "139px", height: "auto", bottom: "220px", left: "14%" } },
+		{ pic: leaf2_2, styles: { width: "139px", height: "auto", top: "150px", left: "15%" } }],
+		backgroundStyle: { background: "#FF4E5A" },
+		circleFill: "#FF4E5A",
 		ccal: "21 ккал",
 		ml: "200 мл",
-		pinFill: "#FFC700",
+		pinFill: "#FF4E5A",
 		pinStroke: "white",
 		sideTextColor: "#2F2F2F",
+		layerOptionLen: 9,
 		layerOptions: [{
 			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
 
 			},
-			bgItems: [{
-				pic: ice_cube_1,
-				style: {
+			bgItems: [
+				{
+					pic: ice_cube_1,
+					RTLIndex: 0,
+					style: {//
+						size: {
+							width: "119px",
+							height: "108px",
+						},
+						position: {
+							top: "21%",
+							left: "19%"
+						},
+						transform: {
+							transform: "rotate(0deg)"
+						}
+					}
+				}, {
+					pic: leaf2_4,
+					RTLIndex: 7,
+					style: {
+						size: {
+							width: "66px ",
+							height: "auto ",
+						},
+						position: {
+							bottom: "15%",
+							right: "20%"
+						},
+						transform: {
+							transform: "rotate(0deg)"
 
-				}
-			}, {
-				pic: ice_cube_2,
-				style: {
+						}
+					}
+				}, {
+					pic: cherry2_1,
+					RTLIndex: 6,
+					style: {
+						size: {
+							width: "121px",
+							height: "auto ",
+						},
+						position: {
+							bottom: "-25px",
+							right: "23%"
+						},
+						transform: {
+							transform: "rotate(0deg)"
 
-				}
-			}, {
-				pic: lemon_1,
-				style: {
+						}
+					}
+				}, {
+					pic: leaf2_1,
+					RTLIndex: 4,
+					style: {
+						size: {
+							width: "173px ",
+							height: "auto",
+						},
+						position: {
+							bottom: "0",
+							left: "19%"
+						},
+						transform: {
+							transform: "rotate(0deg)"
 
-				}
-			}, {
-				pic: leaf_1,
-				style: {
+						}
+					}
+				},
+			]
+		},
+		{
+			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
 
-				}
-			},]
+			},
+			bgItems: [
+				{
+					pic: ice_cube_2,
+					RTLIndex: 8,
+					style: {
+						size: {
+							width: "94px",
+							height: "auto",
+						},
+						position: {
+							top: "50px",
+							right: "20%"
+						},
+						transform: {
+							transform: "rotate(0deg)"
+
+						}
+					}
+				}, {
+					pic: cherry2_2,
+					RTLIndex: 3,
+					style: {
+						soze: {
+							width: "112px",
+							height: "161px",
+						},
+						position: {
+							bottom: "150px",
+							left: "17%"
+						},
+						transform: {
+							transform: "rotate(0deg)"
+
+						}
+					}
+				},]
 		},
 		{
 			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
 
 			},
 			bgItems: [{
-				pic: ice_cube_3,
+				pic: ice_cube_4,
+				RTLIndex: 4,
 				style: {
+					size: {
+						width: "72px",
+						height: "72px",
+					},
+					position: {
+						bottom: "60px",
+						left: "32%"
+					},
+					transform: {
+						transform: "rotate(0deg)"
 
+					}
 				}
 			}, {
-				pic: leaf_2,
+				pic: leaf2_4,
+				RTLIndex: 2,
 				style: {
+					size: {
+						width: "89px",
+						height: "auto",
+					},
+					position: {
+						top: "50%",
+						left: "25%"
+					},
+					transform: {
+						transform: "rotate(0deg)"
 
+					}
 				}
 			}, {
-				pic: lemon_3,
+				pic: leaf2_4,
+				RTLIndex: 8,
 				style: {
+					size: {
+						width: "35px",
+						height: "auto",
+					},
+					position: {
+						top: "50px",
+						right: "34%"
+					},
+					transform: {
+						transform: "rotate(0deg)"
 
+					}
+				}
+			},
+			]
+		},],
+	}, {
+		title: "Кола",
+		image: prod_1_5PNG,
+		secondatyImage: [],
+		backgroundStyle: { background: `url(${cola_bg}) bottom center / 110% auto no-repeat, #230D07` },
+		circleFill: "#230D07",
+		ccal: "21 ккал",
+		ml: "200 мл",
+		pinFill: "#230D07",
+		pinStroke: "white",
+		sideTextColor: "#2F2F2F",
+		layerOptionLen: 9,
+		layerOptions: [{
+			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {},
+			bgItems: [
+				{
+					pic: ice_cube_1,
+					RTLIndex: 1,
+					style: {//
+						size: {
+							width: "119px",
+							height: "108px",
+						},
+						position: {
+							bottom: "17%",
+							left: "28%"
+						},
+						transform: {
+							transform: "rotate(-30deg)"
+						}
+					}
+				}, {
+					pic: ice_cube_4,
+					RTLIndex: 2,
+					style: {
+						size: {
+							width: "68px",
+							height: "auto",
+						},
+						position: {
+							bottom: "20px",
+							right: "36%"
+						},
+						transform: {
+							transform: "rotate(0deg)",
+							opacity: "0.7"
+						}
+					}
+				},
+			]
+		},
+		{
+			parallaxCoefficientX: 1, parallaxCoefficientY: 0, layerStyle: {
+				background: `url(${cola_cup}) right 8% center no-repeat`,
+				// width: " 110 %"
+				height: "100%",
+
+			},
+			bgItems: [
+
+			]
+		},
+		{
+			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
+
+			},
+			bgItems: [{
+				pic: ice_cube_4,
+				RTLIndex: 0,
+				style: {
+					size: {
+						width: "72px",
+						height: "72px",
+					},
+					position: {
+						top: "80px",
+						left: "28%"
+					},
+					transform: {
+						transform: "rotate(0deg)",
+						opacity: "0.5"
+					}
+				}
+			}, {
+				pic: ice_cube_4,
+				RTLIndex: 3,
+				style: {
+					size: {
+						width: "130px",
+						height: "auto",
+					},
+					position: {
+						bottom: "-20px",
+						right: "29%"
+					},
+					transform: {
+						transform: "rotate(30deg)",
+						opacity: "0.9"
+					}
+				}
+			},]
+		},],
+	}, {
+		title: "Персик",
+		image: prod_1_4PNG,
+		secondatyImage: [{ pic: peach1, styles: { width: "250px", height: "250px", right: "175px", top: "54px" } }],
+		backgroundStyle: { background: "#FBB35E" },
+		circleFill: "#FBB35E",
+		ccal: "21 ккал",
+		ml: "200 мл",
+		pinFill: "#FBB35E",
+		pinStroke: "white",
+		sideTextColor: "#2F2F2F",
+		layerOptionLen: 9,
+		layerOptions: [{
+			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
+
+			},
+			bgItems: [
+				{
+					pic: ice_cube_1,
+					RTLIndex: 1,
+					style: {//
+						size: {
+							width: "119px",
+							height: "108px",
+						},
+						position: {
+							top: "8%",
+							left: "20%"
+						},
+						transform: {
+							transform: "rotate(40deg)"
+						}
+					}
+				}, {
+					pic: ice_cube_1,
+					RTLIndex: 5,
+					style: {//
+						size: {
+							width: "119px",
+							height: "108px",
+						},
+						position: {
+							bottom: "8%",
+							right: "35%"
+						},
+						transform: {
+							transform: "rotate(40deg)"
+						}
+					}
+				}, {
+					pic: peach3,
+					RTLIndex: 6,
+					style: {//
+						size: {
+							width: "264px",
+							height: "auto",
+						},
+						position: {
+							bottom: "0",
+							right: "22%"
+						},
+						transform: {
+							transform: "rotate(0deg)"
+						}
+					}
+				}, {
+					pic: leaf4_3,
+					RTLIndex: 4,
+					style: {//
+						size: {
+							width: "264px",
+							height: "auto",
+						},
+						position: {
+							bottom: "0",
+							left: "25%"
+						},
+						transform: {
+							transform: "rotate(0deg)"
+						}
+					}
+				},
+			]
+		},
+		{
+			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
+
+			},
+			bgItems: [{
+				pic: ice_cube_4,
+				RTLIndex: 3,
+				style: {
+					size: {
+						width: "90px",
+						height: "82px",
+					},
+					position: {
+						bottom: "0",
+						left: "16%"
+					},
+					transform: {
+
+						transform: "rotate(45deg)"
+					}
+				}
+			}, {
+				pic: leaf4_2,
+				RTLIndex: 0,
+				style: {
+					size: {
+						width: "217px",
+						height: "auto",
+					},
+					position: {
+						top: "-10px",
+						left: "26%"
+					},
+					transform: {
+
+						transform: "rotate(0deg)"
+					}
 				}
 			},]
 		},
@@ -332,52 +687,291 @@ let tempProducts = [
 			},
 			bgItems: [{
 				pic: ice_cube_4,
+				RTLIndex: 8,
 				style: {
+					size: {
+						width: "72px",
+						height: "72px",
+					},
+					position: {
+						top: "80px",
+						right: "16%"
+					},
+					transform: {
+						transform: "rotate(0deg)"
 
+					}
 				}
 			}, {
-				pic: leaf2_4,
+				pic: peach2,
+				RTLIndex: 2,
 				style: {
+					size: {
+						width: "158px",
+						height: "auto",
+					},
+					position: {
+						top: "27%",
+						left: "12%"
+					},
+					transform: {
+						transform: "rotate(0deg)"
 
+					}
+				}
+			}, {
+				pic: leaf4_2,
+				RTLIndex: 5,
+				style: {
+					size: {
+						width: "131px",
+						height: "auto",
+					},
+					position: {
+						top: "31%",
+						right: "24%"
+					},
+					transform: {
+
+						transform: "rotate(180deg)"
+					}
+				}
+			},]
+		},],
+	}, {
+		title: "Тархун",
+		image: prod_1_3PNG,
+		secondatyImage: [{ pic: tarragon_secondary, styles: { width: "357px", height: "auto" } }],
+		backgroundStyle: { background: "#3F9B0B" },
+		circleFill: "#3F9B0B",
+		ccal: "21 ккал",
+		ml: "200 мл",
+		pinFill: "#3F9B0B",
+		pinStroke: "white",
+		sideTextColor: "#2F2F2F",
+		layerOptionLen: 9,
+		noAnimatedBG: [{
+			pic: tarragon_bg2,
+			RTLIndex: 5,
+			style: {
+				size: {
+					width: "auto",
+					height: "auto",
+				},
+				position: {
+					bottom: "-11%",
+					right: "31%"
+				},
+				transform: {
+
+					transform: "rotate(-4deg)"
+				}
+			}
+		}, {
+			pic: tarragon_bg2,
+			RTLIndex: 8,
+			style: {
+				size: {
+					width: "auto",
+					height: "auto",
+				},
+				position: {
+					top: "-12%",
+					right: "11%"
+				},
+				transform: {
+					transform: "rotate(80deg)"
+
+				}
+			}
+		},],
+		layerOptions: [{
+			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {},
+			bgItems: [
+				{
+					pic: ice_cube_1,
+					RTLIndex: 1,
+					style: {//
+						size: {
+							width: "119px",
+							height: "108px",
+						},
+						position: {
+							top: "51%",
+							left: "17%"
+						},
+						transform: {
+							transform: "rotate(-45deg)"
+						}
+					}
+				}, {
+					pic: ice_cube_1,
+					RTLIndex: 4,
+					style: {//
+						size: {
+							width: "119px",
+							height: "108px",
+						},
+						position: {
+							bottom: "5%",
+							right: "34%"
+						},
+						transform: {
+							transform: "rotate(35deg)"
+						}
+					}
+				},
+			]
+		},
+		{
+			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
+
+			},
+			bgItems: [{
+				pic: ice_cube_2,
+				RTLIndex: 2,
+				style: {
+					size: {
+						width: "98px ",
+						height: "91px ",
+					},
+					position: {
+						bottom: "22%",
+						left: "28%"
+					},
+					transform: {
+						transform: "rotate(-45deg)"
+
+					}
+				}
+			},]
+		},
+		{
+			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
+
+			},
+			bgItems: [{
+				pic: ice_cube_4,
+				RTLIndex: 0,
+				style: {
+					size: {
+						width: "72px",
+						height: "72px",
+					},
+					position: {
+						top: "80px",
+						left: "28%"
+					},
+					transform: {
+						transform: "rotate(0deg)"
+
+					}
+				}
+			}, {
+				pic: ice_cube_4,
+				RTLIndex: 3,
+				style: {
+					size: {
+						width: "90px",
+						height: "auto",
+					},
+					position: {
+						top: "90px",
+						right: "30%"
+					},
+					transform: {
+						transform: "rotate(0deg)"
+
+					}
 				}
 			},]
 		},],
 	}, {
 		title: "Лимон",
 		image: prod_1_2PNG,
-		secondatyImage: { pic: lemon_2, styles: { width: "250px", height: "250px" } },
-		color: "#FFC700",
-		circleFill: "transparent",
+		secondatyImage: [{ pic: lemon_2, styles: { width: "250px", height: "250px" } }],
+		backgroundStyle: { background: "#FBB35E" },
+		circleFill: "#FBB35E",
 		ccal: "21 ккал",
 		ml: "200 мл",
-		pinFill: "#FFC700",
+		pinFill: "#FBB35E",
 		pinStroke: "white",
 		sideTextColor: "#2F2F2F",
+		layerOptionLen: 9,
 		layerOptions: [{
 			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
 
 			},
-			bgItems: [{
-				pic: ice_cube_1,
-				style: {
+			bgItems: [
+				{
+					pic: ice_cube_1,
+					RTLIndex: 2,
+					style: {//
+						size: {
+							width: "119px",
+							height: "108px",
+						},
+						position: {
+							top: "55%",
+							left: "17%"
+						},
+						transform: {
+							transform: "rotate(0deg)"
+						}
+					}
+				}, {
+					pic: ice_cube_2,
+					RTLIndex: 7,
+					style: {
+						size: {
+							width: "98px ",
+							height: "91px ",
+						},
+						position: {
+							bottom: "20%",
+							right: "20%"
+						},
+						transform: {
+							transform: "rotate(0deg)"
 
-				}
-			}, {
-				pic: ice_cube_2,
-				style: {
+						}
+					}
+				}, {
+					pic: lemon_1,
+					RTLIndex: 6,
+					style: {
+						size: {
+							width: "250px",
+							height: "125px ",
+						},
+						position: {
+							bottom: "0",
+							right: "23%"
+						},
+						transform: {
+							transform: "rotate(0deg)"
 
-				}
-			}, {
-				pic: lemon_1,
-				style: {
+						}
+					}
+				}, {
+					pic: leaf_1,
+					RTLIndex: 4,
+					style: {
+						size: {
+							width: "214px ",
+							height: "108px",
+						},
+						position: {
+							bottom: "0",
+							left: "19%"
+						},
+						transform: {
+							transform: "rotate(0deg)"
 
-				}
-			}, {
-				pic: leaf_1,
-				style: {
-
-				}
-			},]
+						}
+					}
+				},
+			]
 		},
 		{
 			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
@@ -385,18 +979,54 @@ let tempProducts = [
 			},
 			bgItems: [{
 				pic: ice_cube_3,
+				RTLIndex: 5,
 				style: {
+					size: {
+						width: "90px",
+						height: "82px",
+					},
+					position: {
+						bottom: "0",
+						right: "45%"
+					},
+					transform: {
 
+						transform: "rotate(0deg)"
+					}
 				}
 			}, {
 				pic: leaf_2,
+				RTLIndex: 8,
 				style: {
+					size: {
+						width: "165px",
+						height: "150px",
+					},
+					position: {
+						top: "50px",
+						right: "20%"
+					},
+					transform: {
+						transform: "rotate(0deg)"
 
+					}
 				}
 			}, {
 				pic: lemon_3,
+				RTLIndex: 1,
 				style: {
+					soze: {
+						width: "112px",
+						height: "161px",
+					},
+					position: {
+						top: "150px",
+						left: "20%"
+					},
+					transform: {
+						transform: "rotate(0deg)"
 
+					}
 				}
 			},]
 		},
@@ -406,235 +1036,37 @@ let tempProducts = [
 			},
 			bgItems: [{
 				pic: ice_cube_4,
+				RTLIndex: 0,
 				style: {
+					size: {
+						width: "72px",
+						height: "72px",
+					},
+					position: {
+						top: "80px",
+						left: "28%"
+					},
+					transform: {
+						transform: "rotate(0deg)"
 
+					}
 				}
 			}, {
 				pic: leaf2_4,
+				RTLIndex: 3,
 				style: {
+					size: {
+						width: "44px",
+						height: "66px",
+					},
+					position: {
+						top: "70%",
+						left: "25%"
+					},
+					transform: {
+						transform: "rotate(0deg)"
 
-				}
-			},]
-		},],
-	}, {
-		title: "Лимон",
-		image: prod_1_2PNG,
-		secondatyImage: { pic: lemon_2, styles: { width: "250px", height: "250px" } },
-		color: "#FFC700",
-		circleFill: "transparent",
-		ccal: "21 ккал",
-		ml: "200 мл",
-		pinFill: "#FFC700",
-		pinStroke: "white",
-		sideTextColor: "#2F2F2F",
-		layerOptions: [{
-			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
-
-			},
-			bgItems: [{
-				pic: ice_cube_1,
-				style: {
-
-				}
-			}, {
-				pic: ice_cube_2,
-				style: {
-
-				}
-			}, {
-				pic: lemon_1,
-				style: {
-
-				}
-			}, {
-				pic: leaf_1,
-				style: {
-
-				}
-			},]
-		},
-		{
-			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
-
-			},
-			bgItems: [{
-				pic: ice_cube_3,
-				style: {
-
-				}
-			}, {
-				pic: leaf_2,
-				style: {
-
-				}
-			}, {
-				pic: lemon_3,
-				style: {
-
-				}
-			},]
-		},
-		{
-			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
-
-			},
-			bgItems: [{
-				pic: ice_cube_4,
-				style: {
-
-				}
-			}, {
-				pic: leaf2_4,
-				style: {
-
-				}
-			},]
-		},],
-	}, {
-		title: "Лимон",
-		image: prod_1_2PNG,
-		secondatyImage: { pic: lemon_2, styles: { width: "250px", height: "250px" } },
-		color: "#FFC700",
-		circleFill: "transparent",
-		ccal: "21 ккал",
-		ml: "200 мл",
-		pinFill: "#FFC700",
-		pinStroke: "white",
-		sideTextColor: "#2F2F2F",
-		layerOptions: [{
-			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
-
-			},
-			bgItems: [{
-				pic: ice_cube_1,
-				style: {
-
-				}
-			}, {
-				pic: ice_cube_2,
-				style: {
-
-				}
-			}, {
-				pic: lemon_1,
-				style: {
-
-				}
-			}, {
-				pic: leaf_1,
-				style: {
-
-				}
-			},]
-		},
-		{
-			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
-
-			},
-			bgItems: [{
-				pic: ice_cube_3,
-				style: {
-
-				}
-			}, {
-				pic: leaf_2,
-				style: {
-
-				}
-			}, {
-				pic: lemon_3,
-				style: {
-
-				}
-			},]
-		},
-		{
-			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
-
-			},
-			bgItems: [{
-				pic: ice_cube_4,
-				style: {
-
-				}
-			}, {
-				pic: leaf2_4,
-				style: {
-
-				}
-			},]
-		},],
-	}, {
-		title: "Лимон",
-		image: prod_1_2PNG,
-		secondatyImage: { pic: lemon_2, styles: { width: "250px", height: "250px" } },
-		color: "#FFC700",
-		circleFill: "transparent",
-		ccal: "21 ккал",
-		ml: "200 мл",
-		pinFill: "#FFC700",
-		pinStroke: "white",
-		sideTextColor: "#2F2F2F",
-		layerOptions: [{
-			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
-
-			},
-			bgItems: [{
-				pic: ice_cube_1,
-				style: {
-
-				}
-			}, {
-				pic: ice_cube_2,
-				style: {
-
-				}
-			}, {
-				pic: lemon_1,
-				style: {
-
-				}
-			}, {
-				pic: leaf_1,
-				style: {
-
-				}
-			},]
-		},
-		{
-			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
-
-			},
-			bgItems: [{
-				pic: ice_cube_3,
-				style: {
-
-				}
-			}, {
-				pic: leaf_2,
-				style: {
-
-				}
-			}, {
-				pic: lemon_3,
-				style: {
-
-				}
-			},]
-		},
-		{
-			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
-
-			},
-			bgItems: [{
-				pic: ice_cube_4,
-				style: {
-
-				}
-			}, {
-				pic: leaf2_4,
-				style: {
-
+					}
 				}
 			},]
 		},],
@@ -642,85 +1074,95 @@ let tempProducts = [
 ]
 
 const parallax = (event, targetArray, parallaxOptions) => {
-	// console.log(event.clientX,);
-	targetArray[0].style.transform = `translate(${(event.clientX / 30) * parallaxOptions[0].parallaxCoefficientX}px, ${(event.clientY / 50) * parallaxOptions[0].parallaxCoefficientY}px)`
-	targetArray[1].style.transform = `translate(${(event.clientX / 60) * parallaxOptions[1].parallaxCoefficientX}px, ${(event.clientY / 70) * parallaxOptions[1].parallaxCoefficientY}px)`
-	targetArray[2].style.transform = `translate(${(event.clientX / 80) * parallaxOptions[2].parallaxCoefficientX}px, ${(event.clientY / 90) * parallaxOptions[2].parallaxCoefficientY}px)`
-	// console.log(targetArray[0].current.style);
+	targetArray[0].style.transform = `translate(${(event.clientX / 30) * parallaxOptions[0].parallaxCoefficientX}px, ${(event.clientY / 50) * parallaxOptions[0].parallaxCoefficientY}px)`;
+	targetArray[1].style.transform = `translate(${(event.clientX / 55) * parallaxOptions[1].parallaxCoefficientX}px, ${(event.clientY / 70) * parallaxOptions[1].parallaxCoefficientY}px)`;
+	targetArray[2].style.transform = `translate(${(event.clientX / 80) * parallaxOptions[2].parallaxCoefficientX}px, ${(event.clientY / 90) * parallaxOptions[2].parallaxCoefficientY}px)`;
 }
 const getValidIndex = (index, maxIndex) => {
 	if (index <= maxIndex && index >= 0) return index;
-	if (index > maxIndex) {
-		return 0
-	}
-	if (index < 0) {
-		return maxIndex
-	}
-	console.log("!!!!!!!!!!!!!!!!!!!!!! 549");
+	if (index > maxIndex) return 0;
+	if (index < 0) return maxIndex;
+	
 }
 const getRef = (prewRef, selectedRef, nextRef, currentProduct, index, productsLastIndex) => {
-	if (index === currentProduct) return selectedRef
-	if (getValidIndex(index + 1, productsLastIndex) === currentProduct + 1) return nextRef
-	if (getValidIndex(index - 1, productsLastIndex) === currentProduct - 1) return prewRef
-	return React.createRef()
+	if (index === currentProduct) return selectedRef;
+	if (getValidIndex(currentProduct + 1, productsLastIndex) === index) return nextRef;
+	if (getValidIndex(currentProduct - 1, productsLastIndex) === index) return prewRef;
+	return React.createRef();
 }
+
 const swipeDelay = 10000;
 
 const productsLastIndex = tempProducts.length - 1;
-const asd = (zz) => {
-	setTimeout(() => { return zz }, 1000)
-}
-const nextProduct = (currentProduct, setCurrentProduct) => {
-	if (currentProduct < productsLastIndex) setCurrentProduct(currentProduct + 1);
-	else setCurrentProduct(0);
+
+const nextProduct = (currentProduct, setCurrentProduct, selectedRef, prewRef) => {
+	let p = new Promise((res, rej) => {
+		selectedRef.current.classList.add("change-product");
+		setTimeout(() => res(), 1000);
+	})
+	p.then(() => {
+		selectedRef.current.classList.remove("change-product");
+		if (currentProduct < productsLastIndex) setCurrentProduct(currentProduct + 1);
+		else setCurrentProduct(0);
+		let asd = [...prewRef.current.querySelectorAll(".start_page_slider__item__background__layer__picture")];
+		asd.map((i) => i.classList.add("init_pos"));
+	})
+
 };
-const getWithChangedIndex = (index, newValue, loadIndices) => {
-	let temp = loadIndices
-	temp[index] = newValue
-	return temp;
-}
+const setProduct = (nextIndex, containerRef, setCurrentProduct) => {
+	setCurrentProduct(nextIndex);
+	let allBackgroundImages = [...containerRef.current.querySelectorAll(".start_page_slider__item__background__layer__picture")];
+	allBackgroundImages.map(i => i.classList.add("init_pos"));
+};
 
 export default function StartPageSlider() {
 	const [currentProduct, setCurrentProduct] = React.useState(0);
-	const [counter, setCounter] = React.useState(0);
 	const prewRef = React.useRef(null);
 	const selectedRef = React.useRef(null);
 	const nextRef = React.useRef(null);
-	const [state, setstate] = React.useState(false);
+	const containerRef = React.useRef(null);
 
 	React.useEffect(() => {
-		let pic = Array(...selectedRef.current.querySelectorAll(".zxccxz"))
-		pic.sort((a, b) => a.id - b.id).map((i, index) => {
+		const timer = setInterval(() => nextProduct(currentProduct, setCurrentProduct, selectedRef, prewRef), swipeDelay);
+		let pictures = Array(...selectedRef.current.querySelectorAll(".init_pos"))
+		pictures.sort((a, b) => a.id - b.id).map((pic, index) => {
 			setTimeout(() => {
-				i.classList.remove("zxccxz")
+				pic.classList.remove("init_pos");
 			}, 500 + index * 100);
 		})
-		// pic.classList.remove("zxccxz")
-		console.log("pic", pic);
+		return () => clearInterval(timer);
 	})
 	return (
-		<div className="start_page_slider" onMouseMove={(event) => parallax(event, selectedRef.current.querySelectorAll('.start_page_slider__item__background__layer'), tempProducts[currentProduct].layerOptions)}>
+		<div className="start_page_slider"
+			onMouseMove={(event) => parallax(event,
+				selectedRef.current.querySelectorAll('.start_page_slider__item__background__layer'),
+				tempProducts[currentProduct].layerOptions)}>
 
-			<div className="start_page_slider__container">
+			<div className="start_page_slider__container" ref={containerRef}>
 				{tempProducts.map((product, index) => (
 					<div className={`start_page_slider__item ${index === currentProduct ? "active-item" : ""}`} key={index} ref={getRef(prewRef, selectedRef, nextRef, currentProduct, index, productsLastIndex)}
-						style={{
-							visibility: `${index === currentProduct ? "visible" : "hidden"}`
-						}}>
-						<div className="start_page_slider__item__background" style={{ background: product.color }}>
+						style={{ zIndex: `${index === currentProduct ? "9" : getValidIndex(index, productsLastIndex) === getValidIndex(currentProduct + 1, productsLastIndex) ? "8" : "2"}` }}>
+						<div className="start_page_slider__item__background" style={product.backgroundStyle}>
 							{product.layerOptions.map((layerOption, layerOptionIndex) => (
-								<div className="start_page_slider__item__background__layer" key={index + layerOptionIndex * 2}>
+								<div className="start_page_slider__item__background__layer" key={index + layerOptionIndex * 2} style={layerOption.layerStyle}>
 									{ layerOption.bgItems.map((bgItem, bgItemIndex) => (
 										<img src={bgItem.pic} alt={`bgItem.pic_${bgItemIndex}`}
 											style={{ ...bgItem.style.size, ...bgItem.style.position, ...bgItem.style.transform }}
-											key={index + layerOptionIndex * 3 + bgItemIndex}
-											className={`start_page_slider__item__background__layer__picture zxccxz`}
+											key={bgItemIndex}
+											className={`start_page_slider__item__background__layer__picture init_pos`}
 											id={`${bgItem.RTLIndex}`} />
 									))
 									}
 								</div>
 							))
 							}
+							{product.noAnimatedBG && <div className="start_page_slider__item__background__no-animated">
+								{product.noAnimatedBG.map((it, index) => (
+									<img src={it.pic} alt="it.pic" style={{ ...it.style.size, ...it.style.position, ...it.style.transform }} key={index} />
+								))}
+							</div>
+							}
+
 						</div>
 						<div className="start_page_slider__item__background-side">
 							<div className="start_page_slider__item__background-side__button">
@@ -734,7 +1176,6 @@ export default function StartPageSlider() {
 								</div>
 							</div>
 							<span style={{ color: product.sideTextColor }} className="start_page_slider__item__background-side__phone">8 800 800 - 80 - 80</span>
-
 						</div>
 
 						<div className="start_page_slider__item__wrapper">
@@ -742,10 +1183,15 @@ export default function StartPageSlider() {
 								<p className="start_page_slider__item__wrapper__circle__ccal">{product.ccal}</p>
 								<p className="start_page_slider__item__wrapper__circle__ml">{product.ml}</p>
 								<p className="start_page_slider__item__wrapper__circle__title">{product.title}</p>
+								<div className="start_page_slider__item__wrapper__circle__secondary">
+									{product.secondatyImage.map((i, index) =>
+										<img src={i.pic} alt="i.pic" key={index} style={i.styles} />
+									)}
+								</div>
 								<img src={product.image} alt="Image" className="image" />
 								<Circle
 									currentProduct={currentProduct}
-									setCurrentProduct={setCurrentProduct}
+									setCurrentProduct={(index) => setProduct(index, containerRef, setCurrentProduct)}
 									circleFill={product.circleFill}
 									pinFill={product.pinFill}
 									pinStroke={product.pinStroke} />
@@ -754,16 +1200,7 @@ export default function StartPageSlider() {
 					</div>
 				))
 				}
-				<button onClick={() => setstate(!state)}>{">>>"}</button>
 			</div>
-
 		</div >
 	)
-
-	function AAAA(bgItem, index, layerOptionIndex, bgItemIndex) {
-
-		return <img src={bgItem.pic} alt="bgItem.pic"
-			style={{ ...bgItem.style.position, ...bgItem.style.size }}
-			key={index + layerOptionIndex * 3 + bgItemIndex} />;
-	}
 }
