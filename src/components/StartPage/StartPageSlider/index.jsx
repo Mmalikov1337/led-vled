@@ -279,7 +279,7 @@ let tempProducts = [
 		ml: "200 мл",
 		pinFill: "#FF4E5A",
 		pinStroke: "white",
-		sideTextColor: "#2F2F2F",
+		sideTextColor: "#fff",
 		layerOptionLen: 9,
 		layerOptions: [{
 			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
@@ -465,7 +465,7 @@ let tempProducts = [
 		ml: "200 мл",
 		pinFill: "#230D07",
 		pinStroke: "white",
-		sideTextColor: "#2F2F2F",
+		sideTextColor: "#fff",
 		layerOptionLen: 9,
 		layerOptions: [{
 			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {},
@@ -567,7 +567,7 @@ let tempProducts = [
 		ml: "200 мл",
 		pinFill: "#FBB35E",
 		pinStroke: "white",
-		sideTextColor: "#2F2F2F",
+		sideTextColor: "#fff",
 		layerOptionLen: 9,
 		layerOptions: [{
 			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
@@ -748,7 +748,7 @@ let tempProducts = [
 		ml: "200 мл",
 		pinFill: "#3F9B0B",
 		pinStroke: "white",
-		sideTextColor: "#2F2F2F",
+		sideTextColor: "#fff",
 		layerOptionLen: 9,
 		noAnimatedBG: [{
 			pic: tarragon_bg2,
@@ -896,7 +896,7 @@ let tempProducts = [
 		ml: "200 мл",
 		pinFill: "#FBB35E",
 		pinStroke: "white",
-		sideTextColor: "#2F2F2F",
+		sideTextColor: "#fff",
 		layerOptionLen: 9,
 		layerOptions: [{
 			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
@@ -1082,7 +1082,7 @@ const getValidIndex = (index, maxIndex) => {
 	if (index <= maxIndex && index >= 0) return index;
 	if (index > maxIndex) return 0;
 	if (index < 0) return maxIndex;
-	
+
 }
 const getRef = (prewRef, selectedRef, nextRef, currentProduct, index, productsLastIndex) => {
 	if (index === currentProduct) return selectedRef;
@@ -1095,21 +1095,29 @@ const swipeDelay = 10000;
 
 const productsLastIndex = tempProducts.length - 1;
 
-const nextProduct = (currentProduct, setCurrentProduct, selectedRef, prewRef) => {
+const nextProduct = (setCirclePin, currentProduct, setCurrentProduct, selectedRef, prewRef) => {
 	let p = new Promise((res, rej) => {
 		selectedRef.current.classList.add("change-product");
-		setTimeout(() => res(), 1000);
+		if (currentProduct < productsLastIndex) setCirclePin(currentProduct + 1);
+		else setCirclePin(0);
+		prewRef.current.classList.remove("change-product");
+		setTimeout(() => {
+			if (currentProduct < productsLastIndex) setCurrentProduct(currentProduct + 1);
+			else setCurrentProduct(0);
+			res()
+		}, 1000);
 	})
 	p.then(() => {
-		selectedRef.current.classList.remove("change-product");
-		if (currentProduct < productsLastIndex) setCurrentProduct(currentProduct + 1);
-		else setCurrentProduct(0);
+
 		let asd = [...prewRef.current.querySelectorAll(".start_page_slider__item__background__layer__picture")];
 		asd.map((i) => i.classList.add("init_pos"));
+
+
 	})
 
 };
-const setProduct = (nextIndex, containerRef, setCurrentProduct) => {
+const setProduct = (nextIndex, containerRef, setCurrentProduct, setCirclePin) => {
+	setCirclePin(nextIndex);
 	setCurrentProduct(nextIndex);
 	let allBackgroundImages = [...containerRef.current.querySelectorAll(".start_page_slider__item__background__layer__picture")];
 	allBackgroundImages.map(i => i.classList.add("init_pos"));
@@ -1117,13 +1125,14 @@ const setProduct = (nextIndex, containerRef, setCurrentProduct) => {
 
 export default function StartPageSlider() {
 	const [currentProduct, setCurrentProduct] = React.useState(0);
+	const [currentCirclePin, setCirclePin] = React.useState(0);
 	const prewRef = React.useRef(null);
 	const selectedRef = React.useRef(null);
 	const nextRef = React.useRef(null);
 	const containerRef = React.useRef(null);
 
 	React.useEffect(() => {
-		const timer = setInterval(() => nextProduct(currentProduct, setCurrentProduct, selectedRef, prewRef), swipeDelay);
+		const timer = setInterval(() => nextProduct(setCirclePin, currentProduct, setCurrentProduct, selectedRef, prewRef), swipeDelay);
 		let pictures = Array(...selectedRef.current.querySelectorAll(".init_pos"))
 		pictures.sort((a, b) => a.id - b.id).map((pic, index) => {
 			setTimeout(() => {
@@ -1140,16 +1149,19 @@ export default function StartPageSlider() {
 
 			<div className="start_page_slider__container" ref={containerRef}>
 				{tempProducts.map((product, index) => (
-					<div className={`start_page_slider__item ${index === currentProduct ? "active-item" : ""}`} key={index} ref={getRef(prewRef, selectedRef, nextRef, currentProduct, index, productsLastIndex)}
-						style={{ zIndex: `${index === currentProduct ? "9" : getValidIndex(index, productsLastIndex) === getValidIndex(currentProduct + 1, productsLastIndex) ? "8" : "2"}` }}>
+					<div className={`start_page_slider__item ${index === currentProduct ? "active-item" : ""}`}
+						key={index}
+						ref={getRef(prewRef, selectedRef, nextRef, currentProduct, index, productsLastIndex)}
+						style={{ zIndex: `${index === currentProduct ? "4" : index === getValidIndex(currentProduct + 1, productsLastIndex) ? "3" : "2"}` }}
+					>
 						<div className="start_page_slider__item__background" style={product.backgroundStyle}>
 							{product.layerOptions.map((layerOption, layerOptionIndex) => (
-								<div className="start_page_slider__item__background__layer" key={index + layerOptionIndex * 2} style={layerOption.layerStyle}>
+								<div className="start_page_slider__item__background__layer" key={`${index}_${layerOptionIndex}`} style={layerOption.layerStyle}>
 									{ layerOption.bgItems.map((bgItem, bgItemIndex) => (
 										<img src={bgItem.pic} alt={`bgItem.pic_${bgItemIndex}`}
 											style={{ ...bgItem.style.size, ...bgItem.style.position, ...bgItem.style.transform }}
-											key={bgItemIndex}
-											className={`start_page_slider__item__background__layer__picture init_pos`}
+											key={`${index}_${layerOptionIndex}_${bgItemIndex}`}
+											className="start_page_slider__item__background__layer__picture init_pos"
 											id={`${bgItem.RTLIndex}`} />
 									))
 									}
@@ -1158,13 +1170,14 @@ export default function StartPageSlider() {
 							}
 							{product.noAnimatedBG && <div className="start_page_slider__item__background__no-animated">
 								{product.noAnimatedBG.map((it, index) => (
-									<img src={it.pic} alt="it.pic" style={{ ...it.style.size, ...it.style.position, ...it.style.transform }} key={index} />
+									<img src={it.pic} alt="it.pic" style={{ ...it.style.size, ...it.style.position, ...it.style.transform }} key={`${index}i`} />
 								))}
 							</div>
 							}
 
 						</div>
 						<div className="start_page_slider__item__background-side">
+							<span className="start_page_slider__item__background-side__hash" style = {{color: product.sideTextColor}}><span>#</span>лёдвлёд</span>
 							<div className="start_page_slider__item__background-side__button">
 								<div>
 									<span>Каталог</span>
@@ -1190,8 +1203,10 @@ export default function StartPageSlider() {
 								</div>
 								<img src={product.image} alt="Image" className="image" />
 								<Circle
-									currentProduct={currentProduct}
-									setCurrentProduct={(index) => setProduct(index, containerRef, setCurrentProduct)}
+									currentProduct={currentCirclePin}
+									setCurrentProduct={(index) => setProduct(index, containerRef, setCurrentProduct, setCirclePin)}
+									// currentProduct={currentProduct}
+									// setCurrentProduct={(index) => setProduct(index, containerRef, setCurrentProduct)}
 									circleFill={product.circleFill}
 									pinFill={product.pinFill}
 									pinStroke={product.pinStroke} />
