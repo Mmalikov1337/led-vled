@@ -1096,7 +1096,7 @@ const swipeDelay = 10000;
 const productsLastIndex = tempProducts.length - 1;
 
 const nextProduct = (setCirclePin, currentProduct, setCurrentProduct, selectedRef, prewRef) => {
-	let p = new Promise((res, rej) => {
+	let p = new Promise(res => {
 		selectedRef.current.classList.add("change-product");
 		if (currentProduct < productsLastIndex) setCirclePin(currentProduct + 1);
 		else setCirclePin(0);
@@ -1108,11 +1108,8 @@ const nextProduct = (setCirclePin, currentProduct, setCurrentProduct, selectedRe
 		}, 1000);
 	})
 	p.then(() => {
-
-		let asd = [...prewRef.current.querySelectorAll(".start_page_slider__item__background__layer__picture")];
-		asd.map((i) => i.classList.add("init_pos"));
-
-
+		let pics = [...prewRef.current.querySelectorAll(".start_page_slider__item__background__layer__picture")];
+		pics.map((i) => i.classList.add("init_pos"));
 	})
 
 };
@@ -1177,7 +1174,7 @@ export default function StartPageSlider() {
 
 						</div>
 						<div className="start_page_slider__item__background-side">
-							<span className="start_page_slider__item__background-side__hash" style = {{color: product.sideTextColor}}><span>#</span>лёдвлёд</span>
+							<span className="start_page_slider__item__background-side__hash" style={{ color: product.sideTextColor }}><span>#</span>лёдвлёд</span>
 							<div className="start_page_slider__item__background-side__button">
 								<div>
 									<span>Каталог</span>
@@ -1201,12 +1198,10 @@ export default function StartPageSlider() {
 										<img src={i.pic} alt="i.pic" key={index} style={i.styles} />
 									)}
 								</div>
-								<img src={product.image} alt="Image" className="image" />
+								<img src={product.image} alt="product.image" className="image" />
 								<Circle
 									currentProduct={currentCirclePin}
 									setCurrentProduct={(index) => setProduct(index, containerRef, setCurrentProduct, setCirclePin)}
-									// currentProduct={currentProduct}
-									// setCurrentProduct={(index) => setProduct(index, containerRef, setCurrentProduct)}
 									circleFill={product.circleFill}
 									pinFill={product.pinFill}
 									pinStroke={product.pinStroke} />

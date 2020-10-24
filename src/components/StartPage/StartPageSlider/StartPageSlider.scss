@@ -12,6 +12,8 @@
 
 	.active-item {
 		z-index: 5 !important;
+		// clip: rect(0 50vw 10000px 0px) !important;
+
 	}
 
 	&__container {
@@ -21,6 +23,7 @@
 	}
 
 	&__item {
+		clip: rect(0 100vw 10000px 0px);
 		// position: absolute;
 		position: absolute;
 		width: 100%;
@@ -61,6 +64,7 @@
 				height: 100%;
 				display: flex;
 				flex-direction: column;
+
 				// flex-wrap: wrap;
 				* {
 					position: relative;
@@ -111,13 +115,13 @@
 					// margin-left: auto;
 					margin-right: 50px;
 					margin-bottom: 50px;
-		
+
 					font-style: normal;
 					font-weight: bold;
 					cursor: pointer;
 					width: 151px;
 					// position: relative;
-					
+
 					// justify-self: center;
 					&::before {
 						content: "";
@@ -137,7 +141,8 @@
 					width: fit-content;
 					position: relative;
 					top: 40%;
-					span{
+
+					span {
 						color: #FFC700;
 					}
 				}
@@ -284,19 +289,79 @@
 }
 
 .change-product {
-	animation: changeProduct 1030ms;
+	animation: changeProduct 1030ms linear alternate;
+	-webkit-animation: changeProduct 1030ms linear alternate;
+	-moz-animation: changeProduct 1030ms linear alternate;
+	-ms-animation: changeProduct 1030ms linear alternate;
+	-o-animation: changeProduct 1030ms linear alternate;
+	// animation: changeProduct 1030ms;
 	// clip: rect(0 30vw 10000px 0px);
 	// border: 2px solid black;
 }
 
 @keyframes changeProduct {
 	0% {
+
+		-webkit-clip: rect(0 0vw 10000px 0px);
 		clip: rect(0 100vw 10000px 0px);
 	}
 
 	100% {
-		clip: rect(0 0vw 10000px 0px);
 
+		-webkit-clip: rect(0 0vw 10000px 0px);
+		clip: rect(0 0vw 10000px 0px);
+	}
+}
+@-webkit-keyframes changeProduct {
+	0% {
+
+		-webkit-clip: rect(0 0vw 10000px 0px);
+		clip: rect(0 100vw 10000px 0px);
+	}
+
+	100% {
+
+		-webkit-clip: rect(0 0vw 10000px 0px);
+		clip: rect(0 0vw 10000px 0px);
+	}
+}
+@-moz-keyframes changeProduct {
+	0% {
+
+		-moz-clip: rect(0 0vw 10000px 0px);
+		clip: rect(0 100vw 10000px 0px);
+	}
+
+	100% {
+
+		-moz-clip: rect(0 0vw 10000px 0px);
+		clip: rect(0 0vw 10000px 0px);
+	}
+}
+@-ms-keyframes changeProduct {
+	0% {
+
+		-ms-clip: rect(0 0vw 10000px 0px);
+		clip: rect(0 100vw 10000px 0px);
+	}
+
+	100% {
+
+		-ms-clip: rect(0 0vw 10000px 0px);
+		clip: rect(0 0vw 10000px 0px);
+	}
+}
+@-o-keyframes changeProduct {
+	0% {
+
+		-o-clip: rect(0 0vw 10000px 0px);
+		clip: rect(0 100vw 10000px 0px);
+	}
+
+	100% {
+
+		-o-clip: rect(0 0vw 10000px 0px);
+		clip: rect(0 0vw 10000px 0px);
 	}
 }
 
