@@ -124,13 +124,13 @@ const Feedback = ({ currentPage }) => {
 		</div>
 	)
 }
-export default function Swiper({ id, link, setSwiperPage }) {
+export default function Swiper({ id, link, setSwiperPage, ChangeQuantity, tempItems }) {
 
 	const [currentPage, setCurrentPage] = React.useState(0);
 	const [active, setActive] = React.useState([false, false]);
 	const [heightOfLine, setHeightOfLine] = React.useState(null);
 	const [swiperPause, setSwiperPause] = React.useState(false);
-	const ref = React.useRef(null)
+	const ref = React.useRef(null);
 	
 	React.useEffect(() => {
 		setSwiperPage(currentPage)
@@ -139,10 +139,9 @@ export default function Swiper({ id, link, setSwiperPage }) {
 	const toTop = () => {
 		if (swiperPause) return
 		setCurrentPage(currentPage < links.length - 1 ? currentPage + 1 : links.length - 1);
-		let swiped = new Promise(function (resolve, reject) {
+		let swiped = new Promise(function (resolve) {
 			setHeightOfLine('to_top');
 			setSwiperPause(true);
-
 			resolve();
 		});
 		swiped.then(() => {
@@ -156,7 +155,7 @@ export default function Swiper({ id, link, setSwiperPage }) {
 	const toBottom = () => {
 		if (swiperPause) return
 		setCurrentPage(currentPage > 0 ? currentPage - 1 : 0);
-		let swiped = new Promise(function (resolve, reject) {
+		let swiped = new Promise(function (resolve) {
 			setHeightOfLine('to_bottom');
 			setSwiperPause(true);
 			resolve();
@@ -201,7 +200,7 @@ export default function Swiper({ id, link, setSwiperPage }) {
 					</div>
 				</div>
 				<div className="swiper__main" ref={link}>{/* */}
-					<Elements toTop={toTop} toBottom={toBottom} currentPage={currentPage} swiperPause = {swiperPause} />
+					<Elements toTop={toTop} toBottom={toBottom} currentPage={currentPage} swiperPause = {swiperPause} ChangeQuantity = {ChangeQuantity} tempItems = {tempItems}/>
 				</div>
 			</div>
 			<Footer currentPage={currentPage} />

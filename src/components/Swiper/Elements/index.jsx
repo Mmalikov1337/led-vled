@@ -63,7 +63,7 @@ const CircleSVG = ({ style }) => {
 	)
 }
 
-export default function Elements({ toTop, toBottom, currentPage, swiperPause }) {
+export default function Elements({ toTop, toBottom, currentPage, swiperPause, ChangeQuantity, tempItems }) {
 	// const [state, setstate] = useState(initialState)
 	let windowSize = useWindowSize()
 
@@ -72,7 +72,7 @@ export default function Elements({ toTop, toBottom, currentPage, swiperPause }) 
 		<Usage />,
 		<Price />,
 		<Delivery />,
-		<Tastes />,
+		<Tastes ChangeQuantity = {ChangeQuantity} tempItems = {tempItems}/>,
 		<Partners onLoad={swiperPause} />,
 		<Contacts onLoad={swiperPause}  />
 	]

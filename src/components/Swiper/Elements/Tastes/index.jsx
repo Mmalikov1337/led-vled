@@ -3,11 +3,7 @@ import Scroll from 'react-scroll'
 
 import starSVG from './../../../../assets/images/star_full.svg';
 import shadowPNG from './../../../../assets/images/shadow.png';
-import prod_1_5PNG from './../../../../assets/images/1_5.png';
-import prod_1_4PNG from './../../../../assets/images/1_4.png';
-import prod_1_3PNG from './../../../../assets/images/1_3.png';
-import prod_1_2PNG from './../../../../assets/images/1_2.png';
-import prod_1_1PNG from './../../../../assets/images/1_1.png';
+
 
 import './Tastes.scss';
 
@@ -32,94 +28,12 @@ const scrollToId = (id) => {
 		containerId: 'slider',
 	});
 };
-const tempItems = [
-	{
-		pic: prod_1_4PNG,
-		mainColor: "#FBB35E",
-		sideColor: "#FCCA8E",
-		rating: "5.0",
-		title: 'Лимон',
-		description: "Натуральные ингредиенты",
-		price: "10₽",
-		mesure: 'шт',
-		properties: [
-			"21 ккал",
-			"200 мл"
-		]
-	}
-	, {
-		pic: prod_1_2PNG,
-		mainColor: "#DBE4A7",
-		sideColor: "#e6ecc1",
-		rating: "5.0",
-		title: 'Лимон',
-		description: "Натуральные ингредиенты",
-		price: "10₽",
-		mesure: 'шт',
-		properties: [
-			"21 ккал",
-			"200 мл"
-		]
-	}, {
-		pic: prod_1_1PNG,
-		mainColor: "#FF4E5A",
-		sideColor: "#f46c81",
-		rating: "4.8",
-		title: 'Вишня',
-		description: "Натуральные ингредиенты",
-		price: "10₽",
-		mesure: 'шт',
-		properties: [
-			"21 ккал",
-			"200 мл"
-		]
-	},
-	{
-		pic: prod_1_5PNG,
-		mainColor: "#2D1109",
-		sideColor: "#4c342e",
-		rating: "4.7",
-		title: 'Coca-Cola',
-		description: "Натуральные ингредиенты",
-		price: "10₽",
-		mesure: 'шт',
-		properties: [
-			"21 ккал",
-			"200 мл"
-		]
-	}, {
-		pic: prod_1_3PNG,
-		mainColor: "#3F9B0B",
-		sideColor: "#65af3c",
-		rating: "5.0",
-		title: 'Лимон',
-		description: "Натуральные ингредиенты",
-		price: "10₽",
-		mesure: 'шт',
-		properties: [
-			"21 ккал",
-			"200 мл"
-		]
-	},
-]
 
-export default function Tastes() {
-	const [selectedQuantity, setSelectedQuantity] = React.useState(() => [...Array(tempItems.length)].fill(1));
+
+export default function Tastes({ChangeQuantity, tempItems}) {
+	// const [selectedQuantity, setSelectedQuantity] = React.useState(() => [...Array(tempItems.length)].fill(1));
 	const [slideIndex, setSlideIndex] = React.useState(() => 0);
 	const maxIndex = tempItems.length - 3
-
-	const increaseSelectedQuantity = (index) => {
-		const temp = selectedQuantity.concat();
-		temp[index]++;
-		setSelectedQuantity(temp)
-	}
-	const decreaseSelectedQuantity = (index) => {
-		const temp = selectedQuantity.concat();
-		if (temp[index] > 1) {
-			temp[index]--;
-			setSelectedQuantity(temp);
-		};
-	}
 
 	const nextSlide = () => {
 		setSlideIndex(slideIndex < maxIndex ? slideIndex + 1 : 0)
@@ -180,15 +94,15 @@ export default function Tastes() {
 									</div>
 									<div className="tastes__slider__slide__counter">
 										<div className="tastes__slider__slide__counter__plate">
-											<div className="tastes__slider__slide__counter__plate__button" onClick={() => decreaseSelectedQuantity(index)}>
+											<div className="tastes__slider__slide__counter__plate__button" onClick={() => ChangeQuantity.decreaseSelectedQuantity(index)}>
 												<svg width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path d="M5.952 0.952H2.28C1.488 0.952 0.912 1.528 0.912 2.296C0.912 3.064 1.488 3.664 2.28 3.664H5.952C6.744 3.664 7.32 3.064 7.32 2.296C7.32 1.528 6.744 0.952 5.952 0.952Z" fill="#717171" />
 												</svg>
 											</div>
 											<div className="tastes__slider__slide__counter__plate__quantity">
-												{selectedQuantity[index]}
+												{ChangeQuantity.selectedProductsQuantity[index]}
 											</div>
-											<div className="tastes__slider__slide__counter__plate__button" onClick={() => increaseSelectedQuantity(index)}>
+											<div className="tastes__slider__slide__counter__plate__button" onClick={() => ChangeQuantity.increaseSelectedQuantity(index)}>
 												<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path d="M6.744 12.152C7.632 12.152 8.304 11.48 8.304 10.568V7.808H11.184C12.12 7.808 12.648 7.112 12.648 6.344C12.648 5.552 12.12 4.88 11.184 4.88H8.304V2.096C8.304 1.208 7.632 0.535999 6.744 0.535999C5.856 0.535999 5.208 1.208 5.208 2.096V4.88H2.28C1.32 4.88 0.792 5.552 0.792 6.344C0.792 7.112 1.32 7.808 2.28 7.808H5.208V10.568C5.208 11.48 5.856 12.152 6.744 12.152Z" fill="#008CE6" />
 												</svg>

@@ -509,18 +509,12 @@ let tempProducts = [
 		{
 			parallaxCoefficientX: 1, parallaxCoefficientY: 0, layerStyle: {
 				background: `url(${cola_cup}) right 8% center no-repeat`,
-				// width: " 110 %"
 				height: "100%",
-
 			},
-			bgItems: [
-
-			]
+			bgItems: []
 		},
 		{
-			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
-
-			},
+			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {},
 			bgItems: [{
 				pic: ice_cube_4,
 				RTLIndex: 0,
@@ -570,14 +564,12 @@ let tempProducts = [
 		sideTextColor: "#fff",
 		layerOptionLen: 9,
 		layerOptions: [{
-			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
-
-			},
+			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {},
 			bgItems: [
 				{
 					pic: ice_cube_1,
 					RTLIndex: 1,
-					style: {//
+					style: {
 						size: {
 							width: "119px",
 							height: "108px",
@@ -593,7 +585,7 @@ let tempProducts = [
 				}, {
 					pic: ice_cube_1,
 					RTLIndex: 5,
-					style: {//
+					style: {
 						size: {
 							width: "119px",
 							height: "108px",
@@ -609,7 +601,7 @@ let tempProducts = [
 				}, {
 					pic: peach3,
 					RTLIndex: 6,
-					style: {//
+					style: {
 						size: {
 							width: "264px",
 							height: "auto",
@@ -625,7 +617,7 @@ let tempProducts = [
 				}, {
 					pic: leaf4_3,
 					RTLIndex: 4,
-					style: {//
+					style: {
 						size: {
 							width: "264px",
 							height: "auto",
@@ -642,9 +634,7 @@ let tempProducts = [
 			]
 		},
 		{
-			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
-
-			},
+			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {},
 			bgItems: [{
 				pic: ice_cube_4,
 				RTLIndex: 3,
@@ -658,7 +648,6 @@ let tempProducts = [
 						left: "16%"
 					},
 					transform: {
-
 						transform: "rotate(45deg)"
 					}
 				}
@@ -675,16 +664,13 @@ let tempProducts = [
 						left: "26%"
 					},
 					transform: {
-
 						transform: "rotate(0deg)"
 					}
 				}
 			},]
 		},
 		{
-			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
-
-			},
+			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {},
 			bgItems: [{
 				pic: ice_cube_4,
 				RTLIndex: 8,
@@ -699,7 +685,6 @@ let tempProducts = [
 					},
 					transform: {
 						transform: "rotate(0deg)"
-
 					}
 				}
 			}, {
@@ -716,7 +701,6 @@ let tempProducts = [
 					},
 					transform: {
 						transform: "rotate(0deg)"
-
 					}
 				}
 			}, {
@@ -732,7 +716,6 @@ let tempProducts = [
 						right: "24%"
 					},
 					transform: {
-
 						transform: "rotate(180deg)"
 					}
 				}
@@ -763,7 +746,6 @@ let tempProducts = [
 					right: "31%"
 				},
 				transform: {
-
 					transform: "rotate(-4deg)"
 				}
 			}
@@ -781,7 +763,6 @@ let tempProducts = [
 				},
 				transform: {
 					transform: "rotate(80deg)"
-
 				}
 			}
 		},],
@@ -824,9 +805,7 @@ let tempProducts = [
 			]
 		},
 		{
-			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
-
-			},
+			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {},
 			bgItems: [{
 				pic: ice_cube_2,
 				RTLIndex: 2,
@@ -841,15 +820,12 @@ let tempProducts = [
 					},
 					transform: {
 						transform: "rotate(-45deg)"
-
 					}
 				}
 			},]
 		},
 		{
-			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
-
-			},
+			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {},
 			bgItems: [{
 				pic: ice_cube_4,
 				RTLIndex: 0,
@@ -864,7 +840,6 @@ let tempProducts = [
 					},
 					transform: {
 						transform: "rotate(0deg)"
-
 					}
 				}
 			}, {
@@ -881,7 +856,6 @@ let tempProducts = [
 					},
 					transform: {
 						transform: "rotate(0deg)"
-
 					}
 				}
 			},]
@@ -899,9 +873,7 @@ let tempProducts = [
 		sideTextColor: "#fff",
 		layerOptionLen: 9,
 		layerOptions: [{
-			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
-
-			},
+			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {},
 			bgItems: [
 				{
 					pic: ice_cube_1,
@@ -933,7 +905,6 @@ let tempProducts = [
 						},
 						transform: {
 							transform: "rotate(0deg)"
-
 						}
 					}
 				}, {
@@ -950,7 +921,6 @@ let tempProducts = [
 						},
 						transform: {
 							transform: "rotate(0deg)"
-
 						}
 					}
 				}, {
@@ -974,9 +944,7 @@ let tempProducts = [
 			]
 		},
 		{
-			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {
-
-			},
+			parallaxCoefficientX: 1, parallaxCoefficientY: 1, layerStyle: {},
 			bgItems: [{
 				pic: ice_cube_3,
 				RTLIndex: 5,
@@ -990,7 +958,6 @@ let tempProducts = [
 						right: "45%"
 					},
 					transform: {
-
 						transform: "rotate(0deg)"
 					}
 				}
@@ -1008,7 +975,6 @@ let tempProducts = [
 					},
 					transform: {
 						transform: "rotate(0deg)"
-
 					}
 				}
 			}, {
@@ -1048,7 +1014,6 @@ let tempProducts = [
 					},
 					transform: {
 						transform: "rotate(0deg)"
-
 					}
 				}
 			}, {
@@ -1065,7 +1030,6 @@ let tempProducts = [
 					},
 					transform: {
 						transform: "rotate(0deg)"
-
 					}
 				}
 			},]
@@ -1082,17 +1046,15 @@ const getValidIndex = (index, maxIndex) => {
 	if (index <= maxIndex && index >= 0) return index;
 	if (index > maxIndex) return 0;
 	if (index < 0) return maxIndex;
-
-}
+};
 const getRef = (prewRef, selectedRef, nextRef, currentProduct, index, productsLastIndex) => {
 	if (index === currentProduct) return selectedRef;
 	if (getValidIndex(currentProduct + 1, productsLastIndex) === index) return nextRef;
 	if (getValidIndex(currentProduct - 1, productsLastIndex) === index) return prewRef;
 	return React.createRef();
-}
+};
 
 const swipeDelay = 10000;
-
 const productsLastIndex = tempProducts.length - 1;
 
 const nextProduct = (setCirclePin, currentProduct, setCurrentProduct, selectedRef, prewRef) => {
@@ -1104,7 +1066,7 @@ const nextProduct = (setCirclePin, currentProduct, setCurrentProduct, selectedRe
 		setTimeout(() => {
 			if (currentProduct < productsLastIndex) setCurrentProduct(currentProduct + 1);
 			else setCurrentProduct(0);
-			res()
+			res();
 		}, 1000);
 	})
 	p.then(() => {
@@ -1119,8 +1081,7 @@ const setProduct = (nextIndex, containerRef, setCurrentProduct, setCirclePin) =>
 	let allBackgroundImages = [...containerRef.current.querySelectorAll(".start_page_slider__item__background__layer__picture")];
 	allBackgroundImages.map(i => i.classList.add("init_pos"));
 };
-
-export default function StartPageSlider() {
+export default function StartPageSlider({ nextPage }) {
 	const [currentProduct, setCurrentProduct] = React.useState(0);
 	const [currentCirclePin, setCirclePin] = React.useState(0);
 	const prewRef = React.useRef(null);
@@ -1130,12 +1091,12 @@ export default function StartPageSlider() {
 
 	React.useEffect(() => {
 		const timer = setInterval(() => nextProduct(setCirclePin, currentProduct, setCurrentProduct, selectedRef, prewRef), swipeDelay);
-		let pictures = Array(...selectedRef.current.querySelectorAll(".init_pos"))
+		let pictures = Array(...selectedRef.current.querySelectorAll(".init_pos"));
 		pictures.sort((a, b) => a.id - b.id).map((pic, index) => {
 			setTimeout(() => {
 				pic.classList.remove("init_pos");
 			}, 500 + index * 100);
-		})
+		});
 		return () => clearInterval(timer);
 	})
 	return (
@@ -1149,8 +1110,7 @@ export default function StartPageSlider() {
 					<div className={`start_page_slider__item ${index === currentProduct ? "active-item" : ""}`}
 						key={index}
 						ref={getRef(prewRef, selectedRef, nextRef, currentProduct, index, productsLastIndex)}
-						style={{ zIndex: `${index === currentProduct ? "4" : index === getValidIndex(currentProduct + 1, productsLastIndex) ? "3" : "2"}` }}
-					>
+						style={{ zIndex: `${index === currentProduct ? "4" : index === getValidIndex(currentProduct + 1, productsLastIndex) ? "3" : "2"}` }}>
 						<div className="start_page_slider__item__background" style={product.backgroundStyle}>
 							{product.layerOptions.map((layerOption, layerOptionIndex) => (
 								<div className="start_page_slider__item__background__layer" key={`${index}_${layerOptionIndex}`} style={layerOption.layerStyle}>
@@ -1166,16 +1126,16 @@ export default function StartPageSlider() {
 							))
 							}
 							{product.noAnimatedBG && <div className="start_page_slider__item__background__no-animated">
-								{product.noAnimatedBG.map((it, index) => (
+								{product.noAnimatedBG.map((it, index) => 
 									<img src={it.pic} alt="it.pic" style={{ ...it.style.size, ...it.style.position, ...it.style.transform }} key={`${index}i`} />
-								))}
+								)}
 							</div>
 							}
 
 						</div>
 						<div className="start_page_slider__item__background-side">
 							<span className="start_page_slider__item__background-side__hash" style={{ color: product.sideTextColor }}><span>#</span>лёдвлёд</span>
-							<div className="start_page_slider__item__background-side__button">
+							<div className="start_page_slider__item__background-side__button" onClick={nextPage}>
 								<div>
 									<span>Каталог</span>
 									<div>

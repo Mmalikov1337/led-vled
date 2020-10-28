@@ -73,7 +73,7 @@
 				&__button {
 					left: 2.5%;
 					top: 85%;
-
+					z-index: 5;
 					div {
 						cursor: pointer;
 						width: 185px;
@@ -273,8 +273,11 @@
 			stroke-dashoffset: 1830.72;
 		}
 
-		100% {
+		90% {
 			stroke-dashoffset: 1242.72;
+		}
+		100% {
+			stroke-dashoffset: 550.72;
 		}
 	}
 }
@@ -345,7 +348,7 @@
 		clip: rect(0 100vw 10000px 0px);
 	}
 
-	100% {
+	100% { 
 
 		-ms-clip: rect(0 0vw 10000px 0px);
 		clip: rect(0 0vw 10000px 0px);
