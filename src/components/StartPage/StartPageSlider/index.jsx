@@ -24,7 +24,6 @@ import cherry2_3 from './../../../assets/images/cherry2_3.png';
 
 import leaf2_1 from './../../../assets/images/leaf2_1.png';
 import leaf2_2 from './../../../assets/images/leaf2_2.png';
-// import leaf2_3 from './../../../assets/images/leaf2_3.png';
 import leaf2_4 from './../../../assets/images/leaf2_4.png';
 /* + Кубики льда */
 //3
@@ -34,11 +33,9 @@ import cola_cup from './../../../assets/images/cola_cup.png';
 import peach1 from './../../../assets/images/peach1.png';
 import peach2 from './../../../assets/images/peach2.png';
 import peach3 from './../../../assets/images/peach3.png';
-// import leaf4_1 from './../../../assets/images/leaf4_1.png';
 import leaf4_2 from './../../../assets/images/leaf4_2.png';
 import leaf4_3 from './../../../assets/images/leaf4_3.png';
 //5
-// import tarragon_bg1 from './../../../assets/images/tarragon_bg1.png';
 import tarragon_bg2 from './../../../assets/images/tarragon_bg2.png';
 import tarragon_secondary from './../../../assets/images/tarragon_secondary.png';
 
@@ -1035,7 +1032,7 @@ let tempProducts = [
 			},]
 		},],
 	},
-]
+];
 
 const parallax = (event, targetArray, parallaxOptions) => {
 	targetArray[0].style.transform = `translate(${(event.clientX / 30) * parallaxOptions[0].parallaxCoefficientX}px, ${(event.clientY / 50) * parallaxOptions[0].parallaxCoefficientY}px)`;
@@ -1098,7 +1095,13 @@ export default function StartPageSlider({ nextPage }) {
 			}, 500 + index * 100);
 		});
 		return () => clearInterval(timer);
-	})
+	});
+	React.useEffect(() => {
+		document.body.style.overflow = "hidden";
+		// return () => {
+		// 	console.log("ZXCCXZZXC");
+		// }
+	},[]);
 	return (
 		<div className="start_page_slider"
 			onMouseMove={(event) => parallax(event,

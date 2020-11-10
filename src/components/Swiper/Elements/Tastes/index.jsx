@@ -1,9 +1,8 @@
-import React from 'react'
-import Scroll from 'react-scroll'
+import React from 'react';
+import Scroll from 'react-scroll';
 
 import starSVG from './../../../../assets/images/star_full.svg';
 import shadowPNG from './../../../../assets/images/shadow.png';
-
 
 import './Tastes.scss';
 
@@ -19,7 +18,6 @@ const Circle = ({ color, width, height }) => {
 	)
 }
 const scrollToId = (id) => {
-	// console.log(id);
 	Scroll.scroller.scrollTo(id, {
 		duration: 1000,
 		delay: 0,
@@ -30,22 +28,31 @@ const scrollToId = (id) => {
 };
 
 
-export default function Tastes({ChangeQuantity, tempItems}) {
-	// const [selectedQuantity, setSelectedQuantity] = React.useState(() => [...Array(tempItems.length)].fill(1));
+export default function Tastes({ ChangeQuantity, tempItems }) {
+	const [selectedQuantity, setSelectedQuantity] = React.useState( ChangeQuantity.selectedProductsQuantity);
+	// const [selectedQuantity, setSelectedQuantity] = React.useState(() => { [...Array(tempItems.length)].fill(0) });
 	const [slideIndex, setSlideIndex] = React.useState(() => 0);
-	const maxIndex = tempItems.length - 3
-
-	const nextSlide = () => {
-		setSlideIndex(slideIndex < maxIndex ? slideIndex + 1 : 0)
+	const maxIndex = tempItems.length - 3;
+	const increaseSelectedQuantity = (index) => {
+		const temp = selectedQuantity.concat();
+		temp[index]++;
+		setSelectedQuantity(temp);
 	}
-
-	const prewSlide = () => {
-		setSlideIndex(() => slideIndex >= 1 ? slideIndex - 1 : maxIndex)
+	const decreaseSelectedQuantity = (index) => {
+		const temp = selectedQuantity.concat();
+		if (temp[index] > 0) {
+			temp[index]--;
+			setSelectedQuantity(temp);
+		};
 	}
+	const nextSlide = () => setSlideIndex(slideIndex < maxIndex ? slideIndex + 1 : 0);
 
-	React.useEffect(() => {
-		scrollToId(`slide_${slideIndex}`)
-	}, [slideIndex])
+	const prewSlide = () => setSlideIndex(() => slideIndex >= 1 ? slideIndex - 1 : maxIndex);
+
+	// const setToCart = (index, value) => 	ChangeQuantity.setSelectedQuantityToStorage(index, value);
+	
+
+	React.useEffect(() => scrollToId(`slide_${slideIndex}`), [slideIndex]);
 
 	return (
 		<div className="tastes" id="tastes">
@@ -82,7 +89,6 @@ export default function Tastes({ChangeQuantity, tempItems}) {
 											<Circle color={it.mainColor} width="147" height="147" />
 											<img src={shadowPNG} alt="starSVG" className="tastes__slider__slide__content__product__shadow" />
 											<img src={it.pic} alt="prodPNG" className="tastes__slider__slide__content__product" />
-											{/* <div /> */}
 										</div>
 
 									</div>
@@ -94,15 +100,15 @@ export default function Tastes({ChangeQuantity, tempItems}) {
 									</div>
 									<div className="tastes__slider__slide__counter">
 										<div className="tastes__slider__slide__counter__plate">
-											<div className="tastes__slider__slide__counter__plate__button" onClick={() => ChangeQuantity.decreaseSelectedQuantity(index)}>
+											<div className="tastes__slider__slide__counter__plate__button" onClick={() => decreaseSelectedQuantity(index)}>
 												<svg width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path d="M5.952 0.952H2.28C1.488 0.952 0.912 1.528 0.912 2.296C0.912 3.064 1.488 3.664 2.28 3.664H5.952C6.744 3.664 7.32 3.064 7.32 2.296C7.32 1.528 6.744 0.952 5.952 0.952Z" fill="#717171" />
 												</svg>
 											</div>
 											<div className="tastes__slider__slide__counter__plate__quantity">
-												{ChangeQuantity.selectedProductsQuantity[index]}
+												{selectedQuantity[index]}
 											</div>
-											<div className="tastes__slider__slide__counter__plate__button" onClick={() => ChangeQuantity.increaseSelectedQuantity(index)}>
+											<div className="tastes__slider__slide__counter__plate__button" onClick={() => increaseSelectedQuantity(index)}>
 												<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 													<path d="M6.744 12.152C7.632 12.152 8.304 11.48 8.304 10.568V7.808H11.184C12.12 7.808 12.648 7.112 12.648 6.344C12.648 5.552 12.12 4.88 11.184 4.88H8.304V2.096C8.304 1.208 7.632 0.535999 6.744 0.535999C5.856 0.535999 5.208 1.208 5.208 2.096V4.88H2.28C1.32 4.88 0.792 5.552 0.792 6.344C0.792 7.112 1.32 7.808 2.28 7.808H5.208V10.568C5.208 11.48 5.856 12.152 6.744 12.152Z" fill="#008CE6" />
 												</svg>
@@ -122,7 +128,7 @@ export default function Tastes({ChangeQuantity, tempItems}) {
 											))
 										}
 									</div>
-									<div className="tastes__slider__slide__button">
+									<div className="tastes__slider__slide__button" onClick={() => ChangeQuantity.setSelectedQuantityToStorage(index, selectedQuantity[index])}>
 										<div>
 											<span>В корзину</span>
 											<div>

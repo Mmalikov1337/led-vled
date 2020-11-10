@@ -1,16 +1,8 @@
 import React from 'react'
-import Scroll from 'react-scroll'
 
 import starSVG from './../../../assets/images/star_full.svg';
 import shadowPNG from './../../../assets/images/shadow.png';
-
 import logoSVG from '../../../assets/images/logo.svg'
-import prod_1_5PNG from './../../../assets/images/1_5.png';
-import prod_1_4PNG from './../../../assets/images/1_4.png';
-import prod_1_3PNG from './../../../assets/images/1_3.png';
-import prod_1_2PNG from './../../../assets/images/1_2.png';
-import prod_1_1PNG from './../../../assets/images/1_1.png';
-
 
 import './StartPageCatalog.scss'
 
@@ -28,20 +20,6 @@ const Circle = ({ color, width, height }) => {
 
 
 export default function StartPageCatalog({ link, ChangeQuantity, tempItems }) {
-	// const [selectedQuantity, setSelectedQuantity] = React.useState(() => [...Array(tempItems.length)].fill(0));
-
-	// const increaseSelectedQuantity = (index) => {
-	// 	const temp = selectedQuantity.concat();
-	// 	temp[index]++;
-	// 	setSelectedQuantity(temp)
-	// }
-	// const decreaseSelectedQuantity = (index) => {
-	// 	const temp = selectedQuantity.concat();
-	// 	if (temp[index] > 0) {
-	// 		temp[index]--;
-	// 		setSelectedQuantity(temp);
-	// 	};
-	// }
 
 	return (
 		<div className="start_page_catalog" id="start_page_catalog" ref={link}>

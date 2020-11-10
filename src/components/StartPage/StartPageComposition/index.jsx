@@ -76,7 +76,12 @@ export default function StartPageComposition({nextPage}) {
 		image: drinkSVG,
 		text: 'Подходит для добавления в коктейли'
 	},]
-
+	React.useEffect(() => {
+		document.body.style.overflow = "hidden";
+		// return () => {
+		// 	console.log("fdghgfghfgjh");
+		// }
+	},[]);
 	return (
 		<div className="startpage">
 			<div className="startpage">

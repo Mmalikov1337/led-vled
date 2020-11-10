@@ -1,9 +1,9 @@
 import React from 'react'
-import { BrowserRouter, Route, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
-import logoSVG from '../../../assets/images/logo.svg'
-import phoneSVG from './../../../assets/images/phone.svg'
-import cartSVG from './../../../assets/images/cart.svg'
+import logoSVG from '../../../assets/images/logo.svg';
+import phoneSVG from './../../../assets/images/phone.svg';
+import cartSVG from './../../../assets/images/cart.svg';
 
 import './StartPageHeader.scss';
 
@@ -27,25 +27,25 @@ export default function StartPageHeader() {
 					<div>
 						<img src={phoneSVG} alt="phoneSVG" />
 					</div>
-
 					<span>
 						8 800 <span>854 - 12 - 34</span>
 					</span>
 				</div>
 				<div className="sp-header__buttons__cart">
 					<div className="sp-header__buttons__cart__button">
-						<img src={cartSVG} alt="cartSVG" />
+						<NavLink to = "/order">
+							<img src={cartSVG} alt="cartSVG" />
+						</NavLink>
 					</div>
-					{
-						productQuantity > 0 ?
-							<div className="circle">
-								<div>
-									<span>
-										{productQuantity}
-									</span>
-								</div>
-							</div> :
-							""
+					{productQuantity > 0 ?
+						<div className="circle">
+							<div>
+								<span>
+									{productQuantity}
+								</span>
+							</div>
+						</div> :
+						""
 					}
 				</div>
 			</div>
