@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/led-vled/static/css/main.c71f4581.chunk.css",
-    "main.js": "/led-vled/static/js/main.412d0538.chunk.js",
-    "main.js.map": "/led-vled/static/js/main.412d0538.chunk.js.map",
+    "main.css": "/led-vled/static/css/main.888237ca.chunk.css",
+    "main.js": "/led-vled/static/js/main.6f43697e.chunk.js",
+    "main.js.map": "/led-vled/static/js/main.6f43697e.chunk.js.map",
     "runtime-main.js": "/led-vled/static/js/runtime-main.936a022f.js",
     "runtime-main.js.map": "/led-vled/static/js/runtime-main.936a022f.js.map",
-    "static/js/2.c2c13a84.chunk.js": "/led-vled/static/js/2.c2c13a84.chunk.js",
-    "static/js/2.c2c13a84.chunk.js.map": "/led-vled/static/js/2.c2c13a84.chunk.js.map",
+    "static/js/2.5c5370eb.chunk.js": "/led-vled/static/js/2.5c5370eb.chunk.js",
+    "static/js/2.5c5370eb.chunk.js.map": "/led-vled/static/js/2.5c5370eb.chunk.js.map",
     "index.html": "/led-vled/index.html",
-    "precache-manifest.6ded4df2df34bdade717f9b920d1d0c9.js": "/led-vled/precache-manifest.6ded4df2df34bdade717f9b920d1d0c9.js",
+    "precache-manifest.c4e5772ef655e0898bc4515fd2fbc9a6.js": "/led-vled/precache-manifest.c4e5772ef655e0898bc4515fd2fbc9a6.js",
     "service-worker.js": "/led-vled/service-worker.js",
-    "static/css/main.c71f4581.chunk.css.map": "/led-vled/static/css/main.c71f4581.chunk.css.map",
-    "static/js/2.c2c13a84.chunk.js.LICENSE.txt": "/led-vled/static/js/2.c2c13a84.chunk.js.LICENSE.txt",
+    "static/css/main.888237ca.chunk.css.map": "/led-vled/static/css/main.888237ca.chunk.css.map",
+    "static/js/2.5c5370eb.chunk.js.LICENSE.txt": "/led-vled/static/js/2.5c5370eb.chunk.js.LICENSE.txt",
     "static/media/1_1.png": "/led-vled/static/media/1_1.c065d9cc.png",
     "static/media/1_2.png": "/led-vled/static/media/1_2.e3fc1fd0.png",
     "static/media/1_3.png": "/led-vled/static/media/1_3.850d1122.png",
@@ -20,6 +20,7 @@
     "static/media/app.scss": "/led-vled/static/media/CeraRoundPro-Thin.de1732b7.eot",
     "static/media/arrow_down.svg": "/led-vled/static/media/arrow_down.3bcf704f.svg",
     "static/media/body.svg": "/led-vled/static/media/body.4f2ac4bd.svg",
+    "static/media/box.png": "/led-vled/static/media/box.b9978e49.png",
     "static/media/cart.svg": "/led-vled/static/media/cart.22d9f42d.svg",
     "static/media/cherry2_1.png": "/led-vled/static/media/cherry2_1.a65fdb76.png",
     "static/media/cherry2_2.png": "/led-vled/static/media/cherry2_2.fdcf9acf.png",
@@ -67,8 +68,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.936a022f.js",
-    "static/js/2.c2c13a84.chunk.js",
-    "static/css/main.c71f4581.chunk.css",
-    "static/js/main.412d0538.chunk.js"
+    "static/js/2.5c5370eb.chunk.js",
+    "static/css/main.888237ca.chunk.css",
+    "static/js/main.6f43697e.chunk.js"
   ]
 }
