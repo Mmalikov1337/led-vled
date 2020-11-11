@@ -176,7 +176,7 @@ export default function Cart({ tempItems, ChangeQuantity }) {
 							<div className="cart__make_order__table__input__index inp-block">
 								<div className="cart__make_order__table__input__index__svg-holder svgHolder">
 									<svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-										<g clip-path="url(#clip0)">
+										<g clipPath="url(#clip0)">
 											<path d="M10.075 1.20531L3.26813 4.69031L0.5625 3.35906L7.24938 0.0571875C7.39938 -0.0190625 7.57938 -0.0190625 7.73688 0.0571875L10.075 1.20531Z" fill="white" />
 											<path d="M14.4299 3.35928L7.50366 6.79053L4.90991 5.5124L4.53491 5.32178L11.3493 1.8374L11.7243 2.0274L14.4299 3.35928Z" fill="white" />
 											<path d="M6.94875 7.77939L6.94125 15L0.3075 11.5381C0.12 11.4394 0 11.2413 0 11.0281V4.34814L2.81125 5.73314V8.16814C2.81125 8.48002 3.06625 8.73877 3.37375 8.73877C3.68125 8.73877 3.93625 8.48002 3.93625 8.16814V6.29627L4.31125 6.47877L6.94875 7.77939Z" fill="white" />

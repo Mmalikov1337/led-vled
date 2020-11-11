@@ -33,7 +33,7 @@ export default function StartPageHeader() {
 				</div>
 				<div className="sp-header__buttons__cart">
 					<div className="sp-header__buttons__cart__button">
-						<NavLink to = "/order">
+						<NavLink to = "/order/cart">
 							<img src={cartSVG} alt="cartSVG" />
 						</NavLink>
 					</div>

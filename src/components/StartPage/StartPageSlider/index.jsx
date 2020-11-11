@@ -1,4 +1,5 @@
 import React from 'react';
+import Scroll from 'react-scroll';
 
 import prod_1_5PNG from './../../../assets/images/1_5.png';
 import prod_1_4PNG from './../../../assets/images/1_4.png';
@@ -1078,7 +1079,7 @@ const setProduct = (nextIndex, containerRef, setCurrentProduct, setCirclePin) =>
 	let allBackgroundImages = [...containerRef.current.querySelectorAll(".start_page_slider__item__background__layer__picture")];
 	allBackgroundImages.map(i => i.classList.add("init_pos"));
 };
-export default function StartPageSlider({ nextPage }) {
+export default function StartPageSlider({ nextPage, links, prewPage }) {
 	const [currentProduct, setCurrentProduct] = React.useState(0);
 	const [currentCirclePin, setCirclePin] = React.useState(0);
 	const prewRef = React.useRef(null);
@@ -1098,15 +1099,17 @@ export default function StartPageSlider({ nextPage }) {
 	});
 	React.useEffect(() => {
 		document.body.style.overflow = "hidden";
-		// return () => {
-		// 	console.log("ZXCCXZZXC");
-		// }
-	},[]);
+		// Scroll.animateScroll.scrollToTop({smooth: false})
+		// setTimeout(() => {
+
+		prewPage();
+		// }, 1000);
+	}, []);
 	return (
 		<div className="start_page_slider"
 			onMouseMove={(event) => parallax(event,
 				selectedRef.current.querySelectorAll('.start_page_slider__item__background__layer'),
-				tempProducts[currentProduct].layerOptions)}>
+				tempProducts[currentProduct].layerOptions)} id="start_page_slider">
 
 			<div className="start_page_slider__container" ref={containerRef}>
 				{tempProducts.map((product, index) => (
@@ -1129,7 +1132,7 @@ export default function StartPageSlider({ nextPage }) {
 							))
 							}
 							{product.noAnimatedBG && <div className="start_page_slider__item__background__no-animated">
-								{product.noAnimatedBG.map((it, index) => 
+								{product.noAnimatedBG.map((it, index) =>
 									<img src={it.pic} alt="it.pic" style={{ ...it.style.size, ...it.style.position, ...it.style.transform }} key={`${index}i`} />
 								)}
 							</div>

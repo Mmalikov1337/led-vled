@@ -1,8 +1,9 @@
 import React from 'react'
+import Scroll from 'react-scroll';
 
 import './StartPageComposition.scss';
 import germanySVG from './../../../assets/images/germany.svg';
-import { BrowserRouter, Route, Link } from 'react-router-dom'
+// import { BrowserRouter, Route, Link } from 'react-router-dom'
 
 import bodySVG from './../../../assets/images/body.svg';
 import drinkSVG from './../../../assets/images/drink.svg';
@@ -63,7 +64,7 @@ const tempItems = [
 		id: 4
 	},
 ]
-export default function StartPageComposition({nextPage}) {
+export default function StartPageComposition({ nextPage, links }) {
 	const [rating, setRatingValue] = React.useState(null)
 	const [hover, setHover] = React.useState(null)
 	const [selectedItem, setSelectedItem] = React.useState(0)
@@ -78,10 +79,18 @@ export default function StartPageComposition({nextPage}) {
 	},]
 	React.useEffect(() => {
 		document.body.style.overflow = "hidden";
+		const scrollTo = () => {
+			Scroll.scroller.scrollTo(links[0].id, {
+				duration: 1000,
+				delay: 0,
+				smooth: true
+			});
+		};
+		scrollTo();
 		// return () => {
 		// 	console.log("fdghgfghfgjh");
 		// }
-	},[]);
+	}, []);
 	return (
 		<div className="startpage">
 			<div className="startpage">

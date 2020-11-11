@@ -96,6 +96,9 @@ const links = [
 			background: "#008CE6",
 			opacity: "1",
 		}
+	},{
+		id: 'orderфываыап',
+		style: {}
 	}, {
 		id: 'start_page_catalog',
 		style: {}
@@ -174,16 +177,14 @@ export default function App() {
 	const toBottom = () => setCurrentPages(currentPages < links.length - 1 ? currentPages + 1 : links.length - 1);
 
 	function scrollByWheel(value) {
-		// if(ref.current)console.log(ref.current.className);
-		// else console.log("!ref");
-
+		if (ref.current)console.log(ref.current.className);
 		if (ref.current && ref.current.className === "swiper__main") {
 			if (!(ref.current.contains(value.target)) || swiperPage < 1 || swiperPage > 6)
 				if (value.deltaY > 0) setCurrentPages(1);
 				else setCurrentPages(0);
 		} else {
-			if(ref.current.className === "order") return;
-			if (value.deltaY > 0) setCurrentPages(2);
+			if (ref.current.className === "order") { setCurrentPages(2);return };
+			if (value.deltaY > 0) setCurrentPages(3);
 			else setCurrentPages(0);
 		}
 	}
@@ -192,7 +193,15 @@ export default function App() {
 		<div className='app' onWheel={(e) => scrollByWheel(e)}>
 			<BrowserRouter>
 				<div className="app__container">
-					<StartPage id={links[0].id} nextPage={() => toBottom()} link={ref} toComposition={() => setCurrentPages(2)} ChangeQuantity={ChangeQuantity} tempItems={tempItems} />
+					<StartPage id={links[0].id}
+						nextPage={() => toBottom()}
+						link={ref}
+						toComposition={() => setCurrentPages(2)}
+						ChangeQuantity={ChangeQuantity}
+						tempItems={tempItems}
+						links={links} 
+						prewPage = {() => setCurrentPages(0)}
+						/>
 				</div>
 				<div className="app__container blue" style={links[currentPages].style}>
 					<Route exact path="/">

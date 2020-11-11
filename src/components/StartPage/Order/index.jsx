@@ -1,7 +1,11 @@
 import React from 'react';
 import { Route, NavLink, withRouter, Redirect, Switch } from 'react-router-dom'
 
+import logoSVG from './../../../assets/images/logo.svg'
+
 import Cart from './Cart/';
+import Delivery from './Delivery/';
+import Payment from './Payment/';
 
 import './Order.scss';
 
@@ -30,23 +34,28 @@ function Order(props) {
 	}, []);
 	return (
 		<div className="order" ref={props.link}>
+			<div className="order__side">
+				<p className="order__side__logo">
+					Сделано в <span>REJI</span>
+				</p>
+			</div>
 			<div className="order__container">
 				<div className="order__numbers-container">
 					<div className="order__numbers-container__numbers">
-						<NavLink exact to="/order/delivery">
+						<NavLink exact to="/order/cart">
 							<div className="order__numbers-container__numbers__number">
 								1
 							</div>
 						</NavLink>
 
-						<GapLine color="#008CE6" activeColor="#FF4E5A" currentPath="/order/delivery" pathname={props.history.location.pathname} />
-						<NavLink exact to="/order">
+						<GapLine color="#008CE6" activeColor="#FF4E5A" currentPath="/order/cart" pathname={props.history.location.pathname} />
+						<NavLink exact to="/order/delivery">
 							<div className="order__numbers-container__numbers__number">
 								2
 							</div>
 						</NavLink>
 
-						<GapLine color="#008CE6" activeColor="#FF4E5A" currentPath="/order" pathname={props.history.location.pathname} />
+						<GapLine color="#008CE6" activeColor="#FF4E5A" currentPath="/order/delivery" pathname={props.history.location.pathname} />
 						<NavLink exact to="/order/payment">
 							<div className="order__numbers-container__numbers__number">
 								3
@@ -57,17 +66,44 @@ function Order(props) {
 
 				<div className="order__content">
 					<Switch>
-						<Route exact path="/order/delivery" >
+						<Route exact path="/order/cart" >
 							<Cart tempItems={props.tempItems} ChangeQuantity={props.ChangeQuantity} />
+						</Route>
+						<Route exact path="/order/delivery" >
+							<Delivery />
+						</Route>
+						<Route exact path="/order/payment" >
+							<Payment />
 						</Route>
 						{/* <Route exact path="/order/delivery1" >
 							<Cart tempItems={props.tempItems} ChangeQuantity={props.ChangeQuantity} />
 						</Route> */}
-						<Redirect to = "/order/delivery"/>
+						<Redirect to="/order/cart" />
 					</Switch>
 
 				</div>
 			</div>
+			<div className="order__footer">
+				<div className="order__footer__wrapper">
+					<div className="order__footer__wrapper__logo">
+						<img src={logoSVG} alt="logo_whiteSVG" />
+					</div>
+					<div className="order__footer__wrapper__feedback">
+
+						<div className="order__footer__wrapper__feedback__phone">
+							<span>8 800 800 - 80 - 80</span>
+						</div>
+						<div className="order__footer__wrapper__feedback__mail">
+							<span>info@ledvled.ru</span>
+						</div>
+						<div className="order__footer__wrapper__feedback__adress">
+							<span>ООО «Глобал» г. Омск, ул. Звездова 129</span>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			
 		</div>
 	)
 }
