@@ -21,9 +21,9 @@ const tempItems = [
 		mainColor: "#FBB35E",
 		sideColor: "#FCCA8E",
 		rating: "5.0",
-		title: 'Лимон',
+		title: 'Персик',
 		description: "Натуральные ингредиенты",
-		price: "10₽",
+		price: "10",
 		mesure: 'шт',
 		properties: [
 			"21 ккал",
@@ -37,7 +37,7 @@ const tempItems = [
 		rating: "5.0",
 		title: 'Лимон',
 		description: "Натуральные ингредиенты",
-		price: "10₽",
+		price: "10",
 		mesure: 'шт',
 		properties: [
 			"21 ккал",
@@ -50,7 +50,7 @@ const tempItems = [
 		rating: "4.8",
 		title: 'Вишня',
 		description: "Натуральные ингредиенты",
-		price: "10₽",
+		price: "10",
 		mesure: 'шт',
 		properties: [
 			"21 ккал",
@@ -64,7 +64,7 @@ const tempItems = [
 		rating: "4.7",
 		title: 'Coca-Cola',
 		description: "Натуральные ингредиенты",
-		price: "10₽",
+		price: "10",
 		mesure: 'шт',
 		properties: [
 			"21 ккал",
@@ -77,7 +77,7 @@ const tempItems = [
 		rating: "5.0",
 		title: 'Лимон',
 		description: "Натуральные ингредиенты",
-		price: "10₽",
+		price: "10",
 		mesure: 'шт',
 		properties: [
 			"21 ккал",
@@ -96,7 +96,7 @@ const links = [
 			background: "#008CE6",
 			opacity: "1",
 		}
-	},{
+	}, {
 		id: 'orderфываыап',
 		style: {}
 	}, {
@@ -177,13 +177,13 @@ export default function App() {
 	const toBottom = () => setCurrentPages(currentPages < links.length - 1 ? currentPages + 1 : links.length - 1);
 
 	function scrollByWheel(value) {
-		if (ref.current)console.log(ref.current.className);
+		if (ref.current) console.log(ref.current.className);
 		if (ref.current && ref.current.className === "swiper__main") {
 			if (!(ref.current.contains(value.target)) || swiperPage < 1 || swiperPage > 6)
 				if (value.deltaY > 0) setCurrentPages(1);
 				else setCurrentPages(0);
 		} else {
-			if (ref.current.className === "order") { setCurrentPages(2);return };
+			if (ref.current.className === "order") { setCurrentPages(2); return };
 			if (value.deltaY > 0) setCurrentPages(3);
 			else setCurrentPages(0);
 		}
@@ -192,20 +192,26 @@ export default function App() {
 	return (
 		<div className='app' onWheel={(e) => scrollByWheel(e)}>
 			<BrowserRouter>
-				<div className="app__container">
+				<div className="app__container" onTouchMove={(e) => console.log(e)}>
 					<StartPage id={links[0].id}
 						nextPage={() => toBottom()}
 						link={ref}
 						toComposition={() => setCurrentPages(2)}
 						ChangeQuantity={ChangeQuantity}
 						tempItems={tempItems}
-						links={links} 
-						prewPage = {() => setCurrentPages(0)}
-						/>
+						links={links}
+						prewPage={() => setCurrentPages(0)}
+					/>
 				</div>
-				<div className="app__container blue" style={links[currentPages].style}>
+				<div className="app__container blue" style={links[currentPages].style} >
 					<Route exact path="/">
-						<Swiper id={links[1].id} link={ref} setSwiperPage={(page) => setSwiperPage(page)} ChangeQuantity={ChangeQuantity} tempItems={tempItems} />
+						<Swiper
+							id={links[1].id}
+							link={ref}
+							setSwiperPage={(page) => setSwiperPage(page)}
+							ChangeQuantity={ChangeQuantity}
+							tempItems={tempItems}
+							toStarterPage={() => setCurrentPages(0)} />
 					</Route>
 				</div>
 			</BrowserRouter>

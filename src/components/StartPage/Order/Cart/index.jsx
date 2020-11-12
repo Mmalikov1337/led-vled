@@ -24,17 +24,34 @@ const Circle = ({ color, width, height }) => {
 		</svg>
 	)
 }
-const OrderItem = () => {
+const getSum = (tempItems, ChangeQuantity) => {
+	let sum = 0;
+	tempItems.forEach((i, index) => sum += ~~i.price * ChangeQuantity.selectedProductsQuantity[index]);
+	return sum;
+};
 
-}
+function CartItem(
+	tempItems,
+	ChangeQuantity,
+	renderItemsQuantity = false,
+	title,
+	price,
+	image,
+	color,
+	sideColor,
+	index,
+	picStyles = {}) {
+	let currentProductQuantity = ChangeQuantity.selectedProductsQuantity[index];
+	const increase = () => ChangeQuantity.increaseSelectedQuantity(index);
 
-function CartItem(tempItems, ChangeQuantity, renderItemsQuantity = false, title, price, image) {
+	const decrease = () => { if (currentProductQuantity > 1) ChangeQuantity.decreaseSelectedQuantity(index); }
+
 	return <div className="cart__orders__box">
 		<div className="cart__orders__box__wrapper">
 			<div className="cart__orders__box__image">
 				<div className="cart__orders__box__image__wrapper">
-					<Circle color="#008CE6" sideColor="#4CAEED" width="175" height="175" />
-					<img src={image} alt="product image" />
+					<Circle color={color} sideColor={sideColor} width="175" height="175" />
+					<img src={image} alt="product image" style={picStyles} />
 				</div>
 			</div>
 			<div className="cart__orders__box__text">
@@ -50,16 +67,15 @@ function CartItem(tempItems, ChangeQuantity, renderItemsQuantity = false, title,
 
 		<div className="cart__orders__box__counter">
 			<div className="cart__orders__box__counter__border">
-				<div className="cart__orders__box__counter__border__button" onClick={ChangeQuantity.decreaseBoxQuantity}>
+				<div className="cart__orders__box__counter__border__button" onClick={decrease}>
 					<svg width="8" height="4" viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M5.952 0.952H2.28C1.488 0.952 0.912 1.528 0.912 2.296C0.912 3.064 1.488 3.664 2.28 3.664H5.952C6.744 3.664 7.32 3.064 7.32 2.296C7.32 1.528 6.744 0.952 5.952 0.952Z" fill="#717171" />
 					</svg>
-
 				</div>
 				<div className="cart__orders__box__counter__border__quantity">
-					{ChangeQuantity.boxesQuantity}
+					{currentProductQuantity}
 				</div>
-				<div className="cart__orders__box__counter__border__button" onClick={ChangeQuantity.increaseBoxQuantity}>
+				<div className="cart__orders__box__counter__border__button" onClick={increase}>
 					<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M6.744 12.152C7.632 12.152 8.304 11.48 8.304 10.568V7.808H11.184C12.12 7.808 12.648 7.112 12.648 6.344C12.648 5.552 12.12 4.88 11.184 4.88H8.304V2.096C8.304 1.208 7.632 0.535999 6.744 0.535999C5.856 0.535999 5.208 1.208 5.208 2.096V4.88H2.28C1.32 4.88 0.792 5.552 0.792 6.344C0.792 7.112 1.32 7.808 2.28 7.808H5.208V10.568C5.208 11.48 5.856 12.152 6.744 12.152Z" fill="#008CE6" />
 					</svg>
@@ -67,9 +83,9 @@ function CartItem(tempItems, ChangeQuantity, renderItemsQuantity = false, title,
 			</div>
 		</div>
 		<div className="cart__orders__box__price">
-			{price}
+			{~~price * currentProductQuantity}₽
 		</div>
-		<div className="cart__orders__box__delete">
+		<div className="cart__orders__box__delete" onClick = {() => ChangeQuantity.setSelectedQuantityToStorage(index, 0)} >
 			<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 				<path d="M9.46196 8.82392C10.0899 8.19601 10.0899 7.24566 9.44499 6.60078L7.49338 4.64916L9.52985 2.6127C10.1917 1.95084 10.0729 1.08535 9.52985 0.542288C8.96982 -0.017741 8.12129 -0.119564 7.45944 0.542287L5.42297 2.57876L3.45439 0.61017C2.82647 -0.0177415 1.87612 -0.0177415 1.24821 0.610169C0.620301 1.23808 0.637272 2.17146 1.26518 2.79937L3.23377 4.76796L1.16336 6.83837C0.484537 7.51719 0.58636 8.36572 1.14639 8.92575C1.68945 9.4688 2.55495 9.5876 3.23377 8.90878L5.30418 6.83837L7.25579 8.78998C7.90067 9.43486 8.83405 9.45183 9.46196 8.82392Z" fill="#FF4E5A" />
 			</svg>
@@ -78,6 +94,9 @@ function CartItem(tempItems, ChangeQuantity, renderItemsQuantity = false, title,
 }
 
 export default function Cart({ tempItems, ChangeQuantity }) {
+	React.useEffect(() => {
+		console.log(tempItems);
+	}, [])
 	return (
 		<div className="cart">
 			<div className="cart__container">
@@ -85,8 +104,24 @@ export default function Cart({ tempItems, ChangeQuantity }) {
 					<h3>Оформление заказа</h3>
 				</div>
 				<div className="cart__orders">
-					{/* {CartItem(tempItems, ChangeQuantity, true)} */}
-					{CartItem(tempItems, ChangeQuantity, true, "Бокс Лёд Влёд", "500₽", boxPNG)}
+					{
+						tempItems.map((i, index) =>
+							<React.Fragment key={index}>
+								{ChangeQuantity.selectedProductsQuantity[index] > 0 &&
+									CartItem(
+										tempItems,
+										ChangeQuantity,
+										false,
+										i.title,
+										i.price,
+										i.pic,
+										i.mainColor,
+										i.sideColor,
+										index,
+										{ width: "45px", height: "195px", })}
+							</React.Fragment>
+						)
+					}
 				</div>
 				<div className="cart__info">
 
@@ -100,7 +135,7 @@ export default function Cart({ tempItems, ChangeQuantity }) {
 					<span className="cart__info__sum">
 						Сумма заказа:
 						<span>
-							600₽
+							{getSum(tempItems, ChangeQuantity)}₽
 						</span>
 					</span>
 
@@ -200,8 +235,6 @@ export default function Cart({ tempItems, ChangeQuantity }) {
 										<path d="M10.9527 4.67865C6.49711 0.578904 6.72501 0.735496 6.37078 0.597888C5.86737 0.398201 5.26837 0.502615 4.85461 0.88324L0.729814 4.67865C0.266016 5.10521 0 5.71224 0 6.34447V13.0655C0 13.8574 0.641045 14.5019 1.42884 14.5019H10.2533C11.0411 14.5019 11.6822 13.8574 11.6822 13.0655V6.34447C11.6822 5.71224 11.4161 5.10521 10.9527 4.67865ZM5.41597 3.23783C5.4426 2.98242 5.67686 2.80104 5.93895 2.85023C6.18961 2.9025 6.33079 3.14303 6.28406 3.36703C6.2344 3.60568 6.0099 3.7577 5.76727 3.71215C5.53553 3.66381 5.39408 3.45328 5.41597 3.23783ZM2.25973 7.19232C2.25973 6.34418 2.88085 5.65424 3.64436 5.65424C4.40815 5.65424 5.02925 6.34418 5.02925 7.19232C5.02925 8.04047 4.40812 8.7307 3.64436 8.7307C2.88085 8.7307 2.25973 8.04047 2.25973 7.19232ZM4.77905 11.8699C4.46851 11.8699 4.25177 11.5515 4.37417 11.2602L6.51349 6.16137C6.60753 5.93754 6.86505 5.83207 7.08888 5.92611C7.31271 6.01986 7.41788 6.27767 7.32413 6.5015L5.18452 11.6003C5.11392 11.7685 4.95103 11.8699 4.77905 11.8699ZM8.07885 12.2167C7.31534 12.2167 6.69425 11.5268 6.69425 10.6786C6.69425 9.83051 7.31537 9.14027 8.07885 9.14027C8.84235 9.14027 9.46374 9.83051 9.46374 10.6786C9.46374 11.5268 8.84235 12.2167 8.07885 12.2167Z" fill="white" />
 										<path d="M14.8895 9.50488C13.4587 5.33963 12.6639 3.02377 12.6526 2.99746C12.4039 2.42148 11.9205 1.97354 11.3269 1.76875C11.2929 1.75718 11.4938 1.80599 8.30664 1.0498L11.5472 4.03164C12.1915 4.62402 12.5609 5.46689 12.5609 6.34434V12.0396L14.1419 11.3629C14.857 11.0535 15.1895 10.2229 14.8895 9.50488Z" fill="white" />
 									</svg>
-
-
 								</div>
 								<input type="text" className="cart__make_order__table__input__promocode__text textInput" placeholder="Промокод" />
 							</div>

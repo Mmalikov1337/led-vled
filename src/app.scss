@@ -1,23 +1,21 @@
 @import './assets/fonts/CeraRoundPro/stylesheet.css';
 
 .app {
-    // font-family: 'Cera Round Pro';
-	// overflow: hidden;
-
-    &__container {
-        //   margin-left: 57px;
-        //   margin-bottom: 57px;  
-        width: 95%;
+	&__container {
+		width: 95%;
 		margin: 0 auto;
 		transition: all 1s;
-    }
+	}
 
-    .blue {
-        background: #F0F9FF;
-		// padding: 0 auto;
+	a {
+		text-decoration: none;
+	}
+
+	.blue {
+		background: #F0F9FF;
 		opacity: 0;
-        width: 100%;
+		width: 100%;
 		padding-left: 2.5%;
-    }
+	}
 
 }

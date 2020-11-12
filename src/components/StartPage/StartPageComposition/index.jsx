@@ -4,7 +4,7 @@ import Scroll from 'react-scroll';
 import './StartPageComposition.scss';
 import germanySVG from './../../../assets/images/germany.svg';
 // import { BrowserRouter, Route, Link } from 'react-router-dom'
-
+import { NavLink } from 'react-router-dom'
 import bodySVG from './../../../assets/images/body.svg';
 import drinkSVG from './../../../assets/images/drink.svg';
 
@@ -87,16 +87,11 @@ export default function StartPageComposition({ nextPage, links }) {
 			});
 		};
 		scrollTo();
-		// return () => {
-		// 	console.log("fdghgfghfgjh");
-		// }
 	}, []);
 	return (
 		<div className="startpage">
 			<div className="startpage">
-
 				<div className="wrapper">
-
 					<div className="startpage__description">
 						<div className="startpage__description__content">
 							<div className="startpage__description__content__made-in">
@@ -135,7 +130,6 @@ export default function StartPageComposition({ nextPage, links }) {
 														<path stroke="null" id="svg_1" fill={index + 1 <= (hover || rating) ? "#FFC800" : "#E4E4E4"} d="m0.029625,0.40389c0.772143,0.00305 1.423418,0.48232 1.659141,1.22101l1.520504,4.76471l5.014801,0c0.773158,0 1.426563,0.47751 1.664586,1.21647c0.238062,0.73896 -0.013021,1.5105 -0.639688,1.96552l-4.040711,2.934l1.547172,4.7835c0.238919,0.7387 -0.011239,1.5105 -0.637309,1.9662c-0.62604,0.4558 -1.434079,0.4543 -2.058476,-0.0037l-4.036869,-2.9615c-0.00004,0 -0.00004,-15.88625 -0.00004,-15.88625c0.00226,0 0.004629,0 0.006889,0.00004z" />
 													</svg>
 												}
-
 											</label>
 										))
 									}
@@ -148,7 +142,7 @@ export default function StartPageComposition({ nextPage, links }) {
 								<p>
 									Вкусное мороженное для детей и взрослых
 									Подходит для добавления в коктейли
-		</p>
+								</p>
 							</div>
 							<div className="startpage__description__content__properties">
 								{
@@ -164,23 +158,25 @@ export default function StartPageComposition({ nextPage, links }) {
 									))
 								}
 							</div>
-							<div className="startpage__description__content__button">
-								<div>
-									<span>
-										Перейти в каталог
-			</span>
+							<NavLink to="/catalog">
+
+								<div className="startpage__description__content__button">
 									<div>
-										<svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-											<path d="M8.66685 6.9147L1.99166 0.239632C1.83727 0.0851213 1.63118 0 1.41142 0C1.19167 0 0.985572 0.0851213 0.831183 0.239632L0.339602 0.731092C0.0197263 1.05133 0.0197263 1.57182 0.339602 1.89157L5.94492 7.49689L0.333382 13.1084C0.178993 13.2629 0.09375 13.4689 0.09375 13.6885C0.09375 13.9084 0.178993 14.1144 0.333382 14.269L0.824964 14.7604C0.979475 14.9149 1.18545 15 1.4052 15C1.62496 15 1.83105 14.9149 1.98544 14.7604L8.66685 8.0792C8.82161 7.9242 8.90661 7.71725 8.90612 7.49726C8.90661 7.2764 8.82161 7.06958 8.66685 6.9147Z" fill="white" />
-										</svg>
+										<span>
+											Перейти в каталог
+									</span>
+										<div>
+											<svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M8.66685 6.9147L1.99166 0.239632C1.83727 0.0851213 1.63118 0 1.41142 0C1.19167 0 0.985572 0.0851213 0.831183 0.239632L0.339602 0.731092C0.0197263 1.05133 0.0197263 1.57182 0.339602 1.89157L5.94492 7.49689L0.333382 13.1084C0.178993 13.2629 0.09375 13.4689 0.09375 13.6885C0.09375 13.9084 0.178993 14.1144 0.333382 14.269L0.824964 14.7604C0.979475 14.9149 1.18545 15 1.4052 15C1.62496 15 1.83105 14.9149 1.98544 14.7604L8.66685 8.0792C8.82161 7.9242 8.90661 7.71725 8.90612 7.49726C8.90661 7.2764 8.82161 7.06958 8.66685 6.9147Z" fill="white" />
+											</svg>
+										</div>
 									</div>
 								</div>
-							</div>
+
+							</NavLink>
 						</div>
 					</div>
-
 					<div className="startpage__items">
-
 						<div className="startpage__items__main">
 							<div className="startpage__items__main__section">
 								<div className="startpage__items__main__section__item">
@@ -219,12 +215,9 @@ export default function StartPageComposition({ nextPage, links }) {
 											</div>
 										))
 								}
-
 							</div>
 						</div>
-
 					</div>
-
 				</div>
 				<div className="arrow-wrapper" onClick={nextPage}>
 					<img src={arrow_downSVG} alt="arrow_downSVG" className="arrow_down" />

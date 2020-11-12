@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route, NavLink, withRouter, Redirect, Switch } from 'react-router-dom'
+import Scroll from 'react-scroll';
 
 import logoSVG from './../../../assets/images/logo.svg'
 
@@ -31,6 +32,15 @@ const Circle = ({ color, width, height }) => {
 function Order(props) {
 	React.useEffect(() => {
 		document.body.style.overflow = "scroll";
+
+		const scrollToId = () => {
+			Scroll.scroller.scrollTo("start_page", {
+				duration: 0,
+				delay: 0,
+				smooth: false
+			});
+		};
+		scrollToId();
 	}, []);
 	return (
 		<div className="order" ref={props.link}>
@@ -103,7 +113,7 @@ function Order(props) {
 					</div>
 				</div>
 			</div>
-			
+
 		</div>
 	)
 }

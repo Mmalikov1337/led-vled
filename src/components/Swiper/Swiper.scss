@@ -25,6 +25,7 @@
 
 
 	}
+
 	.to_top {
 		animation: slideOutInTop .4s;
 
@@ -78,15 +79,12 @@
 					background: #56BDFF;
 					position: absolute;
 				}
-
-
 			}
 
 			&__link:hover,
 			.active {
 				&::before {
 					background: #FFC700;
-
 				}
 			}
 		}
@@ -96,6 +94,10 @@
 			align-items: center;
 			font-weight: bold;
 			cursor: pointer;
+
+			svg {
+				margin-right: 20px;
+			}
 		}
 	}
 
@@ -103,8 +105,6 @@
 		display: flex;
 		height: max-content;
 		justify-content: space-between;
-		// gap: 120px; ////    ////
-		// grid-gap:120px;
 		height: 100%;
 	}
 
@@ -132,7 +132,6 @@
 		&__hash {
 			font-size: 15px;
 			letter-spacing: 0.05em;
-
 			transform: rotate(90deg);
 
 			p {
@@ -164,20 +163,12 @@
 
 			&__page {
 				margin-top: 100px;
-				// align-self: flex-end;
-				// position: absolute;
 				width: max-content;
 				font-weight: 500;
 				font-size: 15px;
-				// line-height: 15px;
 				transform: rotate(90deg);
 				height: 20px;
 				width: 150px;
-
-				// div {
-
-				// 	span {}
-				// }
 			}
 
 
@@ -185,20 +176,13 @@
 			&__line-holder {
 				display: flex;
 				justify-content: center;
-				// align-items: center;
 				height: 150px;
-				// align-content: center;
 
 				.swipe-arrow {
 					position: absolute;
-					// display: flex;
 					flex-direction: column;
 					padding: 62px 5px;
 					align-self: center;
-					// margin-top: 50%;
-					// justify-self: center;
-					// place-self: center;
-					// margin-bottom: 5px;
 				}
 
 				.up {
@@ -209,8 +193,6 @@
 				.down {
 					margin-left: 20px;
 				}
-
-				// &__arrows {}
 
 				&__line {
 					background: #56BDFF;
@@ -224,14 +206,7 @@
 
 
 	&__footer {
-		// position: absolute;
-		// top: 200%;
-		// width: 90%;
-		// margin-right: 5%;
-
-		// align-self: flex-end;
 		&__wrapper {
-			// position: relative;
 			display: flex;
 			justify-content: space-between;
 			padding-bottom: 20px;
@@ -240,16 +215,10 @@
 				display: flex;
 				align-items: center;
 				align-content: center;
-				// gap: 20px;
-
-				// img {}
-
 			}
 
 			&__feedback {
 				display: flex;
-				// gap: 75px;
-				// margin-left: 75px;
 				margin-right: 5%;
 				align-self: flex-end;
 				padding-bottom: 25px;
@@ -275,11 +244,8 @@
 					.active {
 						&::before {
 							background: #FFC700;
-
 						}
 					}
-
-					// span {}
 				}
 
 				&__mail {
@@ -305,8 +271,6 @@
 
 						}
 					}
-
-					// span {}
 				}
 
 				&__adress {
@@ -329,16 +293,14 @@
 					.active {
 						&::before {
 							background: #FFC700;
-
 						}
 					}
-
-					// span {}
 				}
 			}
 		}
 	}
 }
+
 @keyframes bgOpacityRev {
 	0% {
 		opacity: 1;
@@ -348,6 +310,7 @@
 		opacity: 0;
 	}
 }
+
 @keyframes bgOpacity {
 	0% {
 		opacity: 0;

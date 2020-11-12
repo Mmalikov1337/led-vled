@@ -32,21 +32,21 @@ export default function StartPageHeader() {
 					</span>
 				</div>
 				<div className="sp-header__buttons__cart">
-					<div className="sp-header__buttons__cart__button">
-						<NavLink to = "/order/cart">
+					<NavLink to="/order/cart">
+						<div className="sp-header__buttons__cart__button">
 							<img src={cartSVG} alt="cartSVG" />
-						</NavLink>
-					</div>
-					{productQuantity > 0 ?
-						<div className="circle">
-							<div>
-								<span>
-									{productQuantity}
-								</span>
-							</div>
-						</div> :
-						""
-					}
+						</div>
+						{productQuantity > 0 ?
+							<div className="circle">
+								<div>
+									<span>
+										{productQuantity}
+									</span>
+								</div>
+							</div> :
+							""
+						}
+					</NavLink>
 				</div>
 			</div>
 		</div>

@@ -124,14 +124,14 @@ const Feedback = ({ currentPage }) => {
 		</div>
 	)
 }
-export default function Swiper({ id, link, setSwiperPage, ChangeQuantity, tempItems }) {
+export default function Swiper({ id, link, setSwiperPage, ChangeQuantity, tempItems, toStarterPage }) {
 
 	const [currentPage, setCurrentPage] = React.useState(0);
 	const [active, setActive] = React.useState([false, false]);
 	const [heightOfLine, setHeightOfLine] = React.useState(null);
 	const [swiperPause, setSwiperPause] = React.useState(false);
-	const ref = React.useRef(null);
-	
+	// const ref = React.useRef(null);
+
 	React.useEffect(() => {
 		setSwiperPage(currentPage)
 	}, [currentPage, setSwiperPage])
@@ -153,8 +153,12 @@ export default function Swiper({ id, link, setSwiperPage, ChangeQuantity, tempIt
 	}
 
 	const toBottom = () => {
-		if (swiperPause) return
-		setCurrentPage(currentPage > 0 ? currentPage - 1 : 0);
+		if (swiperPause) return;
+		if (currentPage > 0) setCurrentPage(currentPage - 1);
+		else {
+			setCurrentPage(0);
+			toStarterPage()
+		};
 		let swiped = new Promise(function (resolve) {
 			setHeightOfLine('to_bottom');
 			setSwiperPause(true);
@@ -175,6 +179,12 @@ export default function Swiper({ id, link, setSwiperPage, ChangeQuantity, tempIt
 			<div className="swiper__navbar">
 				<LinksList links={links} currentPage={currentPage} setCurrentPage={setCurrentPage} />
 				<div className="swiper__navbar__catalog">
+					<svg width="30" height="16" viewBox="0 0 30 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<rect width="30" height="2" rx="1" fill="white" />
+						<rect y="7" width="30" height="2" rx="1" fill="white" />
+						<rect y="14" width="30" height="2" rx="1" fill="white" />
+					</svg>
+
 					Каталог
                 </div>
 			</div>
@@ -199,8 +209,13 @@ export default function Swiper({ id, link, setSwiperPage, ChangeQuantity, tempIt
 						</div>
 					</div>
 				</div>
-				<div className="swiper__main" ref={link}>{/* */}
-					<Elements toTop={toTop} toBottom={toBottom} currentPage={currentPage} swiperPause = {swiperPause} ChangeQuantity = {ChangeQuantity} tempItems = {tempItems}/>
+				<div className="swiper__main" ref={link}>
+					<Elements toTop={toTop}
+						toBottom={toBottom}
+						currentPage={currentPage}
+						swiperPause={swiperPause}
+						ChangeQuantity={ChangeQuantity}
+						tempItems={tempItems} />
 				</div>
 			</div>
 			<Footer currentPage={currentPage} />

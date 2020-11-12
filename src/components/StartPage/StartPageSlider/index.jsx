@@ -59,22 +59,22 @@ const Circle = ({ currentProduct, setCurrentProduct, circleFill, pinFill, pinStr
 			<path className="circle__nav_arc" d="M 1179.2793479431384,972.8983924408517 A 620,620 300 0, 1 664.9985367233663,1269.8185572376467" strokeWidth={2} />
 			<path data-slide={5} className={`circle__nav_arc circle__nav_arc--front ${currentProduct === 5 ? "active-line" : ""}`} d="M 1179.2793479431384,972.8983924408517 A 620,620 300 0, 1 664.9985367233663,1269.8185572376467" strokeWidth={3} strokeDasharray="619.2624817418906" strokeDashoffset="619.2624817418906" style={{ opacity: 1 }} />
 
-			<circle className="homeSlider__navigationPin" onClick={() => setCurrentProduct(0)} data-slide={0} r={24} fill={currentProduct === 0 ? "white" : pinFill} cx={650} cy={1270} strokeWidth={currentProduct === 0 ? 2 : 26} data-cy="sliderPin" style={{ transformOrigin: '0px 0px 0px' }} data-svg-origin="650 1270" transform="matrix(1,0,0,1,0,0)" tabIndex={0} focusable="true" />
+			<circle className="homeSlider__navigationPin" onClick={currentProduct === 0 ? () => { } : () => setCurrentProduct(0)} data-slide={0} r={24} fill={currentProduct === 0 ? "white" : pinFill} cx={650} cy={1270} strokeWidth={currentProduct === 0 ? 2 : 26} data-cy="sliderPin" style={{ transformOrigin: '0px 0px 0px' }} data-svg-origin="650 1270" transform="matrix(1,0,0,1,0,0)" tabIndex={0} focusable="true" />
 			<circle className="homeSlider__navigationPinAfter" r={currentProduct === 0 ? 16 : 26} stroke={currentProduct === 0 ? "#008CE6" : pinStroke} cx={650} cy={1270} strokeWidth={currentProduct === 0 ? 20 : 4} data-cy="sliderPinAfter" />
 
-			<circle className="homeSlider__navigationPin" onClick={() => setCurrentProduct(1)} data-slide={1} r={24} fill={currentProduct === 1 ? "white" : pinFill} cx="113.06424965364795" cy={960} strokeWidth={currentProduct === 1 ? 2 : 26} data-cy="sliderPin" tabIndex={0} focusable="true" style={{ transformOrigin: '0px 0px 0px' }} data-svg-origin="113.06424713134766 960" transform="matrix(1,0,0,1,0,0)" />
+			<circle className="homeSlider__navigationPin" onClick={currentProduct === 1 ? () => { } : () => setCurrentProduct(1)} data-slide={1} r={24} fill={currentProduct === 1 ? "white" : pinFill} cx="113.06424965364795" cy={960} strokeWidth={currentProduct === 1 ? 2 : 26} data-cy="sliderPin" tabIndex={0} focusable="true" style={{ transformOrigin: '0px 0px 0px' }} data-svg-origin="113.06424713134766 960" transform="matrix(1,0,0,1,0,0)" />
 			<circle className="homeSlider__navigationPinAfter" r={currentProduct === 1 ? 16 : 26} stroke={currentProduct === 1 ? "#008CE6" : pinStroke} cx="113.06424965364795" cy={960} strokeWidth={currentProduct === 1 ? 20 : 4} data-cy="sliderPinAfter" />
 
-			<circle className="homeSlider__navigationPin" onClick={() => setCurrentProduct(2)} data-slide={2} r={24} fill={currentProduct === 2 ? "white" : pinFill} cx="113.06424965364806" cy="339.99999999999994" strokeWidth={currentProduct === 2 ? 2 : 26} data-cy="sliderPin" tabIndex={0} focusable="true" style={{ transformOrigin: '0px 0px 0px' }} data-svg-origin="113.06424713134766 340" transform="matrix(1,0,0,1,0,0)" />
+			<circle className="homeSlider__navigationPin" onClick={currentProduct === 2 ? () => { } : () => setCurrentProduct(2)} data-slide={2} r={24} fill={currentProduct === 2 ? "white" : pinFill} cx="113.06424965364806" cy="339.99999999999994" strokeWidth={currentProduct === 2 ? 2 : 26} data-cy="sliderPin" tabIndex={0} focusable="true" style={{ transformOrigin: '0px 0px 0px' }} data-svg-origin="113.06424713134766 340" transform="matrix(1,0,0,1,0,0)" />
 			<circle className="homeSlider__navigationPinAfter" r={currentProduct === 2 ? 16 : 26} stroke={currentProduct === 2 ? "#008CE6" : pinStroke} cx="113.06424965364806" cy="339.99999999999994" strokeWidth={currentProduct === 2 ? 20 : 4} data-cy="sliderPinAfter" />
 
-			<circle className="homeSlider__navigationPin homeSlider__navigationPin--active" onClick={() => setCurrentProduct(3)} fill={currentProduct === 3 ? "white" : pinFill} data-slide={3} r={24} cx="649.9999999999999" cy={30} strokeWidth={currentProduct === 3 ? 2 : 26} data-cy="sliderPin" tabIndex={-1} focusable="true" style={{ transformOrigin: '0px 0px 0px' }} data-svg-origin="650 30" transform="matrix(1,0,0,1,0,0)" />
+			<circle className="homeSlider__navigationPin homeSlider__navigationPin--active" onClick={currentProduct === 3 ? () => { } : () => setCurrentProduct(3)} fill={currentProduct === 3 ? "white" : pinFill} data-slide={3} r={24} cx="649.9999999999999" cy={30} strokeWidth={currentProduct === 3 ? 2 : 26} data-cy="sliderPin" tabIndex={-1} focusable="true" style={{ transformOrigin: '0px 0px 0px' }} data-svg-origin="650 30" transform="matrix(1,0,0,1,0,0)" />
 			<circle className="homeSlider__navigationPinAfter" r={currentProduct === 3 ? 16 : 26} stroke={currentProduct === 3 ? "#008CE6" : pinStroke} cx="649.9999999999999" cy={30} strokeWidth={currentProduct === 3 ? 20 : 4} data-cy="sliderPinAfter" />
 
-			<circle className="homeSlider__navigationPin _2" onClick={() => setCurrentProduct(4)} data-slide={4} r={24} fill={currentProduct === 4 ? "white" : pinFill} cx="1186.9357503463518" cy="339.9999999999997" strokeWidth={currentProduct === 4 ? 2 : 26} data-cy="sliderPin" tabIndex={0} focusable="true" style={{ transformOrigin: '0px 0px 0px' }} data-svg-origin="1186.935791015625 340" transform="matrix(1,0,0,1,0,0)" />
+			<circle className="homeSlider__navigationPin _2" onClick={currentProduct === 4 ? () => { } : () => setCurrentProduct(4)} data-slide={4} r={24} fill={currentProduct === 4 ? "white" : pinFill} cx="1186.9357503463518" cy="339.9999999999997" strokeWidth={currentProduct === 4 ? 2 : 26} data-cy="sliderPin" tabIndex={0} focusable="true" style={{ transformOrigin: '0px 0px 0px' }} data-svg-origin="1186.935791015625 340" transform="matrix(1,0,0,1,0,0)" />
 			<circle className="homeSlider__navigationPinAfter" r={currentProduct === 4 ? 16 : 26} stroke={currentProduct === 4 ? "#008CE6" : pinStroke} cx="1186.9357503463518" cy="339.9999999999997" strokeWidth={currentProduct === 4 ? 20 : 4} data-cy="sliderPinAfter" />
 
-			<circle className="homeSlider__navigationPin" onClick={() => setCurrentProduct(5)} data-slide={5} r={24} fill={currentProduct === 5 ? "white" : pinFill} cx="1186.935750346352" cy="959.9999999999995" strokeWidth={currentProduct === 5 ? 2 : 26} data-cy="sliderPin" tabIndex={0} focusable="true" style={{ transformOrigin: '0px 0px 0px' }} data-svg-origin="1186.935791015625 960" transform="matrix(1,0,0,1,0,0)" />
+			<circle className="homeSlider__navigationPin" onClick={currentProduct === 5 ? () => { } : () => setCurrentProduct(5)} data-slide={5} r={24} fill={currentProduct === 5 ? "white" : pinFill} cx="1186.935750346352" cy="959.9999999999995" strokeWidth={currentProduct === 5 ? 2 : 26} data-cy="sliderPin" tabIndex={0} focusable="true" style={{ transformOrigin: '0px 0px 0px' }} data-svg-origin="1186.935791015625 960" transform="matrix(1,0,0,1,0,0)" />
 			<circle className="homeSlider__navigationPinAfter" r={currentProduct === 5 ? 16 : 26} cx="1186.935750346352" stroke={currentProduct === 5 ? "#008CE6" : pinStroke} cy="959.9999999999995" strokeWidth={currentProduct === 5 ? 20 : 4} data-cy="sliderPinAfter" />
 		</svg>
 	)
@@ -1099,11 +1099,7 @@ export default function StartPageSlider({ nextPage, links, prewPage }) {
 	});
 	React.useEffect(() => {
 		document.body.style.overflow = "hidden";
-		// Scroll.animateScroll.scrollToTop({smooth: false})
-		// setTimeout(() => {
-
 		prewPage();
-		// }, 1000);
 	}, []);
 	return (
 		<div className="start_page_slider"
