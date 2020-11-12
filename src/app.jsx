@@ -196,7 +196,7 @@ export default function App() {
 					<StartPage id={links[0].id}
 						nextPage={() => toBottom()}
 						link={ref}
-						toComposition={() => setCurrentPages(2)}
+						toComposition={() => setCurrentPages(3)}
 						ChangeQuantity={ChangeQuantity}
 						tempItems={tempItems}
 						links={links}
