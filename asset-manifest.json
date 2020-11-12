@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/led-vled/static/css/main.3a875fc5.chunk.css",
-    "main.js": "/led-vled/static/js/main.e3a03fd6.chunk.js",
-    "main.js.map": "/led-vled/static/js/main.e3a03fd6.chunk.js.map",
+    "main.css": "/led-vled/static/css/main.f1c8af53.chunk.css",
+    "main.js": "/led-vled/static/js/main.ad0a50d8.chunk.js",
+    "main.js.map": "/led-vled/static/js/main.ad0a50d8.chunk.js.map",
     "runtime-main.js": "/led-vled/static/js/runtime-main.936a022f.js",
     "runtime-main.js.map": "/led-vled/static/js/runtime-main.936a022f.js.map",
-    "static/js/2.88aafd1f.chunk.js": "/led-vled/static/js/2.88aafd1f.chunk.js",
-    "static/js/2.88aafd1f.chunk.js.map": "/led-vled/static/js/2.88aafd1f.chunk.js.map",
+    "static/js/2.f6db9240.chunk.js": "/led-vled/static/js/2.f6db9240.chunk.js",
+    "static/js/2.f6db9240.chunk.js.map": "/led-vled/static/js/2.f6db9240.chunk.js.map",
     "index.html": "/led-vled/index.html",
-    "precache-manifest.2b0fb49a10735674480c8e14bbc83cb3.js": "/led-vled/precache-manifest.2b0fb49a10735674480c8e14bbc83cb3.js",
+    "precache-manifest.fe167271720e33a290fc9fddf7cb3673.js": "/led-vled/precache-manifest.fe167271720e33a290fc9fddf7cb3673.js",
     "service-worker.js": "/led-vled/service-worker.js",
-    "static/css/main.3a875fc5.chunk.css.map": "/led-vled/static/css/main.3a875fc5.chunk.css.map",
-    "static/js/2.88aafd1f.chunk.js.LICENSE.txt": "/led-vled/static/js/2.88aafd1f.chunk.js.LICENSE.txt",
+    "static/css/main.f1c8af53.chunk.css.map": "/led-vled/static/css/main.f1c8af53.chunk.css.map",
+    "static/js/2.f6db9240.chunk.js.LICENSE.txt": "/led-vled/static/js/2.f6db9240.chunk.js.LICENSE.txt",
     "static/media/1_1.png": "/led-vled/static/media/1_1.c065d9cc.png",
     "static/media/1_2.png": "/led-vled/static/media/1_2.e3fc1fd0.png",
     "static/media/1_3.png": "/led-vled/static/media/1_3.850d1122.png",
@@ -68,8 +68,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.936a022f.js",
-    "static/js/2.88aafd1f.chunk.js",
-    "static/css/main.3a875fc5.chunk.css",
-    "static/js/main.e3a03fd6.chunk.js"
+    "static/js/2.f6db9240.chunk.js",
+    "static/css/main.f1c8af53.chunk.css",
+    "static/js/main.ad0a50d8.chunk.js"
   ]
 }
