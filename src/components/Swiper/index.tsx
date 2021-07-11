@@ -265,6 +265,11 @@ export default function Swiper({ id, link, toStarterPage }) {
 						swiperPause={swiperPause}
 					/>
 				</div>
+				<div className="swiper__logo">
+					<p className="elements__background-holder__logo">
+						Сделано в <span>REJI</span>
+					</p>
+				</div>
 			</div>
 			<Footer currentPage={currentPage} />
 		</div>

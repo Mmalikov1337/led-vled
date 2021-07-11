@@ -28,6 +28,7 @@
 		width: 580px; ////
 		margin-left: -200px;
 		position: relative;
+
 		&-wrapper {
 			width: 100%;
 			display: flex;
@@ -42,6 +43,12 @@
 			width: 480px;
 			// margin-top: 50px;
 			position: relative;
+			display: flex;
+
+			flex-direction: column;
+			align-content: center;
+			justify-content: flex-end;
+
 			div {
 				display: flex;
 				align-content: center;
@@ -100,7 +107,7 @@
 				&::placeholder {
 					font-weight: 500;
 					font-size: 16px;
-					line-height: 16px;
+					// line-height: 16px;
 					font-family: "Cera Round Pro";
 					// padding-left: 40px;
 					color: #FFFFFF;

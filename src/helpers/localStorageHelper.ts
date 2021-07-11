@@ -20,10 +20,14 @@ class LocalStorageHepler {
 	}
 
 	getSelectedProducts(): number[] {
+		console.log("asdadssAAAAAAAAAAAA");
+
 		let selectedProducts = LocalStorageHepler.getFromStorage(productStorageName);
 		if (!selectedProducts) {
 			selectedProducts = JSON.stringify([...Array(productsQuantity).map(() => 0)]);
 		}
+		console.log(JSON.parse(selectedProducts),"AAAAAAAAAAAA");
+		
 		return JSON.parse(selectedProducts);
 	}
 

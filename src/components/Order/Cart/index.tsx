@@ -1,10 +1,11 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 import MaskedInput from "react-text-mask";
 import { tempItems } from "@src/config";
 import boxPNG from "./../../../../assets/images/box.png";
 import LocalStorageHepler from "@src/helpers/localStorageHelper";
 import Router from "next/router";
 import OrderDataDTO from "@src/types/OrderDataDTO";
+import CartItem from "./CartItem";
 
 const getSum = (tempItems, products) => {
 	let sum = 0;
@@ -46,7 +47,8 @@ export default function Cart() {
 	const instagramInput = React.useRef<HTMLInputElement | null>(null);
 	const commentInput = React.useRef<HTMLInputElement | null>(null);
 
-	const onChangeHandler = (cb) => (e: InputEvent) => cb((e.target as HTMLInputElement).value);
+	const onChangeHandler = (cb: (string: string) => void) => (e: ChangeEvent<HTMLInputElement>) =>
+		cb((e.target as HTMLInputElement).value);
 
 	const submit = () => {
 		const mailReg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
@@ -124,7 +126,7 @@ export default function Cart() {
 			)
 		);
 
-		console.log("orderData: ",ls.getOrderData());
+		console.log("orderData: ", ls.getOrderData());
 
 		Router.push("/order/delivery");
 	};
@@ -544,28 +546,28 @@ export default function Cart() {
 		</div>
 	);
 }
-function CartItem(
-	tempItems: {
-		pic: any;
-		mainColor: string;
-		sideColor: string;
-		rating: string;
-		title: string;
-		description: string;
-		price: string;
-		mesure: string;
-		properties: string[];
-		id: number;
-	}[],
-	ls: LocalStorageHepler,
-	arg2: boolean,
-	title: string,
-	price: string,
-	pic: any,
-	mainColor: string,
-	sideColor: string,
-	index: number,
-	arg9: { width: string; height: string }
-): React.ReactNode {
-	throw new Error("Function not implemented.");
-}
+// function CartItem(
+// 	tempItems: {
+// 		pic: any;
+// 		mainColor: string;
+// 		sideColor: string;
+// 		rating: string;
+// 		title: string;
+// 		description: string;
+// 		price: string;
+// 		mesure: string;
+// 		properties: string[];
+// 		id: number;
+// 	}[],
+// 	ls: LocalStorageHepler,
+// 	arg2: boolean,
+// 	title: string,
+// 	price: string,
+// 	pic: any,
+// 	mainColor: string,
+// 	sideColor: string,
+// 	index: number,
+// 	arg9: { width: string; height: string }
+// ): React.ReactNode {
+// 	throw new Error("Function not implemented.");
+// }

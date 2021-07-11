@@ -21,7 +21,7 @@
 		}
 
 		&__text {
-			width: 454px;
+			max-width: 454px;
 
 			p {
 				font-weight: 500;
@@ -73,11 +73,16 @@
 		}
 	}
 
-	&__right {
-			transform: translateX(-15%);
-			img {
-			width: 582px;
-			height: 582px;
+	&__right  {
+		display: flex;
+		align-items: center;
+		// transform: translateX(-15%);
+		flex: 0 0 40%;
+		img {
+			width: auto;
+			height: auto;
+			max-width: 100%;
+			max-height: 100%;
 		}
 	}
 }

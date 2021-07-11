@@ -33,7 +33,7 @@ export default function CatalogPage() {
 		scrollToId(currentPage);
 	}, [currentPage, links]);
 
-	function scrollByWheel(value:WheelEvent) {
+	function scrollByWheel(value: WheelEvent) {
 		if (value.deltaY < 0) {
 			//вверх
 			if (currentPage > 0) {
@@ -56,7 +56,7 @@ export default function CatalogPage() {
 		}
 		return;
 	}
-
+	
 	return (
 		<CatalogLayout
 			className="container"
@@ -71,7 +71,7 @@ export default function CatalogPage() {
 			}}
 			id={links[0].id}
 		>
-			<ProductSlider currentPage={currentPage}/>
+			<ProductSlider currentPage={currentPage} />
 			<ProductList id={links[1].id} />
 		</CatalogLayout>
 	);

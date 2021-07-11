@@ -1,3 +1,11 @@
+$maxWidth: 1920;
+
+@mixin adaptiv-font($pcSize, $mobSize) {
+	$addSize: $pcSize - $mobSize;
+	$maxWidth: $maxWidth - 320;
+	font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+
 .composition {
 	height: 100%;
 	display: flex;
@@ -7,20 +15,26 @@
 		display: flex;
 		// justify-content: space-between;
 		height: 100%;
+		justify-content: space-between;
 
 		.text-part {
-			width: fit-content;
+			// width: fit-content;
+			flex: 0 0 50%;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
 		}
 
 		&__title {
 			font-family: 'Cera Round Pro';
 
 			h2 {
-				margin-top: 110px;
-				font-size: 72px;
+				margin-top: 0;
+				// font-size: adaptiv-font(72px, 20px);
 				font-weight: 900;
-				line-height: 100px; ////!*!
+				// line-height: 70px;
 				width: min-content;
+				@include adaptiv-font(72, 36);
 			}
 		}
 
@@ -84,6 +98,7 @@
 						font-family: 'Cera Round Pro';
 						font-weight: 900;
 						font-size: 24px;
+						margin: 0 0 15px 0;
 					}
 
 					&__item {
@@ -119,6 +134,8 @@
 					font-weight: 500;
 					font-size: 18px;
 					line-height: 25px;
+					padding: 0;
+					margin: 0;
 
 					span {
 						font-weight: bold;
@@ -131,11 +148,13 @@
 		&__circle {
 			display: flex;
 			align-items: center;
-			transform: translateX(-15%);
-
+			// transform: translateX(-15%);
+			flex: 0 0 40%;
 			img {
-				width: 582px; ////
-				height: 582px;
+				width: auto;
+				height: auto;
+				max-width: 100%;
+				max-height: 100%;
 			}
 		}
 	}

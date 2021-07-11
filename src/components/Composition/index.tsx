@@ -195,11 +195,12 @@ export default function Composition({ nextPage, links }: IComposition) {
 						<div className="startpage__items__main">
 							<div className="startpage__items__main__section">
 								<div className="startpage__items__main__section__item">
+									
+									<div className="startpage__items__main__section__item__content">
 									<div className="startpage__items__main__section__item__rating">
 										{tempItems[selectedItem].rating}
 										<img src={starSVG} alt="starSVG" />
 									</div>
-									<div className="startpage__items__main__section__item__content">
 										<Circle
 											color={tempItems[selectedItem].mainColor}
 											width="582"

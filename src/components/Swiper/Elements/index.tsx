@@ -116,11 +116,7 @@ export default function Elements({ toTop, toBottom, currentPage, swiperPause }) 
 						transform: `translate(${circleStyles[currentPage].x},${circleStyles[currentPage].y})`
 					}} />
 				</div>
-				<div className="elements__background-logo">
-					<p className="elements__background-holder__logo">
-						Сделано в <span>REJI</span>
-					</p>
-				</div>
+				
 			</div>
 
 			{elementsList.map((it, index) => (

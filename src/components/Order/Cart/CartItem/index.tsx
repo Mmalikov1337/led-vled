@@ -1,5 +1,6 @@
 import LocalStorageHepler from "@src/helpers/localStorageHelper";
 import React from "react";
+import Circle from "../Circle";
 
 export default function CartItem(
 	tempItems,
@@ -45,7 +46,7 @@ export default function CartItem(
 
 			<div className="cart__orders__box__counter">
 				<div className="cart__orders__box__counter__border">
-					<div className="cart__orders__box__counter__border__button" onClick={decrease}>
+					<button className="cart__orders__box__counter__border__button" onClick={decrease}>
 						<svg
 							width="8"
 							height="4"
@@ -58,11 +59,11 @@ export default function CartItem(
 								fill="#717171"
 							/>
 						</svg>
-					</div>
+					</button>
 					<div className="cart__orders__box__counter__border__quantity">
 						{currentProductQuantity}
 					</div>
-					<div className="cart__orders__box__counter__border__button" onClick={increase}>
+					<button className="cart__orders__box__counter__border__button" onClick={increase}>
 						<svg
 							width="13"
 							height="13"
@@ -75,11 +76,11 @@ export default function CartItem(
 								fill="#008CE6"
 							/>
 						</svg>
-					</div>
+					</button>
 				</div>
 			</div>
 			<div className="cart__orders__box__price">{~~price * currentProductQuantity}₽</div>
-			<div
+			<button
 				className="cart__orders__box__delete"
 				onClick={() => ls.setSelectedProductByIndex(index, 0)}
 			>
@@ -95,7 +96,8 @@ export default function CartItem(
 						fill="#FF4E5A"
 					/>
 				</svg>
-			</div>
+			</button>
 		</div>
+	
 	);
 }

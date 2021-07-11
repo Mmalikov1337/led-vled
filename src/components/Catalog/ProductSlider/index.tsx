@@ -336,7 +336,10 @@ export default function ProductSlider(/*{ id }*/ { currentPage }) {
 	const nextRef = React.useRef(null);
 	const containerRef = React.useRef(null);
 
+	const [isLoaded, setIsLoaded] = React.useState(false);
+
 	React.useEffect(() => {
+		if(!isLoaded) return
 		const timer = setInterval(() => {
 			if (!paused) {
 				nextProduct(setCirclePin, currentProduct, setCurrentProduct, selectedRef, prewRef);
@@ -378,6 +381,15 @@ export default function ProductSlider(/*{ id }*/ { currentPage }) {
 			console.log(currentPage, paused);
 		}, 2000);
 	}, [currentPage]);
+
+	React.useEffect(() => {
+		setIsLoaded(true);
+	}, []);
+
+	if (!isLoaded) {
+		return <h1>LOADING</h1>;
+	}
+
 	return (
 		<div
 			className="start_page_slider"

@@ -29,6 +29,7 @@ const scrollToId = (id) => {
 		smooth: true,
 		horizontal: true,
 		containerId: "slider",
+		ignoreCancelEvents: true,
 	});
 };
 
@@ -127,7 +128,7 @@ export default function Tastes() {
 								</div>
 								<div className="tastes__slider__slide__counter">
 									<div className="tastes__slider__slide__counter__plate">
-										<div
+										<button
 											className="tastes__slider__slide__counter__plate__button"
 											onClick={() => ls.decreaseProductsQuantity(index)}
 										>
@@ -143,11 +144,11 @@ export default function Tastes() {
 													fill="#717171"
 												/>
 											</svg>
-										</div>
+										</button>
 										<div className="tastes__slider__slide__counter__plate__quantity">
 											{selectedQuantity[index]}
 										</div>
-										<div
+										<button
 											className="tastes__slider__slide__counter__plate__button"
 											onClick={() => ls.increaseProductsQuantity(index)}
 										>
@@ -163,7 +164,7 @@ export default function Tastes() {
 													fill="#008CE6"
 												/>
 											</svg>
-										</div>
+										</button>
 									</div>
 								</div>
 								<div className="tastes__slider__slide__price">
