@@ -38,6 +38,7 @@ import leaf4_3 from '@images/leaf4_3.png';
 import tarragon_bg2 from '@images/tarragon_bg2.png';
 import tarragon_secondary from '@images/tarragon_secondary.png';
 
+import PaymentPageSdk from "@raiffeisen-ecom/payment-sdk";
 export interface ICompositionLink {
 	id: string;
 	style: {
@@ -45,22 +46,16 @@ export interface ICompositionLink {
 		opacity?: string;
 	};
 }
+// export const paymentPage = new PaymentPageSdk("000001680200002-80200002", {
+// 	url: "https://test.ecom.raiffeisen.ru/pay",
+// });
+
+export const serverURL = "http://localhost:3001";
+
 
 export const productStorageName = "selectedProducts";
 export const productsQuantity = 5;
 export const tempItems = [
-	{
-		pic: prod_1_4PNG,
-		mainColor: "#FBB35E",
-		sideColor: "#FCCA8E",
-		rating: "5.0",
-		title: "Персик",
-		description: "Натуральные ингредиенты",
-		price: "10",
-		mesure: "шт",
-		properties: ["21 ккал", "200 мл"],
-		id:0
-	},
 	{
 		pic: prod_1_2PNG,
 		mainColor: "#DBE4A7",
@@ -98,16 +93,28 @@ export const tempItems = [
 		id:3
 	},
 	{
-		pic: prod_1_3PNG,
-		mainColor: "#3F9B0B",
-		sideColor: "#65af3c",
+		pic: prod_1_4PNG,
+		mainColor: "#FBB35E",
+		sideColor: "#FCCA8E",
 		rating: "5.0",
-		title: "Лимон",
+		title: "Персик",
 		description: "Натуральные ингредиенты",
 		price: "10",
 		mesure: "шт",
 		properties: ["21 ккал", "200 мл"],
 		id:4
+	},
+	{
+		pic: prod_1_3PNG,
+		mainColor: "#3F9B0B",
+		sideColor: "#65af3c",
+		rating: "5.0",
+		title: "Тархун",
+		description: "Натуральные ингредиенты",
+		price: "10",
+		mesure: "шт",
+		properties: ["21 ккал", "200 мл"],
+		id:5
 	},
 ];
 

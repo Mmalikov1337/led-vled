@@ -1,11 +1,10 @@
 import React from "react";
 import App from "@components/App";
 
-export default function Main() {
-	// newCurrentPage={0} newSwiperPage={0}
+export default function PartnersPage() {
 	return (
 		<>
-			<App/>
+			<App newCurrentPage={1} newSwiperPage={5}/>
 		</>
 	);
 };

@@ -15,7 +15,7 @@ export default function CartItem(
 	picStyles = {}
 ) {
 	let currentProductQuantity = ls.getSelectedProducts()[index];
-	console.log(ls.getSelectedProducts[index], currentProductQuantity);
+	// console.log(ls.getSelectedProducts[index], currentProductQuantity);
 
 	const increase = () => ls.increaseProductsQuantity(index);
 

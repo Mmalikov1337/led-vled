@@ -123,7 +123,7 @@ export default function Elements({ toTop, toBottom, currentPage, swiperPause }) 
 				<div className="opacity-toggler" key={index}
 					style={{
 						opacity: `${currentPage === index ? "1" : "0"}`,
-						visibility: `${currentPage === index ? "visible" : "hidden"}`
+						visibility: `${currentPage === index ? "visible" : "hidden"}` as Visibility
 					}}>
 					{it}
 				</div>
@@ -131,3 +131,4 @@ export default function Elements({ toTop, toBottom, currentPage, swiperPause }) 
 		</div>
 	)
 }
+export type Visibility =  "collapse" | "hidden" | "visible";

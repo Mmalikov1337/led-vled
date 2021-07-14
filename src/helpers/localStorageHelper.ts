@@ -5,9 +5,10 @@ import React from "react";
 import { productStorageName, productsQuantity } from "./../config";
 
 class LocalStorageHepler {
-	stateFunction: React.Dispatch<React.SetStateAction<number[]>> | null;
+	stateFunction: React.Dispatch<React.SetStateAction<number[] | number>> | null;
 
-	constructor(stateFunction: React.Dispatch<React.SetStateAction<number[]>>| null) {
+	
+	constructor(stateFunction: React.Dispatch<React.SetStateAction<number[] | number>> | null) {
 		this.stateFunction = stateFunction;
 	}
 
@@ -20,20 +21,16 @@ class LocalStorageHepler {
 	}
 
 	getSelectedProducts(): number[] {
-		console.log("asdadssAAAAAAAAAAAA");
-
 		let selectedProducts = LocalStorageHepler.getFromStorage(productStorageName);
 		if (!selectedProducts) {
-			selectedProducts = JSON.stringify([...Array(productsQuantity).map(() => 0)]);
+			selectedProducts = JSON.stringify([...Array(5)].fill(0));
 		}
-		console.log(JSON.parse(selectedProducts),"AAAAAAAAAAAA");
-		
 		return JSON.parse(selectedProducts);
 	}
 
 	setSelectedProducts(value: number[] = null) {
 		//меняет стейт
-		if(!this.stateFunction) return
+		if (!this.stateFunction) return;
 		if (!value) {
 			this.stateFunction(this.getSelectedProducts());
 			return;
@@ -42,9 +39,10 @@ class LocalStorageHepler {
 		LocalStorageHepler.setToStorage(productStorageName, stringifyed);
 		this.stateFunction(value);
 	}
+
 	setSelectedProductByIndex(index: number, value: number) {
 		//меняет стейт
-		if(!this.stateFunction) return
+		if (!this.stateFunction) return;
 
 		const temp = this.getSelectedProducts();
 		temp[index] = value;
@@ -60,7 +58,7 @@ class LocalStorageHepler {
 
 	decreaseProductsQuantity(index: number, min: number = 0) {
 		//меняет стейт
-		if(!this.stateFunction) return
+		if (!this.stateFunction) return;
 
 		const selectedProducts = this.getSelectedProducts();
 
@@ -74,13 +72,22 @@ class LocalStorageHepler {
 	static getInitialState() {
 		return React.useState([...Array(5)].fill(0));
 	}
+	/* NAVBAR */
+	setProductQuantity() {
+		this.stateFunction(this.getProductQuantity())
+	}
+	getProductQuantity() {
+		const products = this.getSelectedProducts();
+		const selected = products.filter((it) => it > 1);
+		return selected.length;
+	}
 	/* ORDER */
 	setOrderData(orderData: OrderDataDTO | null) {
-		if(!orderData) return 
-		const stringifyed = JSON.stringify(orderData)
+		if (!orderData) return;
+		const stringifyed = JSON.stringify(orderData);
 		LocalStorageHepler.setToStorage("orderData", stringifyed);
 	}
-	
+
 	getOrderData(): OrderDataDTO | null {
 		const stringifyed = LocalStorageHepler.getFromStorage("orderData");
 		if (!stringifyed) {
@@ -91,8 +98,8 @@ class LocalStorageHepler {
 
 	/*DELIVERY */
 	setDeliveryData(deliveryData: DeliveryDataDTO | null) {
-		if(!deliveryData) return 
-		const stringifyed = JSON.stringify(deliveryData)
+		if (!deliveryData) return;
+		const stringifyed = JSON.stringify(deliveryData);
 		LocalStorageHepler.setToStorage("deliveryData", stringifyed);
 	}
 
@@ -105,9 +112,9 @@ class LocalStorageHepler {
 	}
 
 	/*PAYMENT */
-	setPaymentData(paymentData:PaymentDataDTO) {
-		if(!paymentData) return 
-		const stringifyed = JSON.stringify(paymentData)
+	setPaymentData(paymentData: PaymentDataDTO) {
+		if (!paymentData) return;
+		const stringifyed = JSON.stringify(paymentData);
 		LocalStorageHepler.setToStorage("paymentData", stringifyed);
 	}
 

@@ -1,25 +1,76 @@
-.order {
+.personal-data {
 	width: 100%;
 	// height: 88vh;
 	background: #F0F9FF;
 	border-radius: 15px 15px 0px 0px;
 	min-height: 88vh;
 	font-family: "Cera Round Pro";
-	// position: relative;
+	position: relative;
 
-	.wrong-input{
-		border:2px solid red;
+	.wrong-input {
+		border: 2px solid red;
 	}
 
 	&__container {
+		&__back-container {
+			width: 95%;
+			margin: 0 auto;
+			margin-top: 50px;
+			margin-bottom: 40px;
+		}
+	}
 
-		// position: relative;
+	&__buttons {
+		display: flex;
+		justify-content: center;
+		margin-top: 75px;
+		margin-bottom: 60px;
+
+		&__prew {
+			margin-right: 30px;
+
+			div {
+				cursor: pointer;
+				width: 185px;
+				height: 60px;
+				background: #FFFFFF;
+				box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+				border-radius: 15px;
+				display: flex;
+				flex-direction: row-reverse;
+				align-items: center;
+				justify-content: center;
+
+				span {
+					font-weight: bold;
+					font-size: 18px;
+					color: rgb(0, 0, 0);
+				}
+
+				div {
+					background: #FFFFFF;
+					background: linear-gradient(135deg, #F2F2F2 0%, #FFFFFF 100%);
+					/* 5 */
+
+					box-shadow: -5px 5px 10px rgba(224, 224, 224, 0.2), 5px -5px 10px rgba(224, 224, 224, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px 5px 13px rgba(224, 224, 224, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(224, 224, 224, 0.5);
+					border-radius: 15px;
+					width: 40px;
+					height: 40px;
+					display: flex;
+					align-content: center;
+					align-items: center;
+					justify-content: center;
+					justify-content: center;
+					margin-right: 15px;
+				}
+			}
+		}
 	}
 
 	&__side {
 		width: 100%;
 		height: 100%;
-		// position: relative;
+		position: relative;
 		display: flex;
 		justify-content: flex-end;
 		align-content: center;
@@ -36,54 +87,6 @@
 
 	}
 
-	&__numbers-container {
-		width: 100%;
-		display: flex;
-		justify-content: center;
-		*{
-			// transition: all .5s;
-		}
-		&__numbers {
-			margin-top: 50px; ////
-			margin-bottom: 50px;
-			display: flex;
-			align-items: center;
-			background: #FFFFFF;
-			box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
-			border-radius: 15px;
-			padding: 20px 30px; ////
-
-			&__gapline {
-				margin: 0 20px;
-			}
-
-			a {
-				text-decoration: none;
-				box-shadow: -5px 5px 10px rgba(224, 224, 224, 0.2), 5px -5px 10px rgba(224, 224, 224, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px 5px 13px rgba(224, 224, 224, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(224, 224, 224, 0.5);
-				border-radius: 15px;
-				box-sizing: border-box;
-				color: #008CE6;
-				border: 1px solid #008CE6;
-			}
-
-			.active {
-				border: 1px solid #FF4E5A;
-				color: #FF4E5A;
-				box-shadow: -5px 5px 10px rgba(224, 224, 224, 0.2), 5px -5px 10px rgba(224, 224, 224, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.9), 5px 5px 13px rgba(224, 224, 224, 0.9), inset 1px 1px 2px rgba(255, 255, 255, 0.3), inset -1px -1px 2px rgba(224, 224, 224, 0.5);
-				background: linear-gradient(135deg, #F2F2F2 0%, #FFFFFF 100%);
-				border-radius: 15px;
-			}
-
-			&__number {
-				background: linear-gradient(135deg, #F2F2F2 0%, #FFFFFF 100%);
-				padding: 20px 26px;
-				border-radius: 15px;
-				font-weight: bold;
-				font-size: 18px;
-				line-height: 18px;
-			}
-		}
-	}
 
 	&__content {}
 
@@ -189,6 +192,58 @@
 					}
 				}
 			}
+		}
+	}
+
+	.personal {
+		background: #ffffff;
+		box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05);
+		border-radius: 15px;
+		margin: 0 17%;
+		font-family: "Cera Round Pro";
+
+		.link {
+			text-decoration: none;
+			color: #008CE6;
+		}
+
+		&__container {
+			padding: 0 50px;
+		}
+
+		&__title {
+
+
+			h3 {
+				font-weight: 900;
+				font-size: 48px;
+				line-height: 48px;
+				color: #2F2F2F;
+				margin: 0;
+				padding: 40px 0;
+			}
+		}
+
+		&__subtitle {
+
+			font-weight: 900;
+			font-size: 24px;
+
+			h4 {
+				color: black;
+
+				span {
+
+					color: #008CE6;
+				}
+			}
+		}
+
+		&__section {
+
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 25px;
 		}
 	}
 }

@@ -50,17 +50,18 @@ export default function Composition({ nextPage, links }: IComposition) {
 			text: "Подходит для добавления в коктейли",
 		},
 	];
-	React.useEffect(() => {
-		document.body.style.overflow = "hidden";
-		const scrollTo = () => {
-			Scroll.scroller.scrollTo(links[0].id, {
-				duration: 1000,
-				delay: 0,
-				smooth: true,
-			});
-		};
-		scrollTo();
-	}, []);
+	// React.useEffect(() => {
+	// 	document.body.style.overflow = "hidden";
+	// 	const scrollTo = () => {
+	// 		Scroll.scroller.scrollTo(links[0].id, {
+	// 			duration: 1000,
+	// 			delay: 0,
+	// 			smooth: true,
+	// 		});
+	// 	};
+	// 	scrollTo();
+	// }, []);
+
 	return (
 		<div className="startpage">
 			<div className="startpage">
@@ -229,7 +230,7 @@ export default function Composition({ nextPage, links }: IComposition) {
 										<div
 											className="startpage__items__side__section__item"
 											key={index}
-											onClick={() => setSelectedItem(it.id)}
+											onClick={() => setSelectedItem(it.id-1)}
 										>
 											<div className="startpage__items__side__section__item__rating">
 												{it.rating}

@@ -2,6 +2,7 @@ import React from "react";
 // import Scroll from 'react-scroll';
 
 import Elements from "./Elements";
+import Router from "next/router";
 
 import logo_whiteSVG from "./../../assets/images/logo_white.svg";
 import contactBgTextXVG from "./../../assets/images/contacts_bg_text.svg";
@@ -71,9 +72,7 @@ const LinksList = ({ links, currentPage, setCurrentPage }) => {
 		<ul className="swiper__navbar__list">
 			{links.map((it, index) => (
 				<li
-					className={`swiper__navbar__list__link ${
-						currentPage === index ? "active" : ""
-					}`}
+					className={`swiper__navbar__list__link ${currentPage === index ? "active" : ""}`}
 					onClick={() => setCurrentPage(index)}
 					key={index}
 				>
@@ -138,8 +137,8 @@ const Feedback = ({ currentPage }) => {
 		</div>
 	);
 };
-export default function Swiper({ id, link, toStarterPage }) {
-	const [swiperPage, setSwiperPage] = React.useState(0);
+export default function Swiper({ id, link, toStarterPage, newSwiperPage }) {
+	// const [swiperPage, setSwiperPage] = React.useState(0);
 
 	const [currentPage, setCurrentPage] = React.useState(0);
 	const [active, setActive] = React.useState([false, false]);
@@ -147,12 +146,22 @@ export default function Swiper({ id, link, toStarterPage }) {
 	const [swiperPause, setSwiperPause] = React.useState(false);
 
 	// const ref = React.useRef(null);
-
 	React.useEffect(() => {
-		setSwiperPage(currentPage);
-	}, [currentPage, setSwiperPage]);
+		// console.log("newSwiperPage",newSwiperPage);
 
-	
+		if (newSwiperPage) {
+			// console.log("SET");
+
+			setCurrentPage(newSwiperPage);
+		}
+	}, []);
+
+	// React.useEffect(() => {
+
+	// }, [ setSwiperPage]);
+	// React.useEffect(() => {
+	// 	setSwiperPage(currentPage);
+	// }, [currentPage]);
 
 	const toTop = () => {
 		if (swiperPause) return;
@@ -176,6 +185,7 @@ export default function Swiper({ id, link, toStarterPage }) {
 		else {
 			setCurrentPage(0);
 			toStarterPage();
+			
 		}
 		let swiped = new Promise(function (resolve) {
 			setHeightOfLine("to_bottom");
@@ -198,11 +208,7 @@ export default function Swiper({ id, link, toStarterPage }) {
 			></div>
 
 			<div className="swiper__navbar">
-				<LinksList
-					links={links}
-					currentPage={currentPage}
-					setCurrentPage={setCurrentPage}
-				/>
+				<LinksList links={links} currentPage={currentPage} setCurrentPage={setCurrentPage} />
 				<div className="swiper__navbar__catalog">
 					<svg
 						width="30"
@@ -227,9 +233,7 @@ export default function Swiper({ id, link, toStarterPage }) {
 							</p>
 						</div>
 						<div className="swiper__sidebar__progress-line">
-							<div className="swiper__sidebar__progress-line__index">
-								0{currentPage + 1}
-							</div>
+							<div className="swiper__sidebar__progress-line__index">0{currentPage + 1}</div>
 							<div className="swiper__sidebar__progress-line__line-holder">
 								<div
 									className={`swiper__sidebar__progress-line__line-holder__line ${
@@ -237,23 +241,11 @@ export default function Swiper({ id, link, toStarterPage }) {
 									}`}
 								></div>
 								<div className="swiper__sidebar__progress-line__line-holder__arrows">
-									<ArrowSVG
-										toUp={true}
-										func={toTop}
-										active={active}
-										setActive={setActive}
-									/>
-									<ArrowSVG
-										toUp={false}
-										func={toBottom}
-										active={active}
-										setActive={setActive}
-									/>
+									<ArrowSVG toUp={true} func={toTop} active={active} setActive={setActive} />
+									<ArrowSVG toUp={false} func={toBottom} active={active} setActive={setActive} />
 								</div>
 							</div>
-							<div className="swiper__sidebar__progress-line__page">
-								{links[currentPage].title}
-							</div>
+							<div className="swiper__sidebar__progress-line__page">{links[currentPage].title}</div>
 						</div>
 					</div>
 				</div>

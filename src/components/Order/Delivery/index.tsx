@@ -149,7 +149,7 @@ export default function Delivery() {
 					</div>
 				</div>
 				<div className="delivery__buttons">
-					<div className="delivery__buttons__prew">
+					<button className="delivery__buttons__prew">
 						<div>
 							<span>Назад</span>
 							<div>
@@ -167,7 +167,7 @@ export default function Delivery() {
 								</svg>
 							</div>
 						</div>
-					</div>
+					</button>
 					<button className="delivery__buttons__next" onClick={submit}>
 						<div>
 							<span>Далее</span>

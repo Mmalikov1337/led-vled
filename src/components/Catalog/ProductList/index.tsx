@@ -24,22 +24,7 @@ const Circle = ({ color, width, height }) => {
 	);
 };
 
-export default function ProductList({id}) {
-	// const [selectedQuantity, setSelectedQuantity] = React.useState(ChangeQuantity.selectedProductsQuantity);
-
-	// const increaseSelectedQuantity = (index) => {
-	// 	const temp = selectedQuantity.concat();
-	// 	temp[index]++;
-	// 	setSelectedQuantity(temp);
-	// }
-
-	// const decreaseSelectedQuantity = (index) => {
-	// 	const temp = selectedQuantity.concat();
-	// 	if (temp[index] > 0) {
-	// 		temp[index]--;
-	// 		setSelectedQuantity(temp);
-	// 	};
-	// }
+export default function ProductList({ id }) {
 	const [isLoaded, setIsLoaded] = React.useState(false);
 
 	const [selectedQuantity, setSelectedQuantity] = React.useState([...Array(5)].fill(0));
@@ -71,11 +56,7 @@ export default function ProductList({id}) {
 			</div>
 			<div className="start_page_catalog__products">
 				{tempItems.map((it, index) => (
-					<div
-						className="start_page_catalog__products__item"
-						key={index}
-						id={`slide_${index}`}
-					>
+					<div className="start_page_catalog__products__item" key={index} id={`slide_${index}`}>
 						<div className="start_page_catalog__products__item__top">
 							<div className="start_page_catalog__products__item__rating">
 								{it.rating}
@@ -105,7 +86,9 @@ export default function ProductList({id}) {
 							<div className="start_page_catalog__products__item__counter__plate">
 								<button
 									className="start_page_catalog__products__item__counter__plate__button"
-									onClick={() => {ls.decreaseProductsQuantity(index)}}
+									onClick={() => {
+										ls.decreaseProductsQuantity(index);
+									}}
 								>
 									<svg
 										width="8"
@@ -121,11 +104,13 @@ export default function ProductList({id}) {
 									</svg>
 								</button>
 								<div className="start_page_catalog__products__item__counter__plate__quantity">
-								{selectedQuantity[index]}
+									{selectedQuantity[index]}
 								</div>
 								<button
 									className="start_page_catalog__products__item__counter__plate__button"
-									onClick={() => {ls.increaseProductsQuantity(index)}}
+									onClick={() => {
+										ls.increaseProductsQuantity(index);
+									}}
 								>
 									<svg
 										width="13"
@@ -145,18 +130,13 @@ export default function ProductList({id}) {
 						<div className="start_page_catalog__products__item__price">
 							{it.price}₽<span>/{it.mesure}</span>
 						</div>
-						<div className="start_page_catalog__products__item__description">
-							{it.description}
-						</div>
+						<div className="start_page_catalog__products__item__description">{it.description}</div>
 						<div className="start_page_catalog__products__item__properties">
 							{it.properties.map((i, index) => (
 								<p key={index}>{i}</p>
 							))}
 						</div>
-						<div
-							className="start_page_catalog__products__item__button"
-							onClick={() => {}}
-						>
+						<div className="start_page_catalog__products__item__button" onClick={() => {}}>
 							<div>
 								<span>В корзину</span>
 								<div>

@@ -11,20 +11,15 @@ const App = ({ Component, pageProps }: AppProps) => {
 	return (
 		<>
 			<Head>
-				<title>Netsyde</title>
+				<title>лёд влёд</title>
 				<meta name="viewport" content="initial-scale=1.0, width=device-width" />
 				<meta name="format-detection" content="telephone=no" />
 				<meta name="mobile-web-app-capable" content="yes" />
 				<meta name="theme-color" content="#FFFFFF" />
 				<link rel="manifest" href="/manifest.json" />
 			</Head>
-			{/* <Provider store={store}> */}
-				<Component {...pageProps} />
-			{/* </Provider> */}
+			<Component {...pageProps} />
 		</>
 	);
 };
-// const makeStore = () => store;
-// const wrapper = createWrapper(makeStore)
-// export default wrapper.withRedux(App);
 export default App;

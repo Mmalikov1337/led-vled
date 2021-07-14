@@ -1,35 +1,35 @@
 export default class OrderDataDTO {
 	name: string;
-	mail: string;
-	phone: string;
-	city: string;
-	homeAdress: string;
-	isHouse: boolean;
+	email: string;
+	tel: string;
+	cityAddress: string;
+	houseNumber: string;
+	houseOrApartment: boolean;//'house' (true) or 'apartment' (false) : Boolean
 	postIndex: string;
-	promocode: string | null;
+	promo: string | null;
 	instagram: string | null;
 	comment: string | null;
 
 	constructor(
 		name: string,
-		mail: string,
+		email: string,
 		phone: string,
 		city: string,
 		homeAdress: string,
-		isHouse: boolean,
+		houseOrApartment: boolean,
 		postIndex: string,
 		promocode: string | null,
 		instagram: string | null,
 		comment: string | null
 	) {
 		this.name = name;
-		this.mail = mail;
-		this.phone = phone;
-		this.city = city;
-		this.homeAdress = homeAdress;
-		this.isHouse = isHouse;
+		this.email = email;
+		this.tel = phone;
+		this.cityAddress = city;
+		this.houseNumber = homeAdress;
+		this.houseOrApartment = houseOrApartment;
 		this.postIndex = postIndex;
-		this.promocode = promocode;
+		this.promo = promocode;
 		this.instagram = instagram;
 		this.comment = comment;
 	}

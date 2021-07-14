@@ -1,10 +1,10 @@
 export default class PaymentDataDTO {
-	payment: string;
+	method: string;
 
 	constructor(
-		payment: string,
+		method: string,
 	) {
-		this.payment = payment;
+		this.method = method;
 	}
 
     getPlainObject(){

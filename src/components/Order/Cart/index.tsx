@@ -51,6 +51,8 @@ export default function Cart() {
 		cb((e.target as HTMLInputElement).value);
 
 	const submit = () => {
+		if (!isLoaded) return;
+		
 		const mailReg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 
 		const nameIsValid = name.length >= 2;
@@ -63,53 +65,62 @@ export default function Cart() {
 		const instagramIsValid = !!instagram;
 		const commentIsValid = !!comment;
 
+		let isAllCorrect = true;
+
 		if (!nameIsValid) {
+			isAllCorrect = false;
 			nameInput.current.classList.add("wrong-input");
 		} else {
 			nameInput.current.classList.remove("wrong-input");
 		}
 		if (!mailIsValid) {
+			isAllCorrect = false;
 			mailInput.current.classList.add("wrong-input");
 		} else {
 			mailInput.current.classList.remove("wrong-input");
 		}
 		if (!phoneIsValid) {
+			isAllCorrect = false;
 			phoneDiv.current.querySelector("input").classList.add("wrong-input");
 		} else {
 			phoneDiv.current.querySelector("input").classList.remove("wrong-input");
 		}
 		if (!cityIsValid) {
+			isAllCorrect = false;
 			cityInput.current.classList.add("wrong-input");
 		} else {
 			cityInput.current.classList.remove("wrong-input");
 		}
 		if (!homeAdressIsValid) {
+			isAllCorrect = false;
 			homeAdressInput.current.classList.add("wrong-input");
 		} else {
 			homeAdressInput.current.classList.remove("wrong-input");
 		}
 		if (!postIndexIsValid) {
+			isAllCorrect = false;
 			postIndexInput.current.classList.add("wrong-input");
 		} else {
 			postIndexInput.current.classList.remove("wrong-input");
 		}
-		if (!promocodeIsValid) {
-			promocodeInput.current.classList.add("wrong-input");
-		} else {
-			promocodeInput.current.classList.remove("wrong-input");
-		}
-		if (!instagramIsValid) {
-			instagramInput.current.classList.add("wrong-input");
-		} else {
-			instagramInput.current.classList.remove("wrong-input");
-		}
-		if (!commentIsValid) {
-			commentInput.current.classList.add("wrong-input");
-			return;
-		} else {
-			commentInput.current.classList.remove("wrong-input");
-		}
-		if (!isLoaded) return;
+		// if (!promocodeIsValid) {
+		// 	promocodeInput.current.classList.add("wrong-input");
+		// } else {
+		// 	promocodeInput.current.classList.remove("wrong-input");
+		// }
+		// if (!instagramIsValid) {
+		// 	instagramInput.current.classList.add("wrong-input");
+		// } else {
+		// 	instagramInput.current.classList.remove("wrong-input");
+		// }
+		// if (!commentIsValid) {
+		// 	commentInput.current.classList.add("wrong-input");
+		// 	// return;
+		// } else {
+		// 	commentInput.current.classList.remove("wrong-input");
+		// }
+
+		if (!isAllCorrect) return;
 
 		ls.setOrderData(
 			new OrderDataDTO(
@@ -120,9 +131,9 @@ export default function Cart() {
 				homeAdress,
 				isHouse,
 				postIndex,
-				promocode,
-				instagram,
-				comment
+				promocode ?? null,
+				instagram ?? null,
+				comment ?? null
 			)
 		);
 

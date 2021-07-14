@@ -6,13 +6,32 @@ import { useRouter } from "next/router";
 import logoSVG from "@images/logo.svg";
 import phoneSVG from "@images/phone.svg";
 import cartSVG from "@images/cart.svg";
+import LocalStorageHepler from "@src/helpers/localStorageHelper";
 
 interface IStartPageHeader {
 	extraClass?: string;
 }
 
-export default function StartPageHeader(props:IStartPageHeader) {
-	const [productQuantity, setProductQuantity] = React.useState(3);
+export default function StartPageHeader(props: IStartPageHeader) {
+	const [productQuantity, setProductQuantity] = React.useState<number>(0);
+
+	// const [isLoaded, setIsLoaded] = React.useState(false);
+
+	// let ls: LocalStorageHepler = isLoaded ? new LocalStorageHepler(setProductQuantity) : null;
+
+	// React.useEffect(() => {
+	// 	setIsLoaded(true);
+	// }, []);
+
+	// React.useEffect(() => {
+	// 	// if (isLoaded) {
+	// 	// 	ls.setProductQuantity();
+	// 	// }
+	// }, [isLoaded]);
+
+	// if (!isLoaded) {
+	// 	return <h1>LOADING</h1>;
+	// }
 
 	const router = useRouter();
 	return (
@@ -29,23 +48,17 @@ export default function StartPageHeader(props:IStartPageHeader) {
 					</li>
 					<li className="sp-header__links__link">
 						<Link href="/catalog">
-							<a className={router.pathname === "/catalog" ? "active" : ""}>
-								Каталог
-							</a>
+							<a className={router.pathname === "/catalog" ? "active" : ""}>Каталог</a>
 						</Link>
 					</li>
 					<li className="sp-header__links__link">
 						<Link href="/partners">
-							<a className={router.pathname === "/partners" ? "active" : ""}>
-								Партнёрам
-							</a>
+							<a className={router.pathname === "/partners" ? "active" : ""}>Партнёрам</a>
 						</Link>
 					</li>
 					<li className="sp-header__links__link">
 						<Link href="/contacts">
-							<a className={router.pathname === "/contacts" ? "active" : ""}>
-								Контакты
-							</a>
+							<a className={router.pathname === "/contacts" ? "active" : ""}>Контакты</a>
 						</Link>
 					</li>
 				</ul>

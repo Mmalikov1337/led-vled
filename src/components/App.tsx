@@ -4,9 +4,13 @@ import Swiper from "./Swiper";
 import Composition from "./Composition";
 import IndexLayout from "@src/layouts/indexLayout";
 import timeout from "@helpers/timeout";
-import {Compositionlinks} from "@src/config"
+import { Compositionlinks } from "@src/config";
+interface IApp {
+	newSwiperPage?: number;
+	newCurrentPage?: number;
+}
 
-export default function App() {
+export default function App(props: IApp) {
 	const [currentPages, setCurrentPages] = React.useState(0);
 	const [swiperPause, setSwiperPause] = React.useState(false);
 	const ref = React.useRef<HTMLElement>(null);
@@ -22,9 +26,24 @@ export default function App() {
 		};
 		scrollToId(currentPages);
 	}, [currentPages, Compositionlinks]);
-
+	React.useEffect(() => {
+		// console.log(props, "priospo");
+		
+		if (props.newCurrentPage) {
+			setCurrentPages(props.newCurrentPage);
+		}
+	}, []);
+	React.useEffect(() => {
+		document.body.style.overflow = "hidden";
+	}, []);
+	const [isLoaded, setIsLoaded] = React.useState(false);
+	React.useEffect(() => {
+		setIsLoaded(true);
+	}, []);
 	const toBottom = () =>
-		setCurrentPages(currentPages < Compositionlinks.length - 1 ? currentPages + 1 : Compositionlinks.length - 1);
+		setCurrentPages(
+			currentPages < Compositionlinks.length - 1 ? currentPages + 1 : Compositionlinks.length - 1
+		);
 
 	function scrollByWheel(value: WheelEvent) {
 		if (!ref.current) {
@@ -38,6 +57,7 @@ export default function App() {
 			if (currentPages > 0) {
 				//не первая страница
 				setCurrentPages(currentPages - 1);
+				if(isLoaded )window.history.replaceState(null, "", "/");
 				return;
 			} else {
 				return;
@@ -55,7 +75,13 @@ export default function App() {
 		}
 		return;
 	}
-
+	// Router.push(
+	// 	{
+	// 		pathname: "/",
+	// 	},
+	// 	undefined,
+	// 	{ shallow: true }
+	// );
 	return (
 		<IndexLayout
 			onWheel={async (e: WheelEvent) => {
@@ -69,7 +95,12 @@ export default function App() {
 			}}
 			childrenTop={<Composition nextPage={toBottom} links={Compositionlinks} />}
 			childrenBottom={
-				<Swiper id={Compositionlinks[1].id} link={ref} toStarterPage={() => setCurrentPages(0)} />
+				<Swiper
+					id={Compositionlinks[1].id}
+					link={ref}
+					toStarterPage={() => setCurrentPages(0)}
+					newSwiperPage={props.newSwiperPage ?? null}
+				/>
 			}
 			bottomStyle={Compositionlinks[currentPages].style}
 		/>
